@@ -1,0 +1,54 @@
+ul li{list-style: none;}
+a:focus, a:hover{ text-decoration: none!important;}
+/*模态框*/
+.modal{overflow: hidden;}
+.modal .modal-dialog{position: fixed; top: 46%; left: 48%; -webkit-transform: translateX(-50%) translateY(-50%);  -moz-transform: translateX(-50%) translateY(-50%);  -ms-transform: translateX(-50%) translateY(-50%); transform: translateX(-50%) translateY(-50%) !important; max-width: 800px; width: 90%;}
+.modal .modal-dialog .modal-body{width: 100%; max-height: 400px; min-height: 400px; overflow-x: hidden; overflow-y: auto; padding: 0 20px;}
+.modal .modal-small{max-width: 800px; width: 600px;}
+.new-manger .show-box{border: 1px solid #dddddd; height: 150px;}
+.new-manger .show-box{border: 1px solid #dddddd;height: 150px;width: 200px;}
+.pageWrap .model-page{margin-top: 0;}
+
+/*快捷方式*/
+
+.shortcut-box{ overflow: hidden; padding:6px 0; box-sizing: border-box;}
+.shortcut-box li{ width: 25%; float:left; text-align: center; margin:10px 0; height: 4em;}
+.shortcut-box li a{ display: inline-block;}
+.shortcut-box li a img{ max-width: 63%;}
+.shortcut-box li a span{display: block; font-size: 12px;}
+
+.n_tit{ padding:0.8rem 0 0.6rem 0; box-sizing: border-box; font-size: 1.8rem;border-bottom:1px solid #ECECEC; margin:0 10px; }
+
+/*快捷方式弹窗*/
+.modal .shortcut-add-box{padding: 0!important;}
+.modal .modal-header .shortcut-modal-title{display: inline-block; float: left;}
+.modal .modal-header .shortcut-search-form{display: inline-block; float: left; margin-left: 10px;    margin-bottom: -10px;}
+.modal .modal-header .shortcut-search-form>form{display: inline-block; height: 33px; width: auto; position: relative; bottom: 5px;}
+.modal .modal-header .shortcut-search-form>form>i{position:absolute; left: 0; top: 7px; color:#ccc; font-size: 15px; margin-left: 10px; color: #5097FE;}
+.modal .modal-header .shortcut-search-form>form>input[type='search']{position:relative; height: 100%; border: 1px solid #ccc; border-radius: 25px; outline: none; background: none; width: 30px; top:0; left:0; padding-left: 30px; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s;}
+.modal .modal-header .shortcut-search-form>form>input[type='search']:focus{border: 1px solid #5097FE; width: 220px; 	-webkit-box-shadow: 0 0 5px rgba(26,179,148,.5);  -moz-box-shadow: 0 0 5px rgba(26,179,148,.5);  box-shadow: 0 0 5px rgba(26,179,148,.5);}
+/*快捷方式弹窗主体*/
+.modal .modal-body .shortcut-add-box-left{width: 100px; height: 100%; position: fixed; z-index: 3000;}
+.modal .modal-body .shortcut-add-box-left ul{margin: 0; padding: 0; position: relative; top: 0; left: 0;}
+.modal .modal-body .shortcut-add-box-left ul li{width: 100%; list-style: none; height: 34px; padding-left: 20px; line-height: 34px; border: none; cursor:pointer;}
+.modal .modal-body .shortcut-add-box-left ul li.active,.modal .modal-body .shortcut-add-box-left ul li:hover{color: #5097FE;}
+.modal .modal-body .shortcut-add-box-left ul li>i{margin-right: 6px;}
+.lanPos{width: 100%; height: 34px; line-height: 34px; background: #F8F8F8; border-left: 3px solid #5097FE; position: absolute;  left: 0; top: 0; z-index: -1; transition: top .2s;}
+.modal .modal-body .shortcut-add-box-right{position: inherit; padding: 10px 10px; }
+.modal .modal-body .shortcut-add-box-right h5{border-bottom: 1px solid #e7eaec;}
+.modal .modal-body .shortcut-add-box-right h5>span{display: inline-block; font-size: 15px; border-bottom: 2px solid #5097FE; padding-bottom: 10px;}
+.modal .modal-body .shortcut-add-box-right ul{padding: 0; margin: 0; }
+.modal .modal-body .shortcut-add-box-right ul li{list-style: none; padding:6px 0; border: 1px solid #ddd; color: #a7a7a7; margin: 0 0 10px 0; cursor: pointer; width: 24%; float: left; margin-right: 1%;}
+.modal .modal-body .shortcut-add-box-right ul li.shortcut-selected{border: 1px solid #5097FE; color: #5097FE;}
+.modal .modal-body .shortcut-add-box-right ul li>i{margin-right: 5px;}
+
+
+.z_main{background: #fff;  margin: 10px;  border-radius: 10px; }
+.ibox-content{position: relative;}
+.shortcut-box li:last-child{ position: absolute; top:0; right: 0;}
+#tag{ position: absolute; right:10px; top:10px;}
+.shortcut-element-box li img{ max-width: 54%; display: block; margin:0 auto;}
+.shortcut-element-box li span{ display: block; text-align: center; width: 100%; overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap}
+.modal-header .close{ font-size: 2rem!important;}

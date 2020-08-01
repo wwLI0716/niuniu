@@ -1,0 +1,245 @@
+{include file="public/shead" /}
+<link rel="stylesheet" href="__WAP_PUBLIC__/nowiconfont/iconfont.css">
+<link rel="stylesheet" href="__WAP_PUBLIC__/css/dropify.min.cf55479bd0d3.css">
+{include file="public/left" /}
+<style>
+    .box {
+        box-shadow: none;
+    }
+    .show-title {
+        margin: 0 0 0px;
+        font-size: 24px;
+        color: #6c757d;
+    }
+    .content-bottom {
+        margin-bottom: 10rem;
+    }
+    .show-module-all {
+        padding: 0;
+    }
+    .box-body-spec {
+        padding: 0;
+    }
+    .show-module {
+        display: inline-block;
+        padding: 0;
+        text-align: center;
+        font-size: 1rem;
+    }
+    .show-module:first-child {
+        margin-left: .9rem;
+    }
+    .table th, .table td {
+        border-bottom: 1px solid #dee2e6;
+        border-top: 0;
+        padding: .5rem 1rem;
+    }
+    .right-th {
+        text-align: right;
+    }
+    .show-module-sign {
+        color: #3c7fff;
+    }
+    .content-header-spec {
+        margin-top: .7rem;
+    }
+    .show-title {
+        margin: 0 0 0px;
+        font-size: 15px;
+        color: #6c757d;
+    }
+    .index_message .p1 {
+        padding-bottom: 0;
+    }
+    .p1,.p2 {
+        margin-bottom: 0;
+    }
+    .special-row {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .index_message {
+        border-radius: 8px !important;;
+    }
+    .special-row-m {
+        margin-top: 2rem;
+    }
+    .senData {
+        width: 48%;
+        display: block;
+        margin: 0 1% 0 1%;
+    }
+    .seeLog {
+        width: 48%;
+        display: block;
+        margin-left: 1%;
+    }
+    .show-title-special {
+        margin-top: 1rem;
+    }
+    .show-p {
+        position: relative;
+    }
+    .radio {
+        line-height: 2rem;
+    }
+    [type=radio]:not(:checked),[type=radio]:checked {
+        opacity: 1;
+        position: static;
+        margin: 0 .5rem;
+    }
+    .radio-text {
+        position: relative;
+        top: -2px;
+    }
+</style>
+<div class="content-wrapper">
+    <section class="content-header show-content-title">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a class="sendA" href="javascript:history.back(-1)">
+                    < &nbsp;
+                </a>
+            </li>
+            <li class="breadcrumb-item active sendContent">经管办</li>
+        </ol>
+    </section>
+    <section class="content-header content-bottom content-header-spec">
+        <div class="col-12">
+            <div class="box box-solid bg-black">
+                <div class="box-body box-body-spec">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="table-container show-module-content">
+                                <form id="examineInfo" name="examineInfo" action="{:url('getreleaseExamine')}" method="post">
+                                    <input type="hidden" id="apple_id" name="apple_id" value="{$demondInfo.apple_id}">
+                                    <input type="hidden" id="id" name="id" value="{$demondInfo.id}">
+                                    <input type="hidden" id="house_name" name="house_name" value="{$demondInfo.house_name}">
+                                    <input type="hidden" id="examine_id" name="examine_id" value="{$examineInfo.id}">
+                                    <input type="hidden" id="management_examine_status" name="management_examine_status" value="0">
+                                    <h1 class="show-title show-title-special">审核信息</h1>
+                                    <div class="form-group">
+                                        <label class="control-label">1、是否符合审核范围</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.management_1"}checked{/if} name="management_1" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.management_1"}checked{/if} name="management_1" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                        </div>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="management_reason_1" id="management_reason_1" rows="5">{if condition="$examineInfo.management_reason_1 eq ''"}无{else /}{$examineInfo.management_reason_1}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">2、意向承租方资格是否符合规定</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.management_2"}checked{/if} name="management_2" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.management_2"}checked{/if} name="management_2" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                        </div>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="management_reason_2" id="management_reason_2" rows="5">{if condition="$examineInfo.management_reason_2 eq ''"}无{else /}{$examineInfo.management_reason_2}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">3、租金价格是否符合规定</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.management_3"}checked{/if} name="management_3" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.management_3"}checked{/if} name="management_3" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                        </div>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="management_reason_3" id="management_reason_3" rows="5">{if condition="$examineInfo.management_reason_3 eq ''"}无{else /}{$examineInfo.management_reason_3}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">4、租赁业态是否符合规定</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.management_4"}checked{/if} name="management_4" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.management_4"}checked{/if} name="management_4" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                        </div>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="management_reason_4" id="management_reason_4" rows="5">{if condition="$examineInfo.management_reason_4 eq ''"}无{else /}{$examineInfo.management_reason_4}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">5、证明材料是否齐全</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.management_5"}checked{/if} name="management_5" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.management_5"}checked{/if} name="management_5" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                        </div>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="management_reason_5" id="management_reason_5" rows="5">{if condition="$examineInfo.management_reason_5 eq ''"}无{else /}{$examineInfo.management_reason_5}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">6、是否提交镇领导审核</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.management_6"}checked{/if} name="management_6" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.management_6"}checked{/if} name="management_6" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                        </div>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="management_examine_reason" id="management_examine_reason" rows="5">{if condition="$examineInfo.management_examine_reason eq ''"}无{else /}{$examineInfo.management_examine_reason}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+{include file="public/bottom" /}
+<!--   Core JS Files   -->
+<script src="__WAP_PUBLIC__/js/layer.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/common1.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/bootstrap.min.14d449eb8876.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/template.eca497836b5a.js"></script>
+<script src="__WAP_PUBLIC__/js/dropify.min.c33a6db4b019.js"></script>
+<script>
+$(function () {
+
+    $('.getA').attr('href',$('.sendA').attr("href"));
+    $('.pageName').html($(".sendContent").html());
+
+    $('.logout').click(function(){
+        //询问框
+        layer.open({
+            content: '{:lang("logout_tip")}'
+            ,skin: 'loginout'
+            ,btn: ['{:lang("yes")}', '{:lang("no")}']
+            ,yes: function(index){
+                window.location.href = "{:url('index/Login/logout')}";
+            }
+        });
+    });
+
+});
+</script>
+</body>
+
+</html>

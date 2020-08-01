@@ -1,0 +1,3 @@
+function checkInApp(){
+    return true;
+}

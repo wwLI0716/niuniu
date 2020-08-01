@@ -1,0 +1,679 @@
+{include file="public/shead" /}
+<link rel="stylesheet" href="__WAP_PUBLIC__/css/flatpickr.min.css">
+<link rel="stylesheet" href="__WAP_PUBLIC__/layui/css/layui.css">
+{include file="public/left" /}
+<style>
+    .box {
+        box-shadow: none;
+    }
+
+    .show-title {
+        margin: 0 0 0px;
+        font-size: 24px;
+        color: #6c757d;
+    }
+
+    .content-bottom {
+        margin-bottom: 10rem;
+    }
+
+    .show-module {
+        display: inline-block;
+        padding: 0;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .show-module-sign {
+        color: #3c7fff;
+    }
+    .none {
+        display: none;
+    }
+    .layui-upload-file{
+        display: none;
+    }
+</style>
+<div class="content-wrapper">
+    <section class="content-header show-content-title">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a class="sendA" href="javascript:history.back(-1)">
+                    < &nbsp;
+                </a>
+            </li>
+            <li class="breadcrumb-item active sendContent">提交申请</li>
+        </ol>
+    </section>
+    <section class="content-header header-top">
+        <div class="col-12">
+            <div class="box box-solid bg-black">
+                <div class="box-body box-body-spec">
+                    <div class="row">
+                        <div class="col-12 show-module-all">
+                            <div class="col-4 show-module show-module-sign">招标基本信息</div>
+                            <div class="col-3 show-module">对竞投方资格要求</div>
+                            <div class="col-3 show-module">对承租方经营出租物要求</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content-header content-bottom">
+        <div class="col-12">
+            <div class="box box-solid bg-black">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <form id="demandInfo" name="demandInfo" action="" enctype="multipart/form-data" method="post">
+                                <input type="hidden" id="bid_id" name="bid_id" value="{$demondInfo.id}">
+                                <div>
+                                    <div class="show-module-content">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">公开招租方式</label>
+                                            <div class="col-sm-4 input-group">
+                                                <!-- <select name="rent_type" class="form-control" required>
+                                                    <option value="网上">网上</option>
+                                                    <option value="评标">评标</option>
+                                                </select> -->
+                                              <input type="text" name="rent_type" class="form-control"
+                                                       placeholder="请输入审核材料" value="网上"
+                                                       required/ readonly='true'>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">报名办法</label>
+                                            <div class="col-sm-4">
+                                                <!-- <select name="enrol_method" class="form-control" required>
+                                                    <option value="网上报名">网上报名</option>
+                                                    <option value="现场审核">现场审核</option>
+                                                </select> -->
+                                                <!--                                                <input type="text" name="house_address" class="form-control" placeholder="请输入楼宇地址" value="{$demondInfo.house_address}" required />-->
+                                           <input type="text" name="enrol_method" class="form-control"
+                                                       placeholder="网上报名" value="网上报名"
+                                                       required/ readonly='true'>  
+                                          
+                                          </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">报名开始时间</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="enrol_start_time" name="enrol_start_time"
+                                                       class="form-control datepicker enrol_start_time"
+                                                       placeholder="请输入报名开始时间" value="{$demondInfo.enrol_start_time}"/>
+
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">报名结束时间</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="enrol_end_time" name="enrol_end_time"
+                                                       class="form-control datepicker enrol_end_time"
+                                                       placeholder="请输入报名结束时间"
+                                                       value="{$demondInfo.enrol_end_time}" required/>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">现场审核地址</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="site_audit_address" class="form-control"
+                                                       placeholder="" value="{$demondInfo.site_audit_address}"
+                                                       required/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">审核材料</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="site_audit_material" class="form-control"
+                                                       placeholder="请输入审核材料" value="{$demondInfo.site_audit_material}"
+                                                       required/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">现场审核截止时间</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="saudit_end_time" name="saudit_end_time"
+                                                       class="form-control datepicker saudit_end_time"
+                                                       placeholder="请输入现场审核截止时间"
+                                                       value="{$demondInfo.saudit_end_time}" required/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">取得竞拍资格截止时间</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="bid_qual_etime" name="bid_qual_etime"
+                                                       class="form-control datepicker bid_qual_etime"
+                                                       placeholder="请输入取得竞拍资格截止时间"
+                                                       value="{$demondInfo.bid_qual_etime}" required/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">竞拍结束时间</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="auction_etime" name="auction_etime"
+                                                       class="form-control datepicker auction_etime"
+                                                       placeholder="请输入竞拍结束时间"
+                                                       value="{$demondInfo.auction_etime}" required/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">出租物现场考察办法</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="rent_saudit_method" name="rent_saudit_method"
+                                                       class="form-control rent_saudit_method" placeholder=""
+                                                       value="{$demondInfo.rent_saudit_method}" required/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">出租方名称</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="rent_name" class="form-control"
+                                                       placeholder="" value="{$demondInfo.rent_name}"
+                                                       required/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">出租地址</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="rent_address" class="form-control"
+                                                       placeholder="" value="{$demondInfo.rent_address}"
+                                                       required/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">出租楼宇名称</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="rent_house" class="form-control"
+                                                       placeholder="" value="{$demondInfo.rent_house}"
+                                                       required/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">出租面积</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="rent_area" class="form-control"
+                                                       placeholder="" value="{$demondInfo.rent_area}"
+                                                       required/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">出租楼宇性质</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="rental_properties" class="form-control"
+                                                       placeholder="" value="{$demondInfo.rental_properties}"
+                                                       required/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">出租楼宇权证
+                                                （有/无)</label>
+                                            <div class="col-sm-4">
+                                                <select name="rental_cert" class="form-control" required>
+                                                    <option value="0" {if condition="$demondInfo.rental_cert eq 0"
+                                                            }selected="selected" {
+                                                    /if}>有</option>
+                                                    <option value="1" {if condition="$demondInfo.rental_cert eq 1"
+                                                            }selected="selected" {
+                                                    /if}>无</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">出租方联系人</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="rent_contact_name" class="form-control"
+                                                       placeholder="" value="{$demondInfo.rent_contact_name}"
+                                                       required/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">出租方联系电话</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="rent_contact_phone" class="form-control"
+                                                       placeholder="" value="{$demondInfo.rent_contact_phone}"
+                                                       required/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="show-module-content" style="display: none;">
+                                        <div class="form-group row">
+                                            <label class="col-sm-1 col-form-label">资格审核方式</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="qual_audit_method" class="form-control"
+                                                       placeholder="" value="资格预审"
+                                                       required/ readonly='true'>
+                                            </div>
+                                            <div class="col-sm-2"></div>
+                                            <label class="col-sm-1 col-form-label">资格要求</label>
+                                            <div class="col-sm-4">
+                                              <select name="qual_require" class="form-control" required>
+                                                    <option value="法人">法人</option>
+                                                    <option value="自然人">自然人</option>
+                                                </select>
+                                                <!-- <input type="text" name="qual_require" class="form-control"
+                                                       placeholder="" value="{$demondInfo.qual_require}"
+                                                       required/> -->
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-1 col-form-label">经营能力</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="manage_ability"  class="form-control" placeholder=""
+                                                       value="{$demondInfo.manage_ability}" required/>
+                                            </div>
+                                            <div class="col-sm-2"></div>
+
+                                            <label class="col-sm-1 col-form-label">资产要求</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="asset_require" class="form-control"
+                                                       value="{$demondInfo.asset_require}" required/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-1 col-form-label">优先资格</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="priority_qual" class="form-control"
+                                                       placeholder=""
+                                                       value="{$demondInfo.priority_qual}"
+                                                       required/>
+                                            </div>
+                                            <div class="col-sm-2"></div>
+                                            <label class="col-sm-1 col-form-label">产业要求</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="industry_require" class="form-control"
+                                                       value="{$demondInfo.industry_require}"/>
+                                            </div>
+                                        </div>
+                                           <div class="form-group row">
+                                            <label class="col-sm-1 col-form-label">投标保证金</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="bid_security" class="form-control"
+                                                       placeholder="" value="{$demondInfo.bid_security}"
+                                                       required/>
+                                            </div>
+                                            <div class="col-sm-2"></div>
+                                            <label class="col-sm-1 col-form-label">其他要求</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="other_require" class="form-control"
+                                                       value="{$demondInfo.other_require}"/>
+                                            </div>
+                                        </div>
+                                           <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">竞投人类型</label>
+                                            <div class="col-sm-3">
+                                                <input type="radio" id="bidder1" name="bidder_type" value="1"
+                                                       checked/>
+                                                <label for="bidder1">法人单位</label>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <input type="radio" id="bidder2" name="bidder_type" value="2"
+                                                      />
+                                                <label for="bidder2">自然人</label>
+                                            </div>
+                                        </div>
+<!--                                           <div class="bid_files1">-->
+<!--                                               <h3 style="text-align: center">法人单位所需材料</h3>-->
+<!--                                               <div class="form-group row">-->
+<!--                                                   <label class="col-sm-4 col-form-label">加盖公章的有效单位营业执照</label>-->
+<!--                                                   <div class="col-sm-4">-->
+<!--                                                       <button type="button" class="layui-btn" id="file-a1">上传图片</button>-->
+<!--                                                   </div>-->
+<!--                                                   <div class="col-sm-4">-->
+<!--                                                       <div id="zs_file-a1"></div>-->
+<!--&lt;!&ndash;                                                       <img class="layui-upload-img" id="zs_file-a1"  height="100px" width="100px" >&ndash;&gt;-->
+<!--                                                       <input type="hidden" id="va_file-a1" value="" name="file1" class="input normal upload-path" />-->
+<!--                                                   </div>-->
+<!--                                               </div>-->
+<!--                                               <div class="form-group row">-->
+<!--                                                   <label class="col-sm-4 col-form-label">加盖公章的有效单位纳税证明(税务登记证)</label>-->
+<!--                                                   <div class="col-sm-4">-->
+<!--                                                       <button type="button" class="layui-btn" id="file-a2">上传图片</button>-->
+<!--                                                   </div>-->
+<!--                                                   <div class="col-sm-4">-->
+<!--                                                       <div id="zs_file-a2"></div>-->
+<!--&lt;!&ndash;                                                       <img class="layui-upload-img" id="zs_file-a2"  height="100px" width="100px">&ndash;&gt;-->
+<!--                                                       <input type="hidden" id="va_file-a2" name="file2" class="input normal upload-path" />-->
+<!--                                                   </div>-->
+<!--                                               </div>-->
+<!--                                               <div class="form-group row">-->
+<!--                                                   <label class="col-sm-4 col-form-label">法人居民身份证复印件及原件</label>-->
+<!--                                                   <div class="col-sm-4">-->
+<!--                                                       <button type="button" class="layui-btn" id="file-a3">上传图片</button>-->
+<!--                                                   </div>-->
+<!--                                                   <div class="col-sm-4">-->
+<!--                                                       <div id="zs_file-a3"></div>-->
+<!--&lt;!&ndash;                                                       <img class="layui-upload-img" id="zs_file-a3"   height="100px" width="100px">&ndash;&gt;-->
+<!--                                                       <input type="hidden" id="va_file-a3" name="file3" class="input normal upload-path" />-->
+<!--                                                   </div>-->
+<!--                                               </div>-->
+<!--                                               <div class="form-group row">-->
+<!--                                                   <label class="col-sm-4 col-form-label">投资方名称及有效营业执照</label>-->
+<!--                                                   <div class="col-sm-4">-->
+<!--                                                       <button type="button" class="layui-btn" id="file-a4">上传图片</button>-->
+<!--                                                   </div>-->
+<!--                                                   <div class="col-sm-4">-->
+<!--                                                       <div id="zs_file-a4"></div>-->
+<!--&lt;!&ndash;                                                       <img class="layui-upload-img" id="zs_file-a4"   height="100px" width="100px">&ndash;&gt;-->
+<!--                                                       <input type="hidden" id="va_file-a4" name="file4" class="input normal upload-path" />-->
+<!--                                                   </div>-->
+<!--                                               </div>-->
+<!--                                               <div class="form-group row">-->
+<!--                                                   <label class="col-sm-4 col-form-label">其他(如环保证明等)</label>-->
+<!--                                                   <div class="col-sm-4">-->
+<!--                                                       <button type="button" class="layui-btn" id="file-a5">上传图片</button>-->
+<!--                                                   </div>-->
+<!--                                                   <div class="col-sm-4">-->
+<!--                                                       <div id="zs_file-a5"></div>-->
+<!--&lt;!&ndash;                                                       <img class="layui-upload-img" id="zs_file-a5"  height="100px" width="100px">&ndash;&gt;-->
+<!--                                                       <input type="hidden" id="va_file-a5" name="file5" class="input normal upload-path" />-->
+<!--                                                   </div>-->
+<!--                                               </div>-->
+<!--                                        </div>-->
+<!--                                           <div class="bid_files2 none">-->
+<!--                                               <h3 style="text-align: center"> 自然人所需材料</label></h3>-->
+<!--                                               <div class="form-group row">-->
+<!--                                                   <label class="col-sm-4 col-form-label">本人身份证复印件及原件</label>-->
+<!--                                                   <div class="col-sm-4">-->
+<!--                                                       <button type="button" class="layui-btn" id="file-b1">上传图片</button>-->
+<!--                                                   </div>-->
+<!--                                                   <div class="col-sm-4">-->
+<!--                                                       <div id="zs_file-b1"></div>-->
+<!--&lt;!&ndash;                                                       <img class="layui-upload-img" id="zs_file-b1"  height="100px" width="100px" >&ndash;&gt;-->
+<!--                                                       <input type="hidden" id="va_file-b1" name="file_1" class="input normal upload-path" />-->
+<!--                                                   </div>-->
+<!--                                               </div>-->
+<!--                                               <div class="form-group row">-->
+<!--                                                   <label class="col-sm-4 col-form-label">户籍证明</label>-->
+<!--                                                   <div class="col-sm-4">-->
+<!--                                                       <button type="button" class="layui-btn" id="file-b2">上传图片</button>-->
+<!--                                                   </div>-->
+<!--                                                   <div class="col-sm-4">-->
+<!--                                                       <div id="zs_file-b2"></div>-->
+<!--&lt;!&ndash;                                                       <img class="layui-upload-img" id="zs_file-b2"  height="100px" width="100px">&ndash;&gt;-->
+<!--                                                       <input type="hidden" id="va_file-b2" name="file_2" class="input normal upload-path" />-->
+<!--                                                   </div>-->
+<!--                                               </div>-->
+<!--                                               <div class="form-group row">-->
+<!--                                                   <label class="col-sm-4 col-form-label">房产证或银行资信证明</label>-->
+<!--                                                   <div class="col-sm-4">-->
+<!--                                                       <button type="button" class="layui-btn" id="file-b3">上传图片</button>-->
+<!--                                                   </div>-->
+<!--                                                   <div class="col-sm-4">-->
+<!--                                                       <div id="zs_file-b3"></div>-->
+<!--&lt;!&ndash;                                                       <img class="layui-upload-img" id="zs_file-b3"   height="100px" width="100px">&ndash;&gt;-->
+<!--                                                       <input type="hidden" id="va_file-b3" name="file_3" class="input normal upload-path" />-->
+<!--                                                   </div>-->
+<!--                                               </div>-->
+<!--                                               <div class="form-group row">-->
+<!--                                                   <label class="col-sm-4 col-form-label">其他(如环保证明等)</label>-->
+<!--                                                   <div class="col-sm-4">-->
+<!--                                                       <button type="button" class="layui-btn" id="file-b4">上传图片</button>-->
+<!--                                                   </div>-->
+<!--                                                   <div class="col-sm-4">-->
+<!--                                                       <div id="zs_file-b4"></div>-->
+<!--&lt;!&ndash;                                                       <img class="layui-upload-img" id="zs_file-b4"   height="100px" width="100px">&ndash;&gt;-->
+<!--                                                       <input type="hidden" id="va_file-b4" name="file_4" class="input normal upload-path" />-->
+<!--                                                   </div>-->
+<!--                                               </div>-->
+<!--                                       </div>-->
+                                    </div>
+                                    <div class="show-module-content" style="display: none;">
+                                        <div class="form-group row">
+                                            <label class="col-sm-1 col-form-label">竞标底价</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="bid_low_price" class="form-control" placeholder="" value="{$demondInfo.bid_low_price}" required />
+                                            </div>
+                                            <div class="col-sm-2"></div>
+                                            <label class="col-sm-1 col-form-label">竞价加价幅度/元</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="bid_increase" class="form-control" placeholder="" value="{$demondInfo.bid_increase}" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-1 col-form-label">租赁年限</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="lease_period" class="form-control"
+                                                       value="{$demondInfo.lease_period}" required/>
+                                            </div>
+                                            <div class="col-sm-2"></div>
+                                            <label class="col-sm-1 col-form-label">租赁起止日期</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="lease_time" class="form-control"
+                                                       placeholder="" value="{$demondInfo.lease_time}"
+                                                       required/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-1 col-form-label">免租期</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="rent_free_period" class="form-control"
+                                                       value="{$demondInfo.rent_free_period}" required/>
+                                            </div>
+                                            <div class="col-sm-2"></div>
+                                            <label class="col-sm-1 col-form-label">租金起算日</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="lease_calculat_stime" class="form-control"
+                                                      value="{$demondInfo.lease_calculat_stime}" required/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-1 col-form-label">出租物经营用途约定</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="business_purpose" class="form-control"
+                                                       placeholder="" value="{$demondInfo.business_purpose}"
+                                                       required/>
+                                            </div>
+                                            <div class="col-sm-2"></div>
+                                            <label class="col-sm-1 col-form-label">税收约定</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="tax_convention" class="form-control"
+                                                       value="{$demondInfo.tax_convention}" required/>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label"></label>
+                                    <div class="col-sm-2">
+                                        <input class="btn btn-primary btn-lg btn-block submit" type="submit" value="提交"
+                                               readonly/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+{include file="public/bottom" /}
+<!--   Core JS Files   -->
+<script src="__WAP_PUBLIC__/js/2a559aaccaa34fb78270f9dc5f3dcac1.js"></script>
+<script src="__WAP_PUBLIC__/js/layer.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/common1.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/bootstrap.min.14d449eb8876.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/template.eca497836b5a.js"></script>
+<script src="__WAP_PUBLIC__/js/jquery.form.js"></script>
+<script src="__WAP_PUBLIC__/layui/layui.js"></script>
+<!--<script>-->
+<!--    var  admin_uploadimg = "uploadimg";-->
+<!--    var imglist = [-->
+<!--        'file-a1','file-a2','file-a3','file-a4','file-a5','file-b1','file-b2','file-b3','file-b4'-->
+<!--    ];-->
+<!--    $.each(imglist,function (k,v) {-->
+<!--        layui.use(['form','layer','upload'], function(){-->
+<!--            var form = layui.form,-->
+<!--                layer = layui.layer;-->
+<!--            upload = layui.upload;-->
+<!--            var $ = layui.jquery;-->
+
+<!--            //拖拽上传-->
+<!--            upload.render({-->
+<!--                elem: '#'+v-->
+<!--                ,url: admin_uploadimg-->
+<!--                ,multiple:true-->
+<!--                ,before: function(obj){-->
+<!--                }-->
+<!--                ,done: function(res){-->
+<!--                    if(res.code==200){-->
+<!--                        valu = $("#va_"+v).val();-->
+<!--                        $("#va_"+v).val(valu+res.data.msg+",");-->
+<!--                        layer.msg('上传成功',{-->
+<!--                            icon: 1,-->
+<!--                            time: 1000 //1秒关闭（如果不配置，默认是3秒）-->
+<!--                        });-->
+<!--                        $('#zs_'+v).append("<img width='100px' height='100px' style='margin-right: 10px' src="+res.data.msg+">"); //图片链接（base64）zs_file-a1-->
+<!--                       //  $('#zs_'+v).attr('src',res.data.msg); //图片链接（base64）zs_file-a1-->
+<!--                    }else{-->
+<!--                        layer.msg('上传失败');-->
+<!--                    }-->
+<!--                    //上传成功-->
+<!--                }-->
+<!--                ,error: function(){-->
+<!--                    alert("上传失败，稍后重试");-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+
+<!--    })-->
+<!--</script>-->
+<script>
+  function upload_file(){
+            console.log(222)
+            $.ajax({
+                url: "{:url('Bid/uploadBidAttach')}",
+                type: "post",
+                data: formdata,
+                processData: false,    // 不处理数据
+                contentType: false,    // 不设置内容类型
+                success: function (res) {
+                    var res = JSON.parse(res);
+                    layer.msg(res.info);
+                    if (res.code == 100) {
+                        $("#annex_address").val(res.data.address);
+                        $(".showNowAnnex").html("<a href='" + res.data.address + "' download='" + res.data.address + "'>当前附件</a>");
+                    }
+                }
+            })
+        }
+    $(function () {
+        function upload_file(){
+            console.log(222)
+            $.ajax({
+                url: "{:url('Bid/uploadBidAttach')}",
+                type: "post",
+                data: formdata,
+                processData: false,    // 不处理数据
+                contentType: false,    // 不设置内容类型
+                success: function (res) {
+                    var res = JSON.parse(res);
+                    layer.msg(res.info);
+                    if (res.code == 100) {
+                        $("#annex_address").val(res.data.address);
+                        $(".showNowAnnex").html("<a href='" + res.data.address + "' download='" + res.data.address + "'>当前附件</a>");
+                    }
+                }
+            })
+        }
+        $('.getA').attr('href', $('.sendA').attr("href"));
+        $('.pageName').html($(".sendContent").html());
+
+        flatpickr(".datepicker", {
+            onReady: function (dateObj, dateStr, instance) {
+                var $cal = $(instance.calendarContainer);
+                if ($cal.find('.flatpickr-clear').length < 1) {
+                    $cal.append('<div class="flatpickr-clear">Clear</div>');
+                    $cal.find('.flatpickr-clear').on('click', function () {
+                        instance.clear();
+                        instance.close();
+                    });
+                }
+            }
+        });
+
+
+
+        $('.show-module').click(function () {
+            $(this).siblings().removeClass("show-module-sign");
+            $(this).addClass("show-module-sign");
+            var sinId = $(this).index();
+            $('.show-module-content').eq(sinId).css("display", "block");
+            $('.show-module-content').eq(sinId).siblings().css("display", "none");
+        });
+
+        $("input[type=radio][name=bidder_type]").change(function () {
+            if (this.value == "1") {
+                $(".bid_files1").removeClass("none");
+                !$(".bid_files1").hasClass("none") && $(".bid_files2").addClass("none");
+            }
+            if (this.value == "2") {
+                $(".bid_files2").removeClass("none");
+                !$(".bid_files2").hasClass("none") && $(".bid_files1").addClass("none");
+            }
+        });
+
+
+
+        //当表单提交时，调用所有的校验方法
+        $("#demandInfo").submit(function () {
+            var forthat = $(this);
+            //询问框
+            layer.open({
+                content: '确认提交吗？'
+                , btn: ['是', '否']
+                , skin: 'loginout'
+                , yes: function (index) {
+                    var status = 1;
+                    //验证
+                    // $('input').each(function () {
+                    //     var that = $(this);
+                    //     if ($(this).attr('name') != 'bid_id' && $(this).attr('name') != undefined && $(this).attr('name') != '' && $(this).attr('name') != 'other_require'&& $(this).attr('name') != 'file1' && $(this).attr('name') != 'file2'&& $(this).attr('name') != 'file3'&& $(this).attr('name') != 'file4'&& $(this).attr('name') != 'file5'&& $(this).attr('name') != 'file_1'&& $(this).attr('name') != 'file_2'&& $(this).attr('name') != 'file_3'&& $(this).attr('name') != 'file_4') {
+                    //         if ($(this).val() == '') {
+                    //             layer.msg(that.attr('placeholder'), {time: 2000});
+                    //             status = 0;
+                    //             return false;
+                    //         }
+                    //     }
+                    // });
+
+                    if (status == 0) {
+                        return false;
+                    }
+                    layer.open({
+                        type: 3,
+                        skin: 'loading_style'
+                    });
+                    //1.发送数据到服务器
+                    $.post(
+                        "{:url('Bid/saveBid')}",
+                        forthat.serialize(),
+                        function (res) {
+                            var res = JSON.parse(res);
+                            layer.closeAll();
+                            layer.msg(res.info, {time: 2000}, function () {
+                                if (res.code == 100) {
+                                    setTimeout(function () {
+                                        window.history.go(-1);
+                                    }, 500);
+                                }
+                            })
+                        });
+                    //2.不让页面跳转
+                    return false;
+                    //如果这个方法没有返回值，或者返回为true，则表单提交，如果返回为false，则表单不提交
+                }
+                , no: function (index) {
+                    return false;
+                }
+            });
+
+            return false;
+        });
+
+
+        $('.logout').click(function () {
+            //询问框
+            layer.open({
+                content: '{:lang("logout_tip")}'
+                , skin: 'loginout'
+                , btn: ['{:lang("yes")}', '{:lang("no")}']
+                , yes: function (index) {
+                    window.location.href = "{:url('index/Login/logout')}";
+                }
+            });
+        });
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+{include file="public/shead" /}
+{include file="public/left" /}
+<link rel="stylesheet" href="__WAP_PUBLIC__/css/dropify.min.cf55479bd0d3.css">
+<style>
+    .box {
+        box-shadow: none;
+    }
+</style>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>{:lang('bank_card_number')}</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i> {:lang('setting')}
+                </a>
+            </li>
+            <li class="breadcrumb-item active">{:lang('bank_card_number')}</li>
+        </ol>
+    </section>
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="box box-solid bg-black">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <form action="#" method="post" enctype="multipart/form-data">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">{:lang('bank_user')}</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="name" placeholder="{:lang('bank_user')}" value="{$bankInfo.bank_person}" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">{:lang('bank')}</label>
+                                            <div class="col-sm-10">
+                                                <select name="bank" class="form-control selectpicker" data-style="btn btn-info btn-round" placeholder="{:lang('bank')}" required id="id_bank">
+                                                    {volist name="banks" id="vo"}
+                                                    <option value="{$vo.id}"{if condition="$bankInfo.bank && $bankInfo.bank eq $vo.id"}selected{/if}>{$vo.name}</option>
+                                                    {/volist}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">{:lang('bank_one')}</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="prov" placeholder="{:lang('bank_one')}" value="{$bankInfo.bank_prov}" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">{:lang('bank_card')}</label>
+                                            <div class="col-sm-10">
+                                                <input type="number" name="card" placeholder="{:lang('bank_card')}" value="{$bankInfo.bank_card}" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">{:lang('bank_card_sure')}</label>
+                                            <div class="col-sm-10">
+                                                <input type="number" name="surecard" placeholder="{:lang('bank_card_sure')}" value="{$bankInfo.bank_card}" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label" for="sfz_zj">{:lang('yhkzmz')}</label>
+                                            <div class="col-sm-10">
+                                                <input type="file" data-max-file-size="1M" name="attachments" accept="image/*" class="bank_img" {if condition='isset($bankInfo.bank_img) && ($bankInfo.bank_img neq "")'}data-default-file="{$bankInfo.bank_img}"{/if} class="bank_img" title="" id="sfz_zj" multiple="multiple" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label"></label>
+                                            <div class="col-sm-10">
+                                                <input class="btn btn-primary btn-lg btn-block bankSend" value="{:lang('sure')}" data-send-href="{:url('bankSubmit')}" readonly />
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--   Core JS Files   -->
+<script src="__WAP_PUBLIC__/js/layer.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/common1.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/bootstrap.min.14d449eb8876.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/template.eca497836b5a.js"></script>
+<script src="__WAP_PUBLIC__/js/dropify.min.c33a6db4b019.js"></script>
+<script>
+$('input[type="file"]').dropify({
+    showRemove: false,
+    messages: {
+        'default': '{:lang("img_tip")}',
+        'replace': '{:lang("img_replace")}',
+        'remove': '{:lang("remove")}',
+        'error': '{:lang("something_woring")}'
+    },
+    error: {
+        'fileSize': 'The file size is too big ( max).',
+        'minWidth': 'The image width is too small (}px min).',
+        'maxWidth': 'The image width is too big (}px max).',
+        'minHeight': 'The image height is too small (}px min).',
+        'maxHeight': 'The image height is too big (px max).',
+        'imageFormat': 'The image format is not allowed ( only).'
+    }
+});
+    $('.logout').click(function(){
+        //询问框
+        layer.open({
+            content: '{:lang("logout_tip")}'
+            ,skin: 'loginout'
+            ,btn: ['{:lang("yes")}', '{:lang("no")}']
+            ,yes: function(index){
+                window.location.href = "{:url('index/Login/logout')}";
+            }
+        });
+    });
+    $('.bankSend').click(function(){
+        let token = $("input[ name='__token__']").val();
+        let name = $("input[ name='name']").val();
+        let prov = $("input[ name='prov']").val();
+        let card = $("input[ name='card']").val();
+        let surecard = $("input[ name='surecard']").val();
+        let bank = $('#id_bank option:selected').val();
+        let bank_img = $('.bank_img').next().find('img').attr('src');
+        if(token == '' || name == '' || prov == '' || card == '' || surecard == '' || bank == '' || bank_img == '')
+        {
+            // layer.open({
+            //     content: "{:lang('complete_the_parameters')}"
+            //     ,skin: 'msg'
+            //     ,time: 2 //2秒后自动关闭
+            // });
+            layer.msg("{:lang('complete_the_parameters')}",{time: 2000})
+            return false;
+        }
+        if(bank_img == undefined)
+        {
+            // layer.open({
+            //     content: "{:lang('complete_the_parameters')}"
+            //     ,skin: 'msg'
+            //     ,time: 2 //2秒后自动关闭
+            // });
+            layer.msg("{:lang('complete_the_parameters')}", {time: 2000})
+            return false;
+        }
+        if(card != surecard)
+        {
+            // layer.open({
+            //     content: "{:lang('bank_not_one')}"
+            //     ,skin: 'msg'
+            //     ,time: 2 //2秒后自动关闭
+            // });
+            layer.msg("{:lang('bank_not_one')}",{time: 2000})
+
+            return false;
+        }
+        let lang = 'zh-tw';
+        if(getCookie('language'))
+        {
+            lang = getCookie('language');
+        }
+        var senData = {
+            token : token,
+            name : name,
+            prov : prov,
+            card : card,
+            bank : bank,
+            surecard : surecard,
+            lang : lang,
+            bank_img : bank_img
+        };
+        // layer.open({
+        //     type: 2
+        //     ,content: '{:lang("sending_data")}'
+        // });
+        layer.open({
+            type: 3,
+            skin: 'loading_style'
+            // content: '{:lang("sending_data")}'
+        })
+        $.post($(this).attr('data-send-href'),senData,
+            function(res){
+                var res = JSON.parse(res);
+                setTimeout(function(){
+                    layer.closeAll();
+                    // layer.open({
+                    //     content: res.info
+                    //     ,skin: 'msg'
+                    //     ,time: 2 //2秒后自动关闭
+                    // });
+                    // setTimeout(function(){ window.location.reload();},2000);
+                    layer.msg(res.info,{time: 2000},function(){
+                        window.location.reload();
+                    })
+                },500);
+            });
+    });
+</script>
+</body>
+
+</html>

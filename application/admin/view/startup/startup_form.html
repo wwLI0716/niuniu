@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>快捷入口编辑</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="__LAYUI__/layui/css/layui.css" media="all">
+    <style>
+        .layui-upload-img {
+    width: 190px;
+    height: 92px;
+    margin: 0 10px 10px 0;
+}
+    </style>
+</head>
+<body>
+<form class="layui-form" action="" method="post" lay-filter="category-form">
+    <div class="layui-form-item">
+        <div class="layui-input-inline">
+            <input type="hidden" name="id" value="{$info.id}" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">状态</label>
+        <div class="layui-input-block">
+            <input type="radio" name="status" value="0" {if isset($info.status) && $info.status == 0}checked{/if} title="禁用">
+            <input type="radio" name="status"  value="1" {if isset($info.status) && $info.status == 1}checked{/if} title="开启">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">是否推广</label>
+        <div class="layui-input-block">
+            <input type="radio" name="extend" value="0" {if isset($info.extend) && $info.extend == 0}checked{/if} title="无">
+            <input type="radio" name="extend"  value="1" {if isset($info.extend) && $info.extend == 1}checked{/if} title="推广">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">类型</label>
+        <div class="layui-input-block">
+            <input type="radio" name="attach_type" value="0" {if isset($info.attach_type) && $info.attach_type == 0}checked{/if} title="图片">
+            <input type="radio" name="attach_type"  value="1" {if isset($info.attach_type) && $info.attach_type == 1}checked{/if} title="动图">
+            <input type="radio" name="attach_type"  value="2" {if isset($info.attach_type) && $info.attach_type == 2}checked{/if} title="视频">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">上传大图(375*215)</label>
+        <div class="layui-input-block">
+            <div class="layui-upload">
+                <button type="button" class="layui-btn" id="uploadbig">上传图片</button>
+                <div class="layui-upload-list">
+                    <?php if(!empty($info['pic_big'])){?>
+                        <img class="layui-upload-img" id="demo1" src="{$info.pic_big}">
+                    <?php }else{?>
+                        <img class="layui-upload-img" id="demo1" >
+                    <?php }?>
+                    <p id="demoText"></p>
+                </div>
+                <input type="hidden" name="pic_big" id="pic_big" value="{$info.pic_big}">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">上传小图(175*215)</label>
+        <div class="layui-input-block">
+            <div class="layui-upload">
+                <button type="button" class="layui-btn" id="uploadsmall">上传图片</button>
+                <div class="layui-upload-list">
+                    <?php if(!empty($info['pic_small'])){?>
+                        <img class="layui-upload-img" id="demo2" src="{$info.pic_small}">
+                    <?php }else{?>
+                        <img class="layui-upload-img" id="demo2" >
+                    <?php }?>
+                    <p id="demoText2"></p>
+                </div>
+                <input type="hidden" name="pic_small" id="pic_small" value="{$info.pic_small}">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item" >
+        <label class="layui-form-label">跳转位置</label>
+        <div class="layui-input-block">
+            <input type="radio" name="target_type" lay-filter="belongType" value="1" {if isset($info.target_type) && $info.target_type == 1}checked{/if} title="资讯">
+            <input type="radio" name="target_type" lay-filter="belongType" value="2" {if isset($info.target_type) && $info.target_type == 2}checked{/if} title="话题">
+            <input type="radio" name="target_type" lay-filter="belongType" value="3" {if isset($info.target_type) && $info.target_type == 3}checked{/if} title="外链">
+            <input type="radio" name="target_type" lay-filter="belongType" value="4" {if isset($info.target_type) && $info.target_type == 4}checked{/if} title="无跳转">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">跳转值</label>
+        <div class="layui-input-inline">
+            <input type="text" name="target_val" value="{$info.target_val}"  placeholder="跳转值(ID或url)"
+                   autocomplete="off" class="layui-input" >
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">启动时长</label>
+        <div class="layui-input-inline">
+            <input type="text" name="duration" value="{$info.duration}"  placeholder="启动时长(秒)"
+                   autocomplete="off" class="layui-input" >
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">开始时间</label>
+            <div class="layui-input-inline">
+                <input name="start_time" value="{$info.start_time}" id="datestart" lay-verify="date" placeholder="YYYY-MM-dd"
+                       autocomplete="off"
+                       class="layui-input" type="text">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">结束时间</label>
+            <div class="layui-input-inline">
+                <input name="end_time" value="{$info.end_time}" id="dateend" lay-verify="date" placeholder="YYYY-MM-dd"
+                       autocomplete="off"
+                       class="layui-input" type="text">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item layui-hide">
+        <input type="button" lay-submit lay-filter="LAY-user-front-submit" id="LAY-user-front-submit" value="确认">
+    </div>
+</form>
+
+<script src="__LAYUI__/layui/layui.js"></script>
+<script>
+    layui.config({
+        base: '__LAYUI__/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index', //主入口模块
+        selectM: '../lib/extend/selectM'
+    }).use(['index', 'form','upload','selectM','laydate'],function() {
+        var $ = layui.jquery,
+            upload = layui.upload,
+            form = layui.form;
+            var laydate = layui.laydate;
+
+            laydate.render({
+                elem: '#datestart'
+            });
+            laydate.render({
+                elem: '#dateend'
+            });
+            
+            
+            //普通图片上传
+          var uploadInst = upload.render({
+            elem: '#uploadbig'
+            ,url: '{:url("uploadImg")}'
+            ,before: function(obj){
+              //预读本地文件示例，不支持ie8
+              obj.preview(function(index, file, result){
+                $('#demo1').attr('src', result); //图片链接（base64）
+              });
+            }
+            ,done: function(res){
+              //如果上传失败
+              if(res.code ==0){
+                $('#pic_big').val(res.url)
+                return layer.msg('上传成功');
+              }else{
+                return layer.msg('上传失败');
+              }
+              //上传成功
+            }
+            ,error: function(){
+              //演示失败状态，并实现重传
+              var demoText = $('#demoText');
+              demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+              demoText.find('.demo-reload').on('click', function(){
+                uploadInst.upload();
+              });
+            }
+          });
+          var uploadsmall = upload.render({
+            elem: '#uploadsmall'
+            ,url: '{:url("uploadImg")}'
+            ,before: function(obj){
+              //预读本地文件示例，不支持ie8
+              obj.preview(function(index, file, result){
+                $('#demo2').attr('src', result); //图片链接（base64）
+              });
+            }
+            ,done: function(res){
+              //如果上传失败
+              if(res.code ==0){
+                $('#pic_small').val(res.url)
+                return layer.msg('上传成功');
+              }else{
+                return layer.msg('上传失败');
+              }
+              //上传成功
+            }
+            ,error: function(){
+              //演示失败状态，并实现重传
+              var demoText = $('#demoText2');
+              demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+              demoText.find('.demo-reload').on('click', function(){
+                uploadsmall.upload();
+              });
+            }
+          });
+    });
+
+
+</script>
+</body>
+</html>

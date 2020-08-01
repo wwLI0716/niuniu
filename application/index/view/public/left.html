@@ -1,0 +1,178 @@
+<style>
+    .layui-layer.layui-anim.layui-layer-dialog .layui-layer-content {
+        color: #333;
+    }
+    .first_in_one a:not([href]):not([tabindex]).layui-layer-btn0,.first_in_two a:not([href]):not([tabindex]).layui-layer-btn0 {
+        color: #fff;
+    }
+    .layui-layer.layui-anim.layui-layer-dialog .layui-layer-content{
+        color: #333;
+    }
+    .layui-layer.layui-anim.layui-layer-dialog.layui-layer-msg .layui-layer-content{
+        color: #fff;
+    }
+    .bottom-mulu {
+        display: none;
+    }
+    .content-wrapper {
+        margin-bottom: 5rem;
+        padding-top: 0;
+    }
+    .content-header {
+        margin-top: 2rem;
+    }
+    .page-dashboard {
+        background-color: #f2f2f2 !important;
+    }
+    .breadcrumb {
+        font-size: 1.5rem !important;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .spec-menu {
+        display: none;
+    }
+    .bigger {
+        font-weight: 900;
+        font-size: 1.8rem;
+    }
+</style>
+<link rel="stylesheet" href="__WAP_PUBLIC__/css/adaption.css" media="screen and (max-width: 767px)">
+<aside class="main-sidebar">
+    <!-- sidebar -->
+    <input type="hidden" name="__token__" value="{$Request.token}" />
+    <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="ulogo">
+                <a href="/">
+                    <!-- logo for regular state and mobile devices -->
+                    <img src="__WAP_PUBLIC__/picture/logo.png" class="img-responsive" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- sidebar menu -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="nav-devider"></li>
+            <li>
+                <a class="specialA" href="javascript:void(0);" data-href="{:url('Index/index')}" data-parameter="">
+                    <i class="iconfont icon_iconfont-shouye"></i> <span>{:lang('home_page')}</span>
+                </a>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="iconfont icon_iconfont-shezhitouxiang-"></i>
+                    <span>审核</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a class="specialA" href="javascript:void(0);" data-href="{:url('/index/Examine/showReleaseDemand')}?status=2" data-parameter="">已审核</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="iconfont icon_iconfont-shangchuangtouxiang"></i>
+                    <span>竞标</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a class="specialA" href="javascript:void(0);" data-href="{:url('Bid/bidList')}" data-parameter="">招标标书</a>
+                    </li>
+                    <li>
+                        <a class="specialA" href="javascript:void(0);" data-href="{:url('His/hisList')}" data-parameter="">合同备案</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="iconfont icon_iconfont-shezhitouxiang-"></i>
+                    <span>个人中心</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a class="specialA" href="javascript:void(0);" data-href="{:url('User/personInfo')}" data-parameter="">个人中心</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="iconfont icon_iconfont-baitang-"></i>
+                    <span>反馈</span>
+                </a>
+                <ul class="treeview-menu">
+                    <li>
+                        <a class="specialA" href="javascript:void(0);" data-href="{:url('Tools/membershipMessage')}" data-parameter="">意见反馈</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="logout" href="javascript:void(0);">
+                    <i class="iconfont icon_084tuichu"></i>
+                    <span>{:lang('logout')}</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+</aside>
+<script>
+$(function(){
+    var sendCheckForStatus = 0;
+    if('{$userStatus}' == 0)
+    {
+        if('{$checkText}' == '')
+        {
+            let checkEmailTip = '{:lang("check_email_true")}';
+            layer.open({
+                content: checkEmailTip
+                ,btn: '{:lang("sure")}',
+                skin: 'first_in_one'
+                ,yes: function(index){
+                    if(sendCheckForStatus == 1)
+                    {
+                        layer.msg('{:lang("do_click_again")}');
+                        return false;
+                    }
+                    let token = $("input[ name='__token__']").val();
+                    let lang = 'zh-tw';
+                    if(getCookie('language'))
+                    {
+                        lang = getCookie('language');
+                    }
+                    let senData = {
+                        token : token,
+                        lang : lang,
+                    };
+                    sendCheckForStatus = 1;
+                    layer.open({
+                        type: 3,
+                        skin: 'loading_style'
+                        // content: '{:lang("sending_data")}'
+                    });
+                    $.post("{:url('/index/User/checkEmail')}",senData,
+                    function(res){
+                        var res = JSON.parse(res);
+                        setTimeout(function(){
+                            layer.closeAll();
+                            layer.open({
+                                content: res.info
+                                ,skin: 'msg'
+                                ,time: 2 //2秒后自动关闭
+                            });
+                            sendCheckForStatus = 0;
+                            setTimeout(function(){ window.location.reload();},2000);
+                        },500);
+                    });
+                }
+            });
+        } else {
+            let checkEmailTip = '{:lang("check_email_true_already")}';
+            layer.open({
+                skin: 'first_in_two',
+                content: checkEmailTip
+                ,btn: '{:lang("sure")}'
+            });
+        }
+    }
+});
+</script>

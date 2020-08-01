@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>快捷入口编辑</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="__LAYUI__/layui/css/layui.css" media="all">
+    <style>
+        .layui-upload-img {
+            width: 190px;
+            height: 92px;
+            margin: 0 10px 10px 0;
+        }
+        .layui-form-label {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<form class="layui-form" action="" method="post" lay-filter="category-form">
+    <div class="layui-form-item">
+        <div class="layui-input-inline">
+            <input type="hidden" name="id" value="{$info.id}" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">快捷入口标题</label>
+        <div class="layui-input-inline">
+            <input type="text" name="name" value="{$info.name}" lay-verify="required" placeholder="请输入标题"
+                   autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">介绍</label>
+        <div class="layui-input-inline">
+            <input type="text" name="desc" value="{$info.desc}"  placeholder="请输入快捷入口摘要"
+                   autocomplete="off" class="layui-input" >
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">上传封面(375*215)</label>
+        <div class="layui-input-inline">
+            <div class="layui-upload">
+                <button type="button" class="layui-btn" id="uploadcover">上传图片</button>
+                <div class="layui-upload-list">
+                    <?php if(!empty($info['icon'])){?>
+                        <img class="layui-upload-img" id="demo1" src="{$info.icon}">
+                    <?php }else{?>
+                        <img class="layui-upload-img" id="demo1" >
+                    <?php }?>
+                    
+                    <p id="demoText"></p>
+                </div>
+                <input type="hidden" name="icon" id="icon" value="{$info.icon}">
+            </div>
+        </div>
+    </div>
+    <!--快捷入口显示位置-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">快捷入口图标显示位置</label>
+        <div class="layui-input-block">
+            <input name="position[]" id="position1"  value="1" type="checkbox" {if isset($info.position) && $info.position & 1}checked{/if} class="form-control" title="首页快捷入口（默认图标）"/>
+            <input name="position[]"  id="position2" value="2" type="checkbox" {if isset($info.position) && $info.position & 2}checked{/if} class="form-control" title="我的社区"/>
+            <input name="position[]"  id="position3" value="4" type="checkbox" {if isset($info.position) && $info.position & 4}checked{/if} class="form-control" title="平安加油站"/>
+            <input name="position[]"  id="position4" value="8" type="checkbox" {if isset($info.position) && $info.position & 8}checked{/if} class="form-control" title="平安生活"/>
+            <input name="position[]"  id="position5" value="16" type="checkbox" {if isset($info.position) && $info.position & 16}checked{/if} class="form-control" title="失物招领"/>
+        </div>
+    </div>
+    <!---->
+    <div class="layui-form-item" >
+        <label class="layui-form-label">快捷入口跳转位置</label>
+        <div class="layui-input-block">
+            <input type="radio" name="belong_type" lay-filter="belongType" value="1" {if isset($info.belong_type) && $info.belong_type == 1}checked{/if} title="资讯">
+            <input type="radio" name="belong_type" lay-filter="belongType" value="2" {if isset($info.belong_type) && $info.belong_type == 2}checked{/if} title="话题">
+            <input type="radio" name="belong_type" lay-filter="belongType" value="3" {if isset($info.belong_type) && $info.belong_type == 3}checked{/if} title="外链">
+            <input type="radio" name="belong_type" lay-filter="belongType" value="4" {if isset($info.belong_type) && $info.belong_type == 4}checked{/if} title="板块">
+            <input type="radio" name="belong_type" lay-filter="belongType" value="5" {if isset($info.belong_type) && $info.belong_type == 5}checked{/if} title="本地圈">
+            <input type="radio" name="belong_type" lay-filter="belongType" value="6" {if isset($info.belong_type) && $info.belong_type == 6}checked{/if} title="外链外部浏览器">
+            <input type="radio" name="belong_type" lay-filter="belongType" value="7" {if isset($info.belong_type) && $info.belong_type == 7}checked{/if} title="热门">
+            <input type="radio" name="belong_type" lay-filter="belongType" value="8" {if isset($info.belong_type) && $info.belong_type == 8}checked{/if} title="商城首页">
+        </div>
+    </div>
+    <div class="layui-form-item" style="display: none;" id="disID">
+        <label class="layui-form-label">关联ID</label>
+        <div class="layui-input-inline">
+            <input type="text" name="belong_id" value="{$info.belong_id}"  placeholder="关联ID"
+                   autocomplete="off" class="layui-input" >
+        </div>
+    </div>
+    <div class="layui-form-item" style="display: none;" id="disURL">
+        <label class="layui-form-label">外链URL</label>
+        <div class="layui-input-inline">
+            <input type="text" name="url" value="{$info.url}"  placeholder="外链URL"
+                   autocomplete="off" class="layui-input" >
+        </div>
+    </div>
+    <div class="layui-form-item" >
+        <label class="layui-form-label">排序</label>
+        <div class="layui-input-inline">
+            <input type="text" name="order" value="{$info.order}"  placeholder="数值越大越靠前"
+                   autocomplete="off" class="layui-input" >
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">是否需要登录</label>
+        <div class="layui-input-block">
+            <input type="checkbox"
+                   {if isset($info.is_need_login) && $info.is_need_login== 1}checked{elseif !isset($info.is_need_login)}checked{else/}{/if}
+            name="is_need_login" lay-skin="switch" lay-filter="switchTest" lay-text="需要|不需要">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">是否需要实名认证</label>
+        <div class="layui-input-block">
+            <input type="checkbox"
+                   {if isset($info.is_need_auth) && $info.is_need_auth== 1}checked{/if}
+            name="is_need_auth" lay-skin="switch" lay-filter="switchTest" lay-text="需要|不需要">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">状态</label>
+        <div class="layui-input-block">
+            <input type="radio" name="status" value="0" {if isset($info.status) && $info.status == 0}checked{/if} title="关闭">
+            <input type="radio" name="status"  value="1" {if isset($info.status) && $info.status == 1}checked{/if} title="开启">
+        </div>
+    </div>
+    <div class="layui-form-item layui-hide">
+        <input type="button" lay-submit lay-filter="LAY-user-front-submit" id="LAY-user-front-submit" value="确认">
+    </div>
+</form>
+
+<script src="__LAYUI__/layui/layui.js"></script>
+<script>
+    layui.config({
+        base: '__LAYUI__/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index', //主入口模块
+        selectM: '../lib/extend/selectM'
+    }).use(['index', 'form','upload','selectM','laydate'],function() {
+        var $ = layui.jquery,
+            upload = layui.upload,
+            form = layui.form;
+            var laydate = layui.laydate;
+
+            laydate.render({
+                elem: '#datestart'
+            });
+            laydate.render({
+                elem: '#dateend'
+            });
+            form.render('select');
+        var belong_type="{$info.belong_type}";
+        if(belong_type){
+            switch(belong_type){
+                case '1':
+
+                    $('#disID').css('display','block');
+
+                    break;
+                case '2':
+                    $('#disID').css('display','block');
+
+                    break;
+                case '3':
+                    $('#disURL').css('display','block');
+
+                    break;
+                case '4':
+                    $('#disID').css('display','block');
+
+                    break;
+                case '5':
+                    $('#disURL').css('display','block');
+
+                    break;
+                case '6':
+                    $('#disURL').css('display','block');
+
+                    break;
+                case '7':
+                    $('#disURL').css('display','block');
+
+                    break;
+                case '8':
+                    $('#disURL').css('display','block');
+
+                    break;
+                case '9':
+                    $('#disURL').css('display','block');
+
+                    break;
+            }
+        }
+            form.on('radio(belongType)', function (data) {
+                var ID=Number(data.value);
+                switch(ID){
+                    case 1:
+                        $('#disID').css('display','block');
+                        $('#disURL').css('display','none');
+                    break;
+                    case 2:
+                        $('#disID').css('display','block');
+                        $('#disURL').css('display','none');
+                    break;
+                    case 3:
+                        $('#disURL').css('display','block');
+                        $('#disID').css('display','none');
+                    break;
+                    case 4:
+                        $('#disID').css('display','block');
+                        $('#disURL').css('display','none');
+                    break;
+                    case 5:
+                        $('#disURL').css('display','block');
+                        $('#disID').css('display','none');
+                    break;
+                    case 6:
+                        $('#disURL').css('display','block');
+                        $('#disID').css('display','none');
+                    break;
+                    case 7:
+                        $('#disURL').css('display','block');
+                        $('#disID').css('display','none');
+                    break;
+                    case 8:
+                        $('#disURL').css('display','block');
+                        $('#disID').css('display','none');
+                    break;
+                }
+            });
+            
+            //普通图片上传
+          var uploadInst = upload.render({
+            elem: '#uploadcover'
+            ,url: '{:url("uploadImg")}'
+            ,before: function(obj){
+              //预读本地文件示例，不支持ie8
+              obj.preview(function(index, file, result){
+                $('#demo1').attr('src', result); //图片链接（base64）
+              });
+            }
+            ,done: function(res){
+              //如果上传失败
+              if(res.code ==0){
+                $('#icon').val(res.url)
+                return layer.msg('上传成功');
+              }else{
+                return layer.msg('上传失败');
+              }
+              //上传成功
+            }
+            ,error: function(){
+              //演示失败状态，并实现重传
+              var demoText = $('#demoText');
+              demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+              demoText.find('.demo-reload').on('click', function(){
+                uploadInst.upload();
+              });
+            }
+          });
+    });
+
+
+</script>
+</body>
+</html>

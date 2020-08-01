@@ -1,0 +1,95 @@
+.sample {
+    background-color: #efeff4;
+}
+
+.sample-item {
+    /*margin-bottom: 20px;*/
+    background-color: #F6F4F2;
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+}
+
+.sample-title {
+    position: relative;
+    font-size: 35px;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    font-weight: 500;
+    margin: 15px;
+    height: 50px;
+}
+.sample-title-img {
+    position: relative;
+    float: right;
+    width: 32px;
+    height: 32px;
+    top: 8px;
+}
+
+.sample-content {
+    background: #fff;
+}
+
+.sample-content-no-info {
+    background:  #F6F4F2;
+}
+
+.sample-list-default-title {
+    width: 6em;
+    margin-right: 15px;
+    font-size: 19px;
+    color: #999;
+}
+
+.sample-list-default-title-long {
+    width: 9em;
+    margin-right: 15px;
+    font-size: 19px;
+    color: #999;
+}
+
+.smart-list-default .sample-list-default-content1 {
+    -webkit-box-flex: 2;
+    -webkit-flex: 2;
+    color: #ff6600;
+    min-width: 96px;
+    font-size: 25px;
+    text-align: left;
+    font-weight: 600;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 15px;
+}
+
+.smart-list-default .sample-list-default-content {
+    -webkit-box-flex: 2;
+    -webkit-flex: 2;
+    color: #ff6600;
+    min-width: 96px;
+    font-size: 25px;
+    text-align: left;
+    font-weight: 600;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 15px;
+}
+
+.smart-list-default .sample-list-default-item {
+    padding: 7px 15px 7px 0;
+    line-height: 24px;
+    display: -webkit-box;
+}
+
+.smart-list-default .sample-list-default-item-no-vehicle {
+    padding: 7px 15px 20px 0;
+    line-height: 24px;
+    display: -webkit-box;
+}
+
+.sample-list-default-img {
+    right: 18px;
+    position: absolute;
+}

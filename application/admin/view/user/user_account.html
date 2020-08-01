@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户银行帐户</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="__LAYUI__/layui/css/layui.css" media="all">
+    <style>
+        .layui-form-label {
+            width: 150px;
+        }
+        .layui-form-item .layui-input-inline {
+            width: 400px;
+        }
+        .layui-spec {
+            margin-top: 50px;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .showClass {
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-card">
+        {if condition="isset($userLst.username)"}
+        <div class="layui-card-header">用户: {$userLst.username} /用户银行帐户</div>
+        <div class="layui-card-body" style="padding: 15px;">
+            <form class="layui-form" action="" method="post" lay-filter="admin-form">
+                <div class="layui-form-item">
+                    <div class="layui-row">
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">开户行</label>
+                            <div class="layui-input-inline">
+                                <input type="text" value="{$userLst.bankname}" lay-verify="required" autocomplete="off" class="layui-input" readonly />
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">开户支行</label>
+                            <div class="layui-input-inline">
+                                <input type="text" value="{$userLst.bank_prov}" lay-verify="required" autocomplete="off" class="layui-input" readonly />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-row">
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">开户人</label>
+                            <div class="layui-input-inline">
+                                <input type="text" value="{$userLst.bank_person}" lay-verify="required" autocomplete="off" class="layui-input" readonly />
+                            </div>
+                        </div>
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">用户卡号</label>
+                            <div class="layui-input-inline">
+                                <input type="text" value="{$userLst.bank_card}" lay-verify="required" autocomplete="off" class="layui-input" readonly />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-row">
+                        <div class="layui-col-md6">
+                            <label class="layui-form-label">银行卡正面照片</label>
+                            <div class="layui-input-inline">
+                                <img class="showClass" src="{$userLst.bank_img}" />
+                            </div>
+                        </div>
+                </div>
+            </form>
+        </div>
+        {else /}
+        <div class="layui-spec">
+            该用户暂未绑定银行帐户信息！
+        </div>
+        {/if}
+    </div>
+</div>
+
+<script src="__LAYUI__/layui/layui.js"></script>
+<script src="__LAYUI__/layui/jquery-1.10.2.js"></script>
+<script>
+    layui.config({
+        base: '__LAYUI__/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index', //主入口模块
+    }).use(['index', 'form'],function() {
+        var $ = layui.jquery,
+            form = layui.form;
+    });
+</script>
+</body>
+</html>

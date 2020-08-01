@@ -1,0 +1,788 @@
+---------------------------------------------------------------
+[ 2020-04-07T04:23:59+08:00 ] 183.136.190.40 GET hqlyapp.jinzhifm.com/
+[运行时间：0.037949s] [吞吐率：26.35req/s] [内存消耗：2,519.08kb] [文件加载：96]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cache-control' => 'max-age=0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => '',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-04-07T05:34:08+08:00 ] 183.136.190.62 GET hqlyma.jinzhifm.com/
+[运行时间：0.039601s] [吞吐率：25.25req/s] [内存消耗：2,511.53kb] [文件加载：99]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cache-control' => 'max-age=0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => '',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000249s ]
+---------------------------------------------------------------
+[ 2020-04-07T08:39:56+08:00 ] 47.101.201.183 GET hqlyma.jinzhifm.com/
+[运行时间：0.037980s] [吞吐率：26.33req/s] [内存消耗：2,489.07kb] [文件加载：98]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000257s ]
+---------------------------------------------------------------
+[ 2020-04-07T08:39:56+08:00 ] 47.101.201.183 GET hqlyma.jinzhifm.com/login/login
+[运行时间：0.052306s] [吞吐率：19.12req/s] [内存消耗：3,559.38kb] [文件加载：113]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/admin/view/login/login.html [ array (
+  0 => 'captcha',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000238s ]
+---------------------------------------------------------------
+[ 2020-04-07T08:39:57+08:00 ] 47.101.201.183 GET hqlyma.jinzhifm.com/captcha
+[运行时间：0.031459s] [吞吐率：31.79req/s] [内存消耗：1,952.66kb] [文件加载：80]
+[ info ] [ ROUTE ] array (
+  'rule' => 'captcha/<id?>',
+  'route' => '\\think\\captcha\\CaptchaController@index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-04-07T10:46:15+08:00 ] 47.100.207.141 GET hqlyapp.jinzhifm.com/
+[运行时间：0.042990s] [吞吐率：23.26req/s] [内存消耗：2,496.63kb] [文件加载：95]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-04-07T10:46:15+08:00 ] 47.100.207.141 GET hqlyapp.jinzhifm.com/login/login
+[运行时间：0.046315s] [吞吐率：21.59req/s] [内存消耗：3,328.34kb] [文件加载：101]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-04-07T10:46:16+08:00 ] 47.100.207.141 GET hqlyapp.jinzhifm.com/index/index
+[运行时间：0.038534s] [吞吐率：25.95req/s] [内存消耗：2,497.41kb] [文件加载：95]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-04-07T10:46:16+08:00 ] 47.100.207.141 GET hqlyapp.jinzhifm.com/login/firstlogin
+[运行时间：0.051171s] [吞吐率：19.54req/s] [内存消耗：3,326.52kb] [文件加载：101]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+---------------------------------------------------------------
+[ 2020-04-07T10:46:16+08:00 ] 47.100.207.141 GET hqlyapp.jinzhifm.com/login/login
+[运行时间：0.047772s] [吞吐率：20.93req/s] [内存消耗：3,328.34kb] [文件加载：101]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-04-07T10:46:16+08:00 ] 47.100.207.141 GET hqlyapp.jinzhifm.com/login/login
+[运行时间：0.046939s] [吞吐率：21.30req/s] [内存消耗：3,328.34kb] [文件加载：101]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-04-07T13:27:03+08:00 ] 210.22.127.250 GET hqlyapp.jinzhifm.com/
+[运行时间：0.038682s] [吞吐率：25.85req/s] [内存消耗：2,519.85kb] [文件加载：96]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.5;q=0.4',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36 QBCore/4.0.1295.400 QQBrowser/9.0.2524.400 Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2875.116 Safari/537.36 NetType/WIFI MicroMessenger/7.0.5 WindowsWechat',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-04-07T13:27:03+08:00 ] 210.22.127.250 GET hqlyapp.jinzhifm.com/login/login
+[运行时间：0.047303s] [吞吐率：21.14req/s] [内存消耗：3,343.75kb] [文件加载：102]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ub106ihd5hgp3n30v0e8n4b7nk',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.5;q=0.4',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36 QBCore/4.0.1295.400 QQBrowser/9.0.2524.400 Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2875.116 Safari/537.36 NetType/WIFI MicroMessenger/7.0.5 WindowsWechat',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-04-07T13:27:28+08:00 ] 202.158.164.26 POST hqlyapp.jinzhifm.com/login/loginsubmit
+[运行时间：0.099354s] [吞吐率：10.07req/s] [内存消耗：3,736.77kb] [文件加载：113]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ub106ihd5hgp3n30v0e8n4b7nk',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.5;q=0.4',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyapp.jinzhifm.com/login/login',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36 QBCore/4.0.1295.400 QQBrowser/9.0.2524.400 Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2875.116 Safari/537.36 NetType/WIFI MicroMessenger/7.0.5 WindowsWechat',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://hqlyapp.jinzhifm.com',
+  'accept' => '*/*',
+  'content-length' => '91',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => 'b7c71e5ea193eb76cb0fc4ee56368114',
+  'name' => '15251137101',
+  'password' => 'wang666,./',
+  'lang' => 'zh-ch',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000426s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user` [ RunTime:0.001232s ]
+[ sql ] [ SQL ] SELECT `id`,`status`,`is_first_login` FROM `ecshecom_user` WHERE  `moble` = '15251137101' LIMIT 1 [ RunTime:0.000368s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user_key` [ RunTime:0.000806s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_user_key` WHERE  `userid` = 48 LIMIT 1 [ RunTime:0.000228s ]
+[ sql ] [ SQL ] UPDATE `ecshecom_user`  SET `check_code` = 'MCWBJTGYVEOK' , `ip` = '202.158.164.26'  WHERE  `id` = 48 [ RunTime:0.000333s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user_login` [ RunTime:0.000904s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_user_login` (`user_id` , `device` , `platform` , `login_type` , `ip` , `client_version` , `device_name` , `created_at`) VALUES (48 , '' , 1 , 1 , '202.158.164.26' , '' , '' , 1586237248) [ RunTime:0.000277s ]
+---------------------------------------------------------------
+[ 2020-04-07T13:27:31+08:00 ] 202.158.164.26 GET hqlyapp.jinzhifm.com/index/index
+[运行时间：0.075196s] [吞吐率：13.30req/s] [内存消耗：4,046.44kb] [文件加载：116]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ub106ihd5hgp3n30v0e8n4b7nk',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.5;q=0.4',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyapp.jinzhifm.com/login/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36 QBCore/4.0.1295.400 QQBrowser/9.0.2524.400 Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2875.116 Safari/537.36 NetType/WIFI MicroMessenger/7.0.5 WindowsWechat',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/index/index_jing_before_examine.html [ array (
+  0 => 'username',
+  1 => 'userrole',
+  2 => 'userStatus',
+  3 => 'checkText',
+  4 => 'noticeStatus',
+  5 => 'pos',
+  6 => 'allCountryInfo',
+  7 => 'status',
+  8 => 'countryid',
+  9 => 'type',
+  10 => 'name',
+  11 => 'person',
+  12 => 'notices',
+  13 => 'demondInfos',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000449s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user` [ RunTime:0.001190s ]
+[ sql ] [ SQL ] SELECT `u`.`username`,`u`.`status`,`u`.`check_email_c`,`u`.`level`,`u`.`email`,`u`.`invit_1`,`u`.`country`,`u`.`moble`,`r`.`role_id` FROM `ecshecom_user` `u` INNER JOIN `ecshecom_user_role` `r` ON `u`.`role_id`=`r`.`id` WHERE  `u`.`id` = '48' LIMIT 1 [ RunTime:0.000447s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user_notice` [ RunTime:0.000820s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_user_notice` WHERE  `user_id` = 48  AND `status` = 0 LIMIT 1 [ RunTime:0.000613s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user_role` [ RunTime:0.000811s ]
+[ sql ] [ SQL ] SELECT `id` FROM `ecshecom_user_role` WHERE  `role_id` = 0 LIMIT 1 [ RunTime:0.000177s ]
+[ sql ] [ SQL ] SELECT `id`,`username` FROM `ecshecom_user` WHERE  `role_id` = 10023 [ RunTime:0.000253s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_apple` [ RunTime:0.000733s ]
+[ sql ] [ SQL ] SELECT `d`.*,a.updated_at as apple_updated_at,a.created_at as apple_created_at,a.contract_type as apple_contract_type,a.process_type as apple_process_type,a.is_soft_first as apple_is_soft_first,a.is_public_rental as apple_is_public_rental,a.status as apple_status FROM `ecshecom_apple` `a` INNER JOIN `ecshecom_apple_details` `d` ON `a`.`id`=`d`.`apple_id` WHERE  `a`.`status` = '0'  AND `d`.`status` = '0' GROUP BY `d`.`apple_id` ORDER BY `d`.`created_at` DESC [ RunTime:0.001550s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`username` FROM `ecshecom_user_notice` `n` INNER JOIN `ecshecom_user` `u` ON `u`.`id`=`n`.`user_id` WHERE  `n`.`apple_id` IN ('902','901','900','897','896','894','893','892','887','886') ORDER BY `n`.`created_at` DESC LIMIT 10 [ RunTime:0.000558s ]
+---------------------------------------------------------------
+[ 2020-04-07T13:27:57+08:00 ] 211.136.123.227 GET hqlyapp.jinzhifm.com/Examine/seeDemand?demandId=902
+[运行时间：0.075317s] [吞吐率：13.28req/s] [内存消耗：4,138.06kb] [文件加载：114]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ub106ihd5hgp3n30v0e8n4b7nk',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.5;q=0.4',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyapp.jinzhifm.com/index/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36 QBCore/4.0.1295.400 QQBrowser/9.0.2524.400 Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2875.116 Safari/537.36 NetType/WIFI MicroMessenger/7.0.5 WindowsWechat',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'demandId' => '902',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/examine/see_demand_jing_before_examine.html [ array (
+  0 => 'username',
+  1 => 'userrole',
+  2 => 'userStatus',
+  3 => 'checkText',
+  4 => 'noticeStatus',
+  5 => 'pos',
+  6 => 'demondInfo',
+  7 => 'examineInfo',
+  8 => 'role',
+  9 => 'demandDetailsInfos',
+  10 => 'takeTimes',
+  11 => 'contactType',
+  12 => 'contactProcess',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000462s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user` [ RunTime:0.001238s ]
+[ sql ] [ SQL ] SELECT `u`.`username`,`u`.`status`,`u`.`check_email_c`,`u`.`level`,`u`.`email`,`u`.`invit_1`,`u`.`country`,`u`.`moble`,`r`.`role_id` FROM `ecshecom_user` `u` INNER JOIN `ecshecom_user_role` `r` ON `u`.`role_id`=`r`.`id` WHERE  `u`.`id` = '48' LIMIT 1 [ RunTime:0.000335s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user_notice` [ RunTime:0.000852s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_user_notice` WHERE  `user_id` = 48  AND `status` = 0 LIMIT 1 [ RunTime:0.000235s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_apple` [ RunTime:0.000716s ]
+[ sql ] [ SQL ] SELECT `d`.*,`a`.`created_at`,a.updated_at as apple_updated_at,a.created_at as apple_created_at,a.contract_type as apple_contract_type,a.process_type as apple_process_type,a.is_soft_first as apple_is_soft_first,a.is_public_rental as apple_is_public_rental,a.status as apple_status FROM `ecshecom_apple` `a` INNER JOIN `ecshecom_apple_details` `d` ON `a`.`id`=`d`.`apple_id` WHERE  `a`.`id` = '902' ORDER BY `d`.`created_at` DESC LIMIT 1 [ RunTime:0.000818s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_examine` [ RunTime:0.001217s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_examine` WHERE  `apple_id` = 902 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000539s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_apple_details` [ RunTime:0.001163s ]
+[ sql ] [ SQL ] SELECT `updated_at` FROM `ecshecom_apple_details` WHERE  `apple_id` = 902 [ RunTime:0.000272s ]
+[ sql ] [ SQL ] SELECT `jing_before_examine_status`,`status`,`id`,`jing_before_examine_reason` FROM `ecshecom_examine` WHERE  `apple_id` = 902 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000296s ]
+---------------------------------------------------------------
+[ 2020-04-07T13:28:03+08:00 ] 211.136.123.227 GET hqlyapp.jinzhifm.com/index/index?lang=
+[运行时间：0.071962s] [吞吐率：13.90req/s] [内存消耗：4,033.43kb] [文件加载：115]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ub106ihd5hgp3n30v0e8n4b7nk',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.5;q=0.4',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyapp.jinzhifm.com/Examine/seeDemand?demandId=902',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36 QBCore/4.0.1295.400 QQBrowser/9.0.2524.400 Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2875.116 Safari/537.36 NetType/WIFI MicroMessenger/7.0.5 WindowsWechat',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'lang' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/index/index_jing_before_examine.html [ array (
+  0 => 'username',
+  1 => 'userrole',
+  2 => 'userStatus',
+  3 => 'checkText',
+  4 => 'noticeStatus',
+  5 => 'pos',
+  6 => 'allCountryInfo',
+  7 => 'status',
+  8 => 'countryid',
+  9 => 'type',
+  10 => 'name',
+  11 => 'person',
+  12 => 'notices',
+  13 => 'demondInfos',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000427s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user` [ RunTime:0.001171s ]
+[ sql ] [ SQL ] SELECT `u`.`username`,`u`.`status`,`u`.`check_email_c`,`u`.`level`,`u`.`email`,`u`.`invit_1`,`u`.`country`,`u`.`moble`,`r`.`role_id` FROM `ecshecom_user` `u` INNER JOIN `ecshecom_user_role` `r` ON `u`.`role_id`=`r`.`id` WHERE  `u`.`id` = '48' LIMIT 1 [ RunTime:0.000309s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user_notice` [ RunTime:0.000812s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_user_notice` WHERE  `user_id` = 48  AND `status` = 0 LIMIT 1 [ RunTime:0.000228s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user_role` [ RunTime:0.000761s ]
+[ sql ] [ SQL ] SELECT `id` FROM `ecshecom_user_role` WHERE  `role_id` = 0 LIMIT 1 [ RunTime:0.000180s ]
+[ sql ] [ SQL ] SELECT `id`,`username` FROM `ecshecom_user` WHERE  `role_id` = 10023 [ RunTime:0.000172s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_apple` [ RunTime:0.000689s ]
+[ sql ] [ SQL ] SELECT `d`.*,a.updated_at as apple_updated_at,a.created_at as apple_created_at,a.contract_type as apple_contract_type,a.process_type as apple_process_type,a.is_soft_first as apple_is_soft_first,a.is_public_rental as apple_is_public_rental,a.status as apple_status FROM `ecshecom_apple` `a` INNER JOIN `ecshecom_apple_details` `d` ON `a`.`id`=`d`.`apple_id` WHERE  `a`.`status` = '0'  AND `d`.`status` = '0' GROUP BY `d`.`apple_id` ORDER BY `d`.`created_at` DESC [ RunTime:0.000618s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`username` FROM `ecshecom_user_notice` `n` INNER JOIN `ecshecom_user` `u` ON `u`.`id`=`n`.`user_id` WHERE  `n`.`apple_id` IN ('902','901','900','897','896','894','893','892','887','886') ORDER BY `n`.`created_at` DESC LIMIT 10 [ RunTime:0.000272s ]
+---------------------------------------------------------------
+[ 2020-04-07T13:28:05+08:00 ] 101.91.60.104 GET hqlyapp.jinzhifm.com/login/login
+[运行时间：0.045672s] [吞吐率：21.90req/s] [内存消耗：3,342.10kb] [文件加载：102]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_2_1 like Mac OS X) AppleWebKit/602.4.6 (KHTML, like Gecko) Mobile/14D27 MicroMessenger/6.5.5 NetType/WIFI Language/zh_CN',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-04-07T14:46:41+08:00 ] 47.101.56.210 GET hqlyapp.jinzhifm.com/
+[运行时间：0.038262s] [吞吐率：26.14req/s] [内存消耗：2,496.56kb] [文件加载：95]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (iphone safari)iPhone Safari',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-04-07T14:46:41+08:00 ] 47.101.56.210 GET hqlyapp.jinzhifm.com/login/login
+[运行时间：0.045401s] [吞吐率：22.03req/s] [内存消耗：3,328.27kb] [文件加载：101]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (iphone safari)iPhone Safari',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-04-07T14:46:43+08:00 ] 47.101.56.210 GET hqlyapp.jinzhifm.com/login/firstlogin
+[运行时间：0.045349s] [吞吐率：22.05req/s] [内存消耗：3,326.46kb] [文件加载：101]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (iphone safari)iPhone Safari',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+---------------------------------------------------------------
+[ 2020-04-07T14:46:43+08:00 ] 47.101.56.210 GET hqlyapp.jinzhifm.com/index/index
+[运行时间：0.037712s] [吞吐率：26.52req/s] [内存消耗：2,497.34kb] [文件加载：95]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (iphone safari)iPhone Safari',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-04-07T14:46:43+08:00 ] 47.101.56.210 GET hqlyapp.jinzhifm.com/login/login
+[运行时间：0.045942s] [吞吐率：21.77req/s] [内存消耗：3,328.27kb] [文件加载：101]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (iphone safari)iPhone Safari',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-04-07T14:46:43+08:00 ] 47.101.56.210 GET hqlyapp.jinzhifm.com/login/login
+[运行时间：0.044907s] [吞吐率：22.27req/s] [内存消耗：3,328.27kb] [文件加载：101]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (iphone safari)iPhone Safari',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-04-07T15:27:33+08:00 ] 183.136.190.62 GET hqlyapp.jinzhifm.com/
+[运行时间：0.038734s] [吞吐率：25.82req/s] [内存消耗：2,519.09kb] [文件加载：96]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cache-control' => 'max-age=0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => '',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-04-07T16:29:45+08:00 ] 183.136.190.62 GET hqlyma.jinzhifm.com/
+[运行时间：0.038337s] [吞吐率：26.08req/s] [内存消耗：2,511.53kb] [文件加载：99]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cache-control' => 'max-age=0',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => '',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000237s ]
+---------------------------------------------------------------
+[ 2020-04-07T20:58:31+08:00 ] 101.227.139.163 GET hqlyapp.jinzhifm.com/
+[运行时间：0.042397s] [吞吐率：23.59req/s] [内存消耗：2,518.82kb] [文件加载：96]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 5.1.1; SM801 Build/LMY47V; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/53.0.2785.49 Mobile MQQBrowser/6.2 TBS/043024 Safari/537.36 MicroMessenger/6.5.4.1000 NetType/4G Language/zh_CN',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-04-07T21:32:09+08:00 ] 49.83.235.185 GET hqlyapp.jinzhifm.com/
+[运行时间：0.041717s] [吞吐率：23.97req/s] [内存消耗：2,519.91kb] [文件加载：96]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1585612854,1585681006,1585700563,1585982389',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'purpose' => 'prefetch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-04-07T21:32:09+08:00 ] 49.83.235.185 GET hqlyapp.jinzhifm.com/login/login
+[运行时间：0.046657s] [吞吐率：21.43req/s] [内存消耗：3,343.53kb] [文件加载：102]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1585612854,1585681006,1585700563,1585982389; PHPSESSID=mvr0bdvmi4dcujja8oo0qihb93',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'purpose' => 'prefetch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-04-07T21:32:09+08:00 ] 49.83.235.185 GET hqlyapp.jinzhifm.com/login/login
+[运行时间：0.046796s] [吞吐率：21.37req/s] [内存消耗：3,343.66kb] [文件加载：102]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1585612854,1585681006,1585700563,1585982389; PHPSESSID=mvr0bdvmi4dcujja8oo0qihb93',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-04-07T21:32:14+08:00 ] 49.83.235.185 GET hqlyapp.jinzhifm.com/login/forgetloginpwd?lang=
+[运行时间：0.051995s] [吞吐率：19.23req/s] [内存消耗：3,326.70kb] [文件加载：101]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1585612854,1585681006,1585700563,1585982389; PHPSESSID=mvr0bdvmi4dcujja8oo0qihb93',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyapp.jinzhifm.com/login/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'lang' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/forgetloginpwd.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-04-07T21:32:17+08:00 ] 49.83.235.185 GET hqlyapp.jinzhifm.com/wap/css/bootstrap.css.map
+[运行时间：0.042510s] [吞吐率：23.52req/s] [内存消耗：2,342.20kb] [文件加载：92]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1585612854,1585681006,1585700563,1585982389; PHPSESSID=mvr0bdvmi4dcujja8oo0qihb93',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-04-07T21:32:19+08:00 ] 49.83.235.185 GET hqlyapp.jinzhifm.com/login/forgetloginpwd?lang=
+[运行时间：0.053031s] [吞吐率：18.86req/s] [内存消耗：3,326.99kb] [文件加载：101]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1585612854,1585681006,1585700563,1585982389; PHPSESSID=mvr0bdvmi4dcujja8oo0qihb93',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyapp.jinzhifm.com/login/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'lang' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/forgetloginpwd.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-04-07T21:32:19+08:00 ] 49.83.235.185 GET hqlyapp.jinzhifm.com/wap/css/bootstrap.css.map
+[运行时间：0.041966s] [吞吐率：23.83req/s] [内存消耗：2,342.20kb] [文件加载：92]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1585612854,1585681006,1585700563,1585982389; PHPSESSID=mvr0bdvmi4dcujja8oo0qihb93',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-04-07T21:33:22+08:00 ] 61.129.7.235 GET hqlyapp.jinzhifm.com/wap/css/bootstrap.css.map
+[运行时间：0.038052s] [吞吐率：26.28req/s] [内存消耗：2,341.60kb] [文件加载：92]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)

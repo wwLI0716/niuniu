@@ -1,0 +1,570 @@
+{include file="public/shead" /}
+{include file="public/left" /}
+<style>
+    .content-header>.breadcrumb {
+        position: unset;
+    }
+    .webticker-4 {
+        padding: 1.25rem 0;
+    }
+    .webticker-3 {
+        height: 27px;
+        overflow: hidden;
+        position: relative;
+        padding: 0 1.25rem;
+    }
+    #webticker-2 {
+        list-style:none;
+        padding-left: 0;
+    }
+    #webticker-2 li {
+        width: 100%;
+        word-break: break-all;
+        word-wrap: break-word;
+        white-space: normal;
+        color: #6c757d;
+    }
+    .show-auto {
+        width: 32%;
+        margin-right: 0;
+    }
+    .dollar-value,.show-auto .media i {
+        display: block;
+        width: 100%;
+    }
+    .show-auto .media i {
+        font-size: 30px;
+    }
+    .show-auto .media,.dollar-value {
+        text-align: center;
+    }
+    .show-auto .box-body {
+        padding-left: .7rem;
+        padding-right: .7rem;
+    }
+    .page-dashboard .dollar-value {
+        font-size: 1rem;
+    }
+    .index_message {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .index_message>div:first-child {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .index_message>div:first-child p {
+        padding: 0;
+        margin: 0;
+    }
+
+    .index_message p {
+        padding: 0;
+        margin: 0;
+        line-height: 2rem;
+    }
+
+    .index_message p.p1 {
+        font-weight: 700;
+    }
+
+    .index_message p.p3 {
+        font-size: 18px;
+        line-height: 32px;
+        font-weight: 700;
+        color: rgb(221, 127, 12);
+    }
+
+    .index_message p.p4 span:last-child {
+        font-size: 16px;
+        font-weight: 700;
+        color: rgb(180, 132, 42);
+    }
+    .doing {
+        padding-left: .5rem;
+    }
+    .show-status {
+        padding: 0.1rem .5rem;
+        line-height: normal;
+    }
+    .btn-primary {
+        background-color: #3c7fff;
+        padding: 0.1rem 1rem;
+    }
+    .pagination li span {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        display: inline-block;
+        min-width: 25px;
+        padding: .4em 1em;
+        text-decoration: none;
+        cursor: pointer;
+        color: #adadad;
+        border: 1px solid transparent;
+        border-radius: 2px;
+        margin-left: 5px;
+        margin-right: 5px;
+        background-color: #ddd;
+    }
+</style>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <section class="content-header show-content-title">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a class="sendA" href="javascript:history.back(-1)">
+                    < &nbsp;
+                </a>
+            </li>
+            <li class="breadcrumb-item active sendContent">
+                {if condition="$status eq 0"}
+                待审核
+                {elseif condition="$status eq 1"}
+                审核中
+                {elseif condition="$status eq 2"}
+                已审核
+                {else /}
+                待复核
+                {/if}
+            </li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <!-- RENOVATION -->
+        <div class="row row_message">
+            <div class="col-lg-12 col-md-12 margin-top-20">
+                <table style="width: 100%;background-color: #fff;line-height: 50px;text-align: center;">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>名称</th>
+                        <th>房产权证号</th>
+                        <th>租赁面积</th>
+                        <th>提交时间</th>
+                        <th>审核状态</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {volist name="demondInfos" id="vo"}
+                    <tr>
+                        <td>{$vo.apple_id}</td>
+                        <td>{$vo.house_name}</td>
+                        <td>{$vo.house_card_number}</td>
+                        <td>{$vo.lease_area_now}</td>
+                        <td>{:date('Y-m-d H:i:s',$vo.updated_at)}</td>
+                        <td><span class="doing">{if condition="$vo.apple_status eq 0"}<button type="button" class="btn btn-info show-status">待审核</button>{elseif condition="$vo.apple_status eq 1"}<button type="button" class="btn btn-warning show-status">审核中</button>{elseif condition="$vo.apple_status eq 2"}<button type="button" class="btn btn-success show-status">审核通过</button>{else /}<button type="button" class="btn btn-danger show-status">审核驳回</button>{/if}</span></td>
+                        <td>
+                            <button style="line-height: 30px;" type="button" class="btn btn-primary"><a style="color: #fff;" href="/Examine/seeDemand?demandId={$vo.apple_id}">查看</a></button>
+                            {if condition="$roleId eq 8"}
+                            <button style="line-height: 30px;" type="button" class="btn btn-primary">
+<!--                                常规流程 不需要安全办审核-->
+                                {if condition="$vo.apple_process_type eq 0 And $vo.apple_is_soft_first eq 0"}
+                                <a style="color: #fff;" onclick="doCommonPrint({$vo.apple_id})">打印</a>
+                                {else/"}
+<!--                                简易流程 -->
+                                <a style="color: #fff;" onclick="doPrint({$vo.apple_id})">打印</a>
+                                {/if}
+                            </button>
+                            {/if}
+                        </td>
+                    </tr>
+                    {/volist}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="page">
+            {$page|raw}
+        </div>
+    </section>
+</div>
+</div>
+{include file="public/bottom" /}
+
+<script>
+    function doCommonPrint(id) {
+        let demandInfo;
+        let examineInfo;
+        $.ajax({
+            type: "POST",
+            url: "/Examine/getDemandDetail",
+            data: {"id": id},
+            timeout:60000,    //超时时间
+            dataType:'json',
+            success: function(data){
+                data = data.data
+                demandInfo = data.demandInfo;
+                examineInfo = data.examineInfo;
+                bdhtml="<body>\n" +
+                    "<!--startprint-->\n" +
+                    "<table border='1' cellpadding='0' cellspacing='0'>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' align='center' style='font-size: 25px;'><b>虹桥镇集体经济组织楼宇经营管理审核表</b></td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' align='center' style='height: 30px;font-size: 20px' ><b>一、租赁基本信息</b></td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td>出租单位名称</td>\n" +
+                    "\t\t<td colspan='2' style='width: 25%'>&nbsp;</td>\n" +
+                    "\t\t<td>出租楼宇名称</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.house_name+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td>出租地址</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.house_address+"</td>\n" +
+                    "\t\t<td>出租面积</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.lease_area+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t\t<td>原承租企业</td>\n" +
+                    "\t\t<td colspan='2' style='width: 25%'>"+demandInfo.original_tenant+"</td>\n" +
+                    "\t\t<td>原合同租赁起止日</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.lease_start+"至"+demandInfo.lease_end+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td>终止原因</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.end_reason+"</td>\n" +
+                    "\t\t<td>合同终止日</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.lease_end_day+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td>现意向承租企业</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.lease_unit+"</td>\n" +
+                    "\t\t<td>承租后经营业态</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.purpose+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td>租赁面积</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.lease_area_now+"平方</td>\n" +
+                    "\t\t<td>租赁单价</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.lease_price+"元</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td>租赁年限</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.lease_year+"</td>\n" +
+                    "\t\t<td>租赁起止日期</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.lease_start_now+"至"+demandInfo.lease_end_now+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td>免租期</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.rent_free_period+"</td>\n" +
+                    "\t\t<td>租金起算日</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.rent_start_day+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' height='80px'>特殊情况说明："+demandInfo.explain+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' align='right'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;日</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' style='height: 30px;font-size: 20px' align='center'  ><b>二、审核意见</b></td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr style='font-weight: bold'>\n" +
+                    "\t\t<td colspan='3'>镇安全办审核意见</td>\n" +
+                    "\t\t<td>通过</td>\n" +
+                    "\t\t<td>拒绝</td>\n" +
+                    "\t\t<td>原因:"+examineInfo.security_do_examine_reason+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' align='right'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;日</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='3' >镇经管办审核意见</td>\n" +
+                    "\t\t<td>通过</td>\n" +
+                    "\t\t<td>拒绝</td>\n" +
+                    "\t\t<td>原因:"+examineInfo.jing_before_examine_reason+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' align='right'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;日</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='3' >经发办审核意见</td>\n" +
+                    "\t\t<td>通过</td>\n" +
+                    "\t\t<td>拒绝</td>\n" +
+                    "\t\t<td>原因:"+examineInfo.jing_examine_reason+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' align='right'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;日</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='3' >农经站审核意见</td>\n" +
+                    "\t\t<td>通过</td>\n" +
+                    "\t\t<td>拒绝</td>\n" +
+                    "\t\t<td>原因:"+examineInfo.farmer_examine_reason+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' align='right'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;日</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='3' >审计办 审核意见</td>\n" +
+                    "\t\t<td>通过</td>\n" +
+                    "\t\t<td>拒绝</td>\n" +
+                    "\t\t<td>原因:"+examineInfo.audit_examine_reason+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' align='right'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;日</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='3' >财政所审核意见</td>\n" +
+                    "\t\t<td>通过</td>\n" +
+                    "\t\t<td>拒绝</td>\n" +
+                    "\t\t<td>原因:"+examineInfo.finance_examine_reason+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' align='right'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;日</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='3' >镇资产公司办审核意见</td>\n" +
+                    "\t\t<td>通过</td>\n" +
+                    "\t\t<td>拒绝</td>\n" +
+                    "\t\t<td>原因:"+examineInfo.assets_examine_reason+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' align='right'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;日</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='3' >镇领导办审核意见</td>\n" +
+                    "\t\t<td>通过</td>\n" +
+                    "\t\t<td>拒绝</td>\n" +
+                    "\t\t<td>原因:"+examineInfo.town_examine_reason+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' align='right'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;日</td>\n" +
+                    "\t</tr>\n" +
+                    "</table>\n" +
+                    "\n" +
+                    "<br>\n" +
+                    "<!--endprint-->\n" +
+                    "</body>";
+                sprnstr="<!--startprint-->"; //开始打印标识字符串有17个字符
+                eprnstr="<!--endprint-->"; //结束打印标识字符串
+                prnhtml=bdhtml.substr(bdhtml.indexOf(sprnstr)+17); //从开始打印标识之后的内容
+                prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr)); //截取开始标识和结束标识之间的内容
+                window.document.body.innerHTML=prnhtml; //把需要打印的指定内容赋给body.innerHTML
+                window.print(); //调用浏览器的打印功能打印指定区域
+                window.document.body.innerHTML=bdhtml; // 最后还原页面
+            },
+            error:function(xhr,textStatus){console.log(data)
+                layer.msg('Page refresh', {time: 2000});
+//              layer.closeAll('loading');
+                location.reload();
+            },
+        });
+
+    }
+    function doPrint(id) {
+        let demandInfo;
+        let examineInfo;
+        let examineResult = "";
+        $.ajax({
+            type: "POST",
+            url: "/Examine/getDemandDetail",
+            data: {"id": id},
+            timeout:60000,    //超时时间
+            dataType:'json',
+            success: function(data){
+                data = data.data;
+                demandInfo = data.demandInfo;
+                examineInfo = data.examineInfo;
+                console.log(examineInfo);
+                if (examineInfo.jing_before_examine_reason !== "") {
+                    examineResult += "镇经管办预审审核反馈:" + examineInfo.jing_before_examine_reason + "<br>";
+                }
+                if (examineInfo.finance_examine_reason !== "") {
+                    examineResult += "财政所审核反馈:" + examineInfo.finance_examine_reason + "<br>";
+                }
+                if (examineInfo.jing_examine_reason !== "") {
+                    examineResult += "镇经发办审核反馈:" + examineInfo.jing_examine_reason + "<br>";
+                }
+                if (examineInfo.farmer_examine_reason !== "") {
+                    examineResult += "农经站审核反馈:" + examineInfo.farmer_examine_reason + "<br>";
+                }
+                if (examineInfo.audit_examine_reason !== "") {
+                    examineResult += "审计办审核反馈:" + examineInfo.audit_examine_reason + "<br>";
+                }
+                if (examineInfo.security_examine_reason !== "") {
+                    examineResult += "安全办前置审核反馈:" + examineInfo.security_examine_reason + "<br>";
+                }
+                if (examineInfo.security_do_examine_reason !== "") {
+                    examineResult += "安全办审核反馈:" + examineInfo.security_do_examine_reason + "<br>";
+                }
+                if (examineInfo.management_examine_reason !== "") {
+                    examineResult += "经管办审核反馈:" + examineInfo.management_examine_reason + "<br>";
+                }
+                if (examineInfo.town_examine_reason !== "") {
+                    examineResult += "镇领导审核反馈:" + examineInfo.town_examine_reason + "<br>";
+                }
+                bdhtml="<body>\n" +
+                    "<!--startprint-->\n" +
+                    "<table border='1' cellpadding='0' cellspacing='0'>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' align='center' style='font-size: 25px;'><b>楼宇租赁项目审核意见表</b></td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' align='center' style='height: 30px;font-size: 20px' ><b>一、租赁基本信息</b></td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td>出租单位名称</td>\n" +
+                    "\t\t<td colspan='2' style='width: 25%'>&nbsp;</td>\n" +
+                    "\t\t<td>出租楼宇名称</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.house_name+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td>出租地址</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.house_address+"</td>\n" +
+                    "\t\t<td>出租面积</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.lease_area+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td>租赁单价</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.lease_price+"元</td>\n" +
+                    "\t\t<td>竞拍底价</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.lease_price+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td>租赁年限</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.lease_year+"</td>\n" +
+                    "\t\t<td>租赁起止日期</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.lease_start+"至"+demandInfo.lease_end+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td>免租期</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.rent_free_period+"</td>\n" +
+                    "\t\t<td>租金起算日</td>\n" +
+                    "\t\t<td colspan='2' align='center'>"+demandInfo.rent_start_day+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' height='80px'>特殊情况说明："+demandInfo.explain+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' style='height: 30px;font-size: 20px' align='center'  ><b>二、审核意见</b></td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr style='font-weight: bold'>\n" +
+                    "\t\t<td colspan='3'>镇经管办审核意见</td>\n" +
+                    "\t\t<td>是</td>\n" +
+                    "\t\t<td>否</td>\n" +
+                    "\t\t<td>否定原因</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='3' >1、是否符合审核范围</td>\n" +
+                    "\t\t<td>√</td>\n" +
+                    "\t\t<td></td>\n" +
+                    "\t\t<td></td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='3' >2、意向承租方资格是否符合规定</td>\n" +
+                    "\t\t<td>√</td>\n" +
+                    "\t\t<td></td>\n" +
+                    "\t\t<td></td>\n" +
+                    "\t</tr>\n" +
+                    "\t\t<td colspan='3' >3、租金价格是否符合规定</td>\n" +
+                    "\t\t<td>√</td>\n" +
+                    "\t\t<td></td>\n" +
+                    "\t\t<td></td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='3' >4、租赁业态是否符合规定</td>\n" +
+                    "\t\t<td>√</td>\n" +
+                    "\t\t<td></td>\n" +
+                    "\t\t<td></td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='3' >5、证明材料是否齐全</td>\n" +
+                    "\t\t<td>√</td>\n" +
+                    "\t\t<td></td>\n" +
+                    "\t\t<td></td>\n" +
+                    "\t</tr>\n" +
+                    "\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' align='center' style='height: 30px;font-size: 20px'><b>三、审核结果</b></td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' height='80px' align='center' >"+examineResult+"</td>\n" +
+                    "\t</tr>\n" +
+                    "\t<tr>\n" +
+                    "\t\t<td colspan='6' align='right'>" +
+                    "<p>签字盖章&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='__WAP_PUBLIC__/images/zhang.png' style='width: 200px;margin:1px'></p>" +
+                    "<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日&nbsp;&nbsp;&nbsp;&nbsp;</p>" +
+                    "\t\t</td>\n" +
+                    "\t</tr>\n" +
+                    "</table>\n" +
+                    "\n" +
+                    "\t<p>备注：</p>\n" +
+                    "\t<p>1、镇经管办应在7个工作日之内将审核意见反馈给相关公司，并将该审核意见报农经站和分管领导。</p>\n" +
+                    "\t<p>2、通过项目审核的公司应根据闵虹委办〔2016〕1号文件要求，及时召开“三重一大”对项目进行集体讨论、民主决策。<br>其中涉及公开招租的，应按公开招租流程进行操作。</p>\n" +
+                    "<br>\n" +
+                    "<!--endprint-->\n" +
+                    "</body>";
+                sprnstr="<!--startprint-->"; //开始打印标识字符串有17个字符
+                eprnstr="<!--endprint-->"; //结束打印标识字符串
+                prnhtml=bdhtml.substr(bdhtml.indexOf(sprnstr)+17); //从开始打印标识之后的内容
+                prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr)); //截取开始标识和结束标识之间的内容
+                window.document.body.innerHTML=prnhtml; //把需要打印的指定内容赋给body.innerHTML
+                setTimeout(function(){
+                    window.print(); //调用浏览器的打印功能打印指定区域
+                },200);
+                window.document.body.innerHTML=bdhtml; // 最后还原页面
+
+            },
+            error:function(xhr,textStatus){console.log(data)
+                layer.msg('Page refresh', {time: 2000});
+//              layer.closeAll('loading');
+                location.reload();
+            },
+        });
+    }
+</script>
+<!--   Core JS Files   -->
+<script src="__WAP_PUBLIC__/js/layer.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/common1.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/bootstrap.min.14d449eb8876.js" type="text/javascript"></script>
+
+<!-- webticker -->
+<script src="__WAP_PUBLIC__/js/jquery.webticker.min.f78e1731f573.js"></script>
+<!-- Crypto_Admin App -->
+<script src="__WAP_PUBLIC__/js/template.eca497836b5a.js"></script>
+<!-- 滾動樣式 -->
+<script src="__WAP_PUBLIC__/js/dashboard.89aa0af61d92.js"></script>
+<!-- Chart -->
+<script src="__WAP_PUBLIC__/js/chart.min.c508c360e58f.js"></script>
+<script src="__WAP_PUBLIC__/js/chartjs-int.b4511dbd6cc9.js"></script>
+<script src="__WAP_PUBLIC__/js/chartjs-int.b4511dbd6cc99.js"></script>
+<!-- easypiechart -->
+<script src="__WAP_PUBLIC__/js/jquery.easypiechart.0f1bfd4eb4e7.js"></script>
+<!-- chart-widgets -->
+<script src="__WAP_PUBLIC__/js/chart-widgets.0569c48737c0.js"></script>
+<script src="__WAP_PUBLIC__/js/moment-with-locales.min.a79a8710a351.js"></script>
+<script src="__WAP_PUBLIC__/js/moment-timezone-with-data.min.a3f47b485883.js"></script>
+<script src="__WAP_PUBLIC__/js/jquery.loading.f548d3016cfe.js"></script>
+
+<script>
+    $(function () {
+
+        $('.getA').attr('href',$('.sendA').attr("href"));
+        $('.pageName').html($(".sendContent").html());
+
+        $('.logout').click(function(){
+            //询问框
+            layer.open({
+                content: '{:lang("logout_tip")}'
+                ,btn: ['{:lang("yes")}', '{:lang("no")}']
+                ,skin: 'loginout'
+                ,yes: function(index){
+                    window.location.href = "{:url('index/Login/logout')}";
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+
+</html>

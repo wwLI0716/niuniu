@@ -1,0 +1,131 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body,h1,h2,h3,h4,input,ul,li,dl,dt,dd,p,button{margin:0;padding:0; list-style:none;font-family:"Helvetica","Microsoft Yahei";font-weight:normal;}
+input:focus::-webkit-input-placeholder,textarea:focus::-webkit-input-placeholder { color:transparent; }
+a{ text-decoration:none;color:#007aff}
+@font-face {
+  font-family: 'scienfont';
+  src: url('//at.alicdn.com/t/font_1476507903_0438144.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_1476507903_0438144.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_1476507903_0438144.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/font_1476507903_0438144.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_1476507903_0438144.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+                                                                                                                  
+                    
+
+
+body{background:#fff;}
+.hide{display:none}
+
+
+.kePublic {
+	background: #FFF;
+}
+
+
+/* 效果CSS开始 */
+
+
+
+
+/*用于获取更加体验*/
+
+.slider li a.title {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 100%;
+	width: 70%;
+}
+
+.focus .focuspoint {
+	margin-top: -3px;
+	width: 10px;
+	height: 10px;
+	margin-right: 10px;
+	border-radius: 50%;
+	background: #666;
+	font-size: 0;
+	display: block;
+	float: left;
+	cursor: pointer;
+}
+
+.focus .focuspoint.current {
+	background: #fff
+}
+
+.focus .bannertitle{
+	display: none;
+	margin-left: 10px;
+	width: 100%;
+	margin-top: 6%;
+	color: white;
+	letter-spacing: 1px;
+	font-size: 0.8em;
+}
+
+.focus .bannertitle.currenttitle{
+	display: block;
+}
+
+/* 效果CSS结束 */
+
+.mt_10{margin-top:10px;}
+.mt_11{  margin-bottom:10px;margin-top:10px; background-color:#ccc;}
+.mt_11 h2{ width:25%; float:left;}
+#main .content{background-color:#fff; background-position: 3% center; background-repeat:no-repeat; background-size: 15%; overflow:hidden}
+#main .content ul{margin-left:20%;border-left:1px solid #eee;}
+#main .content ul li{line-height:2em;border-bottom:1px solid #eee;padding:6px 10px;overflow:hidden; box-sizing: border-box;}
+/*#main .content ul li:before{content:"·";font-weight: bolder;    margin-right: 3px;float: left;}*/
+/*#main .content ul li:last-child{border:none}*/
+#main .content ul li span{display:inline-block}
+#main .content ul li span a{ color: #333;}
+#main .content.amous ul li{overflow: hidden;white-space: nowrap;text-overflow: ellipsis;padding-right:10px}
+#main .content ul li span:first-child{width:74%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;float:left;font-size:.96em}
+#main .content ul li span:last-child{width:25%;font-size:.9em;color:#666;float:right; text-align: right;}
+
+#main1 .content{background-color:#fff; background-position: 3% center; background-repeat:no-repeat; background-size: 15%; overflow:hidden}
+#main1 .content ul li{line-height:2em;border-bottom:1px solid #eee;padding-left:10px;overflow:hidden}
+#main1 .content ul li:before{content:"·";font-weight: bolder;    margin-right: 3px;float: left;}
+#main1 .content ul li:last-child{border:none}
+#main1 .content ul li span{display:inline-block}
+#main1 .content.amous ul li{overflow: hidden;white-space: nowrap;text-overflow: ellipsis;padding-right:10px}
+#main1 .content ul li span:first-child{width:70%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;float:left;font-size:.9em}
+#main1 .content ul li span:last-child{width:25%;font-size:.6em;color:#bbb;float:right}
+
+#main .newcontent ul{margin-left:0;}
+#main .newcontent ul li span:first-child{width:75%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;float:left}
+#main .newcontent ul li span:last-child{width:20%;font-size:.6em;color:#bbb;float:right}
+
+.contitle{border-bottom:1px solid #ccc;}
+.contitle h3{background:#fff;padding:7px 10px;font-size:1.2em}
+.contitle h3:before{content:"|";color:red;margin-right:3px;font-weight:bolder;}
+.contitle h3 span{float:right;font-size:.8em;color:#999;margin-top: 3px;}
+
+.nav{display: -webkit-box;width: 100%;-webkit-box-orient: horizontal;background-color:#ccc;color:#333;}
+.nav>div{-webkit-box-align:center;-webkit-box-flex: 1;padding:15px 0; text-align:center}
+.nav>div.active{background-color:#fff;color:#f00;}
+
+#wrapper{width:96%;margin:0 auto}
+#wrapper h2{font-size:1.2em;line-height:1.6em;margin-bottom:15px;}
+#wrapper .field{color:#999;font-size:.8em;}
+#wrapper .field span{margin-right:20px;}
+#wrapper .content{line-height:1.6em;font-size:.9em; text-align:justify;margin:20px 0 40px 0}
+
+footer>div{overflow:hidden;width:100%;position:fixed;bottom:0;padding-top:3px;background:#fff;border-top: 1px solid #eee;}
+footer>div>div{text-align:center;padding:0 0 2px 0;color:#999;font-size:.7em;float:left;width:33.333333333%}
+footer>div>div.active{color:#10a6e2}
+footer>div>div:last-child{border:0}
+footer .sicon{display:block; font-size:1.2rem;}	
+footer p{margin-top:-3px;}
+.sicon{    font-family:"scienfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+} 

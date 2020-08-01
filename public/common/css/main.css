@@ -1,0 +1,83 @@
+/*推荐好物(通用)*/
+.goods_good{
+	background: #FFF;
+}
+.goods_good .title{
+	display: block;
+    text-indent: 12px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #333;
+}
+.goods_good ul{
+	width: 100%;
+}
+.goods_good ul li{
+	width: 40%;
+	float: left;
+	padding: 5%;
+	border-top: 1px solid #dedfe0;
+}
+.goods_good ul li:nth-child(odd){
+	border-right: 1px solid #dedfe0;
+	margin-left: -1px;
+}
+.goods_good ul li:nth-last-child(1),.goods_good ul li:nth-last-child(2){
+	border-bottom:1px solid #dedfe0;
+}
+.goods_good ul li img{
+	width: 100%;
+}
+.goods_good ul li p{
+	font-size: 14px;
+    color: #494949;
+}
+.goods_good ul li span {
+    font-size: 13px;
+    color: #FF6633;
+}
+.goods_good ul li .type {
+    display: inline-block;
+    border: 1px solid red;
+    border-radius: 8px;
+    padding: 0 8px;
+    text-align: center;
+    height: 16px;
+    line-height: 16px;
+}
+/*赚更多，去兑换(通用)*/
+.bottom{
+	background: #FFF;
+	height: 55px;
+	line-height: 55px;
+	width: 100%;
+	border-top: 1px solid #eee;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+}
+.bottom .left,.bottom .right{
+	width: 50%;
+	text-align: center;
+	color: #333;
+	font-size: 16px;
+}
+.bottom .left{
+	border-right:1px solid #eee;
+	margin-left: -1px;
+}
+.bottom .left span{
+	width: 34px;
+	height: 34px;
+	background: url(../images/icon/get_morered.png) no-repeat 0 center;
+	background-size: 17px 17px;
+	padding-left: 30px;
+}
+.bottom .right span{
+	width: 34px;
+	height: 34px;
+	background: url(../images/icon/to_dhred.png) no-repeat 0 center;
+	background-size: 17px 17px;
+	padding-left: 30px;
+}

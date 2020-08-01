@@ -1,0 +1,27 @@
+@charset "gb2312";
+#lklist ul,#lklist li
+{
+margin:0px;
+padding:0px;
+list-style-type:none;
+}
+.clear{
+	clear: both;
+}
+#lklist a{
+	display:block;
+	width:4.5em;
+	padding:5px;
+	text-decoration:none;
+	color:#333333;
+	background-color:#E7E3E7;
+	text-align:center;
+}
+#lklist a:hover {
+	color: #E7E3E7;
+	background-color:#333333;
+}
+#lklist li{
+float:left;
+margin:5px 2%;
+}

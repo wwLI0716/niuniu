@@ -1,0 +1,168 @@
+{include file="public/shead" /}
+{include file="public/left" /}
+<style>
+.box {
+    box-shadow: none;
+}
+
+.card-container h2 {
+    margin-top: 40px;
+}
+
+.card-body {
+    border: 1px solid #f6f6f6;
+    box-shadow: 0px 0px 5px 0px rgba(142, 139, 133, 0.32);
+    box-sizing: border-box;
+    color: #666;
+}
+ul,li{
+    list-style: none;
+}
+.news{
+    padding: 0;
+    margin-bottom: 0;
+}
+.news li{
+    line-height: 40px;
+    border-bottom: 1px solid #eaeaea;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 14px;
+}
+.news li:last-child{
+    border-bottom: 0;
+}
+.page-dashboard .content .container-fluid{
+    padding: 20px 10px;
+}
+.showTime {
+    flex: 1;
+    text-align: right;
+    color: #ccc;
+}
+.news li span:last-child{
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.page {
+    margin-top: 15px;
+    width: 100%;
+    word-wrap: break-word;
+    word-break: break-all;
+    margin-bottom: 10rem;
+}
+.page .pagination {
+    width: 100%;
+    word-wrap: break-word;
+    word-break: break-all;
+    display: block;
+}
+.page .pagination li {
+    display: inline-block;
+    margin-top: .3rem;
+}
+.pagination li span {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 25px;
+    padding: .4em 1em;
+    text-decoration: none;
+    cursor: pointer;
+    color: #adadad;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #ddd;
+}
+@media (max-width: 767px) {
+    .txtinfo {
+        width: 112px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .newscontent > div.layui-layer-content > p:nth-child(1) {
+        font-size: 16px;
+        line-height: 2;
+    }
+    .newscontent > div.layui-layer-content > p:nth-child(2) {
+        font-size: 14px;
+        color: #646464;
+    }
+    .newscontent > div.layui-layer-btn > a {
+        color: #fff;
+    }
+    .newscontent {
+        width: 100%!important;
+        left: 0!important;
+    }
+}
+</style>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <section class="content-header show-content-title">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a class="sendA" href="{:url('User/personInfo')}">
+                    < &nbsp;
+                </a>
+            </li>
+            <li class="breadcrumb-item active sendContent">通知</li>
+        </ol>
+    </section>
+    <div class="content-header header-top margin-top-20">
+        <div class="container-fluid">
+            <ul class="news">
+                {if condition="count($notices) neq 0"}
+                {volist name="notices" id="vo"}
+                <li>
+                    <span class="iconfont icon_iconfont-xinxituisong-"></span>
+                    <span><a href="/Examine/seeDemand?demandId={$vo.apple_id}">您的{$vo.description}</a></span>
+                </li>
+                {/volist}
+                {else /}
+                <li>
+                    <span>{:lang('has_no_notice')}</span>
+                </li>
+                {/if}
+            </ul>
+        </div>
+    </div>
+    <div class="page col-12">
+        {$page|raw}
+    </div>
+</div>
+</div>
+{include file="public/bottom" /}
+<!--   Core JS Files   -->
+<script src="__WAP_PUBLIC__/js/layer.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/common1.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/bootstrap.min.14d449eb8876.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/template.eca497836b5a.js"></script>
+<script>
+
+    $('.getA').attr('href',$('.sendA').attr("href"));
+    $('.pageName').html($(".sendContent").html());
+
+    $(function () {
+        $('.logout').click(function(){
+            //询问框
+            layer.open({
+                content: '{:lang("logout_tip")}'
+                ,skin: 'loginout'
+                ,btn: ['{:lang("yes")}', '{:lang("no")}']
+                ,yes: function(index){
+                    window.location.href = "{:url('index/Login/logout')}";
+                }
+            });
+        });
+    })
+</script>
+</body>
+
+</html>

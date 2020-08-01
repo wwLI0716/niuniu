@@ -1,0 +1,1925 @@
+---------------------------------------------------------------
+[ 2020-01-23T08:25:41+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/
+[运行时间：0.037336s] [吞吐率：26.78req/s] [内存消耗：2,503.95kb] [文件加载：99]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579221916,1579312296,1579414992,1579675199',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://118.190.135.107:8888/site',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000234s ]
+---------------------------------------------------------------
+[ 2020-01-23T08:25:41+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/login/login
+[运行时间：0.052024s] [吞吐率：19.22req/s] [内存消耗：3,574.40kb] [文件加载：114]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579221916,1579312296,1579414992,1579675199',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://118.190.135.107:8888/site',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/admin/view/login/login.html [ array (
+  0 => 'captcha',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000238s ]
+---------------------------------------------------------------
+[ 2020-01-23T08:25:41+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/captcha
+[运行时间：0.031033s] [吞吐率：32.22req/s] [内存消耗：1,966.24kb] [文件加载：81]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'rule' => 'captcha/<id?>',
+  'route' => '\\think\\captcha\\CaptchaController@index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579221916,1579312296,1579414992,1579675199',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/login/login',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-01-23T08:26:15+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/login/updatecaptcha?t=1579739175024
+[运行时间：0.050818s] [吞吐率：19.68req/s] [内存消耗：3,567.26kb] [文件加载：111]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739147',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/login/login',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  't' => '1579739175024',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000239s ]
+---------------------------------------------------------------
+[ 2020-01-23T08:26:16+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/login/updatecaptcha?t=1579739175892
+[运行时间：0.050043s] [吞吐率：19.98req/s] [内存消耗：3,567.26kb] [文件加载：111]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739147',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/login/login',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  't' => '1579739175892',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000236s ]
+---------------------------------------------------------------
+[ 2020-01-23T08:26:16+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/login/updatecaptcha?t=1579739176670
+[运行时间：0.052607s] [吞吐率：19.01req/s] [内存消耗：3,567.26kb] [文件加载：111]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739147',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/login/login',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  't' => '1579739176670',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000253s ]
+---------------------------------------------------------------
+[ 2020-01-23T08:26:17+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/login/updatecaptcha?t=1579739177552
+[运行时间：0.051397s] [吞吐率：19.46req/s] [内存消耗：3,567.26kb] [文件加载：111]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739147',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/login/login',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  't' => '1579739177552',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000254s ]
+---------------------------------------------------------------
+[ 2020-01-23T08:26:18+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/login/updatecaptcha?t=1579739178536
+[运行时间：0.051496s] [吞吐率：19.42req/s] [内存消耗：3,567.26kb] [文件加载：111]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739147',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/login/login',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  't' => '1579739178536',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000274s ]
+---------------------------------------------------------------
+[ 2020-01-23T08:26:19+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/login/updatecaptcha?t=1579739179587
+[运行时间：0.052537s] [吞吐率：19.03req/s] [内存消耗：3,567.26kb] [文件加载：111]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739147',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/login/login',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  't' => '1579739179587',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000247s ]
+---------------------------------------------------------------
+[ 2020-01-23T08:26:20+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/login/updatecaptcha?t=1579739180479
+[运行时间：0.052620s] [吞吐率：19.00req/s] [内存消耗：3,567.26kb] [文件加载：111]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739147',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/login/login',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  't' => '1579739180479',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000253s ]
+---------------------------------------------------------------
+[ 2020-01-23T08:26:21+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/login/updatecaptcha?t=1579739181371
+[运行时间：0.052343s] [吞吐率：19.10req/s] [内存消耗：3,567.26kb] [文件加载：111]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739147',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/login/login',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  't' => '1579739181371',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000280s ]
+---------------------------------------------------------------
+[ 2020-01-23T08:26:23+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/login/updatecaptcha?t=1579739183797
+[运行时间：0.052918s] [吞吐率：18.90req/s] [内存消耗：3,567.26kb] [文件加载：111]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739147',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/login/login',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  't' => '1579739183797',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000248s ]
+---------------------------------------------------------------
+[ 2020-01-23T08:26:26+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/login/updatecaptcha?t=1579739186689
+[运行时间：0.053370s] [吞吐率：18.74req/s] [内存消耗：3,567.26kb] [文件加载：111]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739147',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/login/login',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  't' => '1579739186689',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000251s ]
+---------------------------------------------------------------
+[ 2020-01-23T08:26:27+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/login/updatecaptcha?t=1579739187758
+[运行时间：0.050158s] [吞吐率：19.94req/s] [内存消耗：3,567.26kb] [文件加载：111]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739147',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/login/login',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  't' => '1579739187758',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000244s ]
+---------------------------------------------------------------
+[ 2020-01-23T08:26:28+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/login/updatecaptcha?t=1579739188523
+[运行时间：0.050260s] [吞吐率：19.90req/s] [内存消耗：3,567.26kb] [文件加载：111]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739147',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/login/login',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  't' => '1579739188523',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000240s ]
+---------------------------------------------------------------
+[ 2020-01-23T08:26:30+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/login/updatecaptcha?t=1579739190015
+[运行时间：0.051730s] [吞吐率：19.33req/s] [内存消耗：3,567.26kb] [文件加载：111]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739147',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/login/login',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  't' => '1579739190015',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000254s ]
+---------------------------------------------------------------
+[ 2020-01-23T08:26:36+08:00 ] 221.231.70.96 POST hqlyma.jinzhifm.com/login/login
+[运行时间：0.056888s] [吞吐率：17.58req/s] [内存消耗：3,748.48kb] [文件加载：116]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739147',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/login/login',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://hqlyma.jinzhifm.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '102',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+)
+[ info ] [ PARAM ] array (
+  'data' => 
+  array (
+    'username' => 'admin',
+    'password' => 'anttrade2019',
+    'vercode' => 'ky87g',
+    'remember' => 'on',
+  ),
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.002348s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000447s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000961s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000401s ]
+[ sql ] [ SQL ] UPDATE `ecshecom_admin`  SET `last_login_time` = 1579739196 , `last_login_ip` = 3722921568  WHERE  `id` = 1 [ RunTime:0.000297s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000265s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000723s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/login/login' , '{\"data\":{\"username\":\"admin\",\"password\":\"anttrade2019\",\"vercode\":\"ky87g\",\"remember\":\"on\"}}' , '登录' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579739196) [ RunTime:0.000269s ]
+---------------------------------------------------------------
+[ 2020-01-23T08:26:38+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/index/index
+[运行时间：0.061461s] [吞吐率：16.27req/s] [内存消耗：3,842.93kb] [文件加载：120]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739147; keep_login=1%7C1579742796%7C73349f5cb32c8cdbf6472f30e275cf67',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/login/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/admin/view/index/index.html [ array (
+  0 => 'menu',
+  1 => 'nav',
+  2 => 'adminRole',
+  3 => 'group',
+  4 => 'admin',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.002913s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000469s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_setting` [ RunTime:0.000911s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `ecshecom_setting` [ RunTime:0.000197s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_group` [ RunTime:0.000773s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000200s ]
+[ sql ] [ SQL ] SELECT `rules` FROM `ecshecom_admin_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000148s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_rule` [ RunTime:0.000712s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `is_menu` = 1  AND `is_show` = 1  AND `status` = 1  AND `module` <> 'admin' ORDER BY `sort` ASC [ RunTime:0.000281s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `name` = 'admin/index/index'  AND `status` = 1 LIMIT 1 [ RunTime:0.000242s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000734s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000178s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000656s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/index/index' , '' , '后台首页' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579739198) [ RunTime:0.000277s ]
+---------------------------------------------------------------
+[ 2020-01-23T08:26:38+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/index/console
+[运行时间：0.062462s] [吞吐率：16.01req/s] [内存消耗：3,798.25kb] [文件加载：118]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739147; keep_login=1%7C1579742796%7C73349f5cb32c8cdbf6472f30e275cf67',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/index/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/admin/view/index/console.html [ array (
+  0 => 'menu',
+  1 => 'nav',
+  2 => 'adminRole',
+  3 => 'group',
+  4 => 'admin',
+  5 => 'allUsers',
+  6 => 'messages',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.003100s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000362s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_setting` [ RunTime:0.000800s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `ecshecom_setting` [ RunTime:0.000190s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_group` [ RunTime:0.000786s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000188s ]
+[ sql ] [ SQL ] SELECT `rules` FROM `ecshecom_admin_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000149s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_rule` [ RunTime:0.000767s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `is_menu` = 1  AND `is_show` = 1  AND `status` = 1  AND `module` <> 'admin' ORDER BY `sort` ASC [ RunTime:0.000283s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `name` = 'admin/index/console'  AND `status` = 1 LIMIT 1 [ RunTime:0.000296s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user` [ RunTime:0.000942s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ecshecom_user` LIMIT 1 [ RunTime:0.000246s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_activity` [ RunTime:0.000699s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ecshecom_activity` LIMIT 1 [ RunTime:0.000209s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000784s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000186s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000671s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/index/console' , '' , '仪表盘' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579739198) [ RunTime:0.000293s ]
+---------------------------------------------------------------
+[ 2020-01-23T08:57:03+08:00 ] 221.231.70.96 GET hqlyapp.jinzhifm.com/
+[运行时间：0.035984s] [吞吐率：27.79req/s] [内存消耗：2,499.97kb] [文件加载：96]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=krpn26297n06lusjnfqbk02740; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579222106,1579312288,1579410846,1579675198',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-01-23T08:57:03+08:00 ] 221.231.70.96 GET hqlyapp.jinzhifm.com/login/login
+[运行时间：0.045728s] [吞吐率：21.87req/s] [内存消耗：3,334.39kb] [文件加载：102]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=krpn26297n06lusjnfqbk02740; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579222106,1579312288,1579410846,1579675198',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-01-23T08:57:04+08:00 ] 221.231.70.96 GET hqlyapp.jinzhifm.com/login/login?lang=en-us
+[运行时间：0.046252s] [吞吐率：21.62req/s] [内存消耗：3,321.46kb] [文件加载：101]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=krpn26297n06lusjnfqbk02740; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579222106,1579312288,1579410846,1579675198',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyapp.jinzhifm.com/login/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'lang' => 'en-us',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/en-us.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-01-23T08:58:08+08:00 ] 101.227.139.171 GET hqlyapp.jinzhifm.com/
+[运行时间：0.035992s] [吞吐率：27.78req/s] [内存消耗：2,497.91kb] [文件加载：96]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_2_1 like Mac OS X) AppleWebKit/602.4.6 (KHTML, like Gecko) Mobile/14D27 MicroMessenger/6.5.5 NetType/WIFI Language/zh_CN',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-01-23T08:58:20+08:00 ] 61.151.178.166 GET hqlyma.jinzhifm.com/
+[运行时间：0.038012s] [吞吐率：26.31req/s] [内存消耗：2,501.87kb] [文件加载：99]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0.1; OPPO R9s Build/MMB29M) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/37.0.0.0 Mobile MQQBrowser/6.9 TBS/036906 Safari/537.36 MicroMessenger/6.5.4.1000 NetType/4G Language/zh_CN',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000264s ]
+---------------------------------------------------------------
+[ 2020-01-23T09:22:27+08:00 ] 221.231.70.96 GET hqlyapp.jinzhifm.com/
+[运行时间：0.038978s] [吞吐率：25.66req/s] [内存消耗：2,500.38kb] [文件加载：96]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=krpn26297n06lusjnfqbk02740; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312288,1579410846,1579675198,1579741030; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579741030',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://118.190.135.107:8888/site',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-01-23T09:22:27+08:00 ] 221.231.70.96 GET hqlyapp.jinzhifm.com/login/login
+[运行时间：0.044521s] [吞吐率：22.46req/s] [内存消耗：3,334.67kb] [文件加载：102]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=krpn26297n06lusjnfqbk02740; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312288,1579410846,1579675198,1579741030; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579741030',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://118.190.135.107:8888/site',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-01-23T09:22:28+08:00 ] 221.231.70.96 GET hqlyapp.jinzhifm.com/login/login?lang=en-us
+[运行时间：0.045212s] [吞吐率：22.12req/s] [内存消耗：3,321.71kb] [文件加载：101]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=krpn26297n06lusjnfqbk02740; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312288,1579410846,1579675198,1579741030; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579741030',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyapp.jinzhifm.com/login/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'lang' => 'en-us',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/en-us.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-01-23T09:22:31+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/
+[运行时间：0.072286s] [吞吐率：13.83req/s] [内存消耗：3,842.14kb] [文件加载：120]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; keep_login=1%7C1579742796%7C73349f5cb32c8cdbf6472f30e275cf67; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739204',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://118.190.135.107:8888/site',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/admin/view/index/index.html [ array (
+  0 => 'menu',
+  1 => 'nav',
+  2 => 'adminRole',
+  3 => 'group',
+  4 => 'admin',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.003172s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000373s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_setting` [ RunTime:0.000911s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `ecshecom_setting` [ RunTime:0.000206s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_group` [ RunTime:0.010402s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000222s ]
+[ sql ] [ SQL ] SELECT `rules` FROM `ecshecom_admin_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000167s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_rule` [ RunTime:0.000779s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `is_menu` = 1  AND `is_show` = 1  AND `status` = 1  AND `module` <> 'admin' ORDER BY `sort` ASC [ RunTime:0.000305s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `name` = 'admin/index/index'  AND `status` = 1 LIMIT 1 [ RunTime:0.000279s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000798s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000204s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000744s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/' , '' , '后台首页' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579742551) [ RunTime:0.000301s ]
+---------------------------------------------------------------
+[ 2020-01-23T09:22:31+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/index/console
+[运行时间：0.064188s] [吞吐率：15.58req/s] [内存消耗：3,798.25kb] [文件加载：118]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; keep_login=1%7C1579742796%7C73349f5cb32c8cdbf6472f30e275cf67; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739204',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/admin/view/index/console.html [ array (
+  0 => 'menu',
+  1 => 'nav',
+  2 => 'adminRole',
+  3 => 'group',
+  4 => 'admin',
+  5 => 'allUsers',
+  6 => 'messages',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.003229s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000415s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_setting` [ RunTime:0.000955s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `ecshecom_setting` [ RunTime:0.000211s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_group` [ RunTime:0.000820s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000199s ]
+[ sql ] [ SQL ] SELECT `rules` FROM `ecshecom_admin_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000153s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_rule` [ RunTime:0.001480s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `is_menu` = 1  AND `is_show` = 1  AND `status` = 1  AND `module` <> 'admin' ORDER BY `sort` ASC [ RunTime:0.000348s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `name` = 'admin/index/console'  AND `status` = 1 LIMIT 1 [ RunTime:0.000255s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user` [ RunTime:0.000955s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ecshecom_user` LIMIT 1 [ RunTime:0.000174s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_activity` [ RunTime:0.001657s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ecshecom_activity` LIMIT 1 [ RunTime:0.000221s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000818s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000193s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000734s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/index/console' , '' , '仪表盘' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579742551) [ RunTime:0.000297s ]
+---------------------------------------------------------------
+[ 2020-01-23T09:22:35+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/admin/adminlist
+[运行时间：0.066386s] [吞吐率：15.06req/s] [内存消耗：4,112.32kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; keep_login=1%7C1579742796%7C73349f5cb32c8cdbf6472f30e275cf67; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739204',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/admin/view/admin/admin_list.html [ array (
+  0 => 'menu',
+  1 => 'nav',
+  2 => 'adminRole',
+  3 => 'group',
+  4 => 'admin',
+  5 => 'gold_name',
+  6 => 'adminAuthGroupList',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.003070s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000437s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_setting` [ RunTime:0.000931s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `ecshecom_setting` [ RunTime:0.000223s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_group` [ RunTime:0.000761s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000223s ]
+[ sql ] [ SQL ] SELECT `rules` FROM `ecshecom_admin_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000166s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_rule` [ RunTime:0.000767s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `is_menu` = 1  AND `is_show` = 1  AND `status` = 1  AND `module` <> 'admin' ORDER BY `sort` ASC [ RunTime:0.000302s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `name` = 'admin/admin/adminlist'  AND `status` = 1 LIMIT 1 [ RunTime:0.000332s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`type`,`title`,`description`,`status`,`rules`,`end_time`,`create_time`,`update_time` FROM `ecshecom_admin_auth_group` WHERE  `status` >= 0 [ RunTime:0.000265s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000789s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000162s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000657s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/admin/adminlist' , '' , '管理员列表' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579742555) [ RunTime:0.000277s ]
+---------------------------------------------------------------
+[ 2020-01-23T09:22:35+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/admin/adminlist?page=1&limit=20
+[运行时间：0.066272s] [吞吐率：15.09req/s] [内存消耗：3,889.38kb] [文件加载：118]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312296,1579414992,1579675199,1579739147; keep_login=1%7C1579742796%7C73349f5cb32c8cdbf6472f30e275cf67; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579739204',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/admin/adminlist',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.002269s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000481s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_setting` [ RunTime:0.000981s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `ecshecom_setting` [ RunTime:0.000204s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_group` [ RunTime:0.000814s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000202s ]
+[ sql ] [ SQL ] SELECT `rules` FROM `ecshecom_admin_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000159s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_rule` [ RunTime:0.000740s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `is_menu` = 1  AND `is_show` = 1  AND `status` = 1  AND `module` <> 'admin' ORDER BY `sort` ASC [ RunTime:0.000289s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `name` = 'admin/admin/adminlist'  AND `status` = 1 LIMIT 1 [ RunTime:0.000258s ]
+[ sql ] [ SQL ] SELECT `id`,`pid`,`module`,`type`,`title`,`description`,`status`,`rules`,`end_time`,`create_time`,`update_time` FROM `ecshecom_admin_auth_group` WHERE  `status` >= 0 [ RunTime:0.000266s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000785s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin` WHERE  `status` >= 0 LIMIT 0,20 [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000200s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ecshecom_admin` WHERE  `status` >= 0 LIMIT 1 [ RunTime:0.000206s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000209s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000706s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/admin/adminlist' , '{\"page\":\"1\",\"limit\":\"20\"}' , '获取管理员列表' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579742555) [ RunTime:0.000276s ]
+---------------------------------------------------------------
+[ 2020-01-23T09:22:39+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/user/userlist
+[运行时间：0.075884s] [吞吐率：13.18req/s] [内存消耗：4,454.02kb] [文件加载：135]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; keep_login=1%7C1579742796%7C73349f5cb32c8cdbf6472f30e275cf67; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579414992,1579675199,1579739147,1579742557; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579742557',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/admin/view/user/user_list.html [ array (
+  0 => 'menu',
+  1 => 'nav',
+  2 => 'adminRole',
+  3 => 'group',
+  4 => 'admin',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.003720s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000454s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_setting` [ RunTime:0.000967s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `ecshecom_setting` [ RunTime:0.000215s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_group` [ RunTime:0.000848s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000212s ]
+[ sql ] [ SQL ] SELECT `rules` FROM `ecshecom_admin_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000155s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_rule` [ RunTime:0.000768s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `is_menu` = 1  AND `is_show` = 1  AND `status` = 1  AND `module` <> 'admin' ORDER BY `sort` ASC [ RunTime:0.000297s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `name` = 'admin/user/userlist'  AND `status` = 1 LIMIT 1 [ RunTime:0.000367s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user` [ RunTime:0.000978s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_user` WHERE  `admin_notice_status` = 0 LIMIT 1 [ RunTime:0.000546s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000838s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000173s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000723s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/user/userlist' , '' , '用户列表' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579742559) [ RunTime:0.000299s ]
+---------------------------------------------------------------
+[ 2020-01-23T09:22:39+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/user/userlist?page=1&limit=20
+[运行时间：0.084537s] [吞吐率：11.83req/s] [内存消耗：4,263.26kb] [文件加载：131]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; keep_login=1%7C1579742796%7C73349f5cb32c8cdbf6472f30e275cf67; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579414992,1579675199,1579739147,1579742557; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579742557',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/user/userlist',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.003819s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000398s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_setting` [ RunTime:0.000947s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `ecshecom_setting` [ RunTime:0.000227s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_group` [ RunTime:0.000835s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000236s ]
+[ sql ] [ SQL ] SELECT `rules` FROM `ecshecom_admin_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000194s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_rule` [ RunTime:0.000824s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `is_menu` = 1  AND `is_show` = 1  AND `status` = 1  AND `module` <> 'admin' ORDER BY `sort` ASC [ RunTime:0.000334s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `name` = 'admin/user/userlist'  AND `status` = 1 LIMIT 1 [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user` [ RunTime:0.001027s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_user` ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000573s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ecshecom_user` LIMIT 1 [ RunTime:0.000204s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user_real` [ RunTime:0.000748s ]
+[ sql ] [ SQL ] SELECT `status`,`name` FROM `ecshecom_user_real` WHERE  `userid` = 57 LIMIT 1 [ RunTime:0.000204s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user_role` [ RunTime:0.000727s ]
+[ sql ] [ SQL ] SELECT `name` FROM `ecshecom_user_role` WHERE  `id` = 10032 LIMIT 1 [ RunTime:0.000194s ]
+[ sql ] [ SQL ] SELECT `status`,`name` FROM `ecshecom_user_real` WHERE  `userid` = 56 LIMIT 1 [ RunTime:0.000199s ]
+[ sql ] [ SQL ] SELECT `name` FROM `ecshecom_user_role` WHERE  `id` = 10031 LIMIT 1 [ RunTime:0.000187s ]
+[ sql ] [ SQL ] SELECT `status`,`name` FROM `ecshecom_user_real` WHERE  `userid` = 55 LIMIT 1 [ RunTime:0.000196s ]
+[ sql ] [ SQL ] SELECT `name` FROM `ecshecom_user_role` WHERE  `id` = 10029 LIMIT 1 [ RunTime:0.000180s ]
+[ sql ] [ SQL ] SELECT `status`,`name` FROM `ecshecom_user_real` WHERE  `userid` = 54 LIMIT 1 [ RunTime:0.000203s ]
+[ sql ] [ SQL ] SELECT `name` FROM `ecshecom_user_role` WHERE  `id` = 10028 LIMIT 1 [ RunTime:0.000177s ]
+[ sql ] [ SQL ] SELECT `status`,`name` FROM `ecshecom_user_real` WHERE  `userid` = 53 LIMIT 1 [ RunTime:0.000217s ]
+[ sql ] [ SQL ] SELECT `name` FROM `ecshecom_user_role` WHERE  `id` = 10027 LIMIT 1 [ RunTime:0.000175s ]
+[ sql ] [ SQL ] SELECT `status`,`name` FROM `ecshecom_user_real` WHERE  `userid` = 52 LIMIT 1 [ RunTime:0.000209s ]
+[ sql ] [ SQL ] SELECT `name` FROM `ecshecom_user_role` WHERE  `id` = 10026 LIMIT 1 [ RunTime:0.000177s ]
+[ sql ] [ SQL ] SELECT `status`,`name` FROM `ecshecom_user_real` WHERE  `userid` = 51 LIMIT 1 [ RunTime:0.000203s ]
+[ sql ] [ SQL ] SELECT `name` FROM `ecshecom_user_role` WHERE  `id` = 10025 LIMIT 1 [ RunTime:0.000192s ]
+[ sql ] [ SQL ] SELECT `status`,`name` FROM `ecshecom_user_real` WHERE  `userid` = 50 LIMIT 1 [ RunTime:0.000189s ]
+[ sql ] [ SQL ] SELECT `name` FROM `ecshecom_user_role` WHERE  `id` = 10030 LIMIT 1 [ RunTime:0.000185s ]
+[ sql ] [ SQL ] SELECT `status`,`name` FROM `ecshecom_user_real` WHERE  `userid` = 49 LIMIT 1 [ RunTime:0.000193s ]
+[ sql ] [ SQL ] SELECT `name` FROM `ecshecom_user_role` WHERE  `id` = 10023 LIMIT 1 [ RunTime:0.000198s ]
+[ sql ] [ SQL ] SELECT `status`,`name` FROM `ecshecom_user_real` WHERE  `userid` = 48 LIMIT 1 [ RunTime:0.000200s ]
+[ sql ] [ SQL ] SELECT `name` FROM `ecshecom_user_role` WHERE  `id` = 10024 LIMIT 1 [ RunTime:0.000178s ]
+[ sql ] [ SQL ] SELECT `status`,`name` FROM `ecshecom_user_real` WHERE  `userid` = 47 LIMIT 1 [ RunTime:0.000211s ]
+[ sql ] [ SQL ] SELECT `name` FROM `ecshecom_user_role` WHERE  `id` = 10023 LIMIT 1 [ RunTime:0.000179s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000838s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000187s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000736s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/user/userlist' , '{\"page\":\"1\",\"limit\":\"20\"}' , '获取用户列表' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579742559) [ RunTime:0.000329s ]
+---------------------------------------------------------------
+[ 2020-01-23T09:24:47+08:00 ] 221.231.70.96 GET hqlyapp.jinzhifm.com/
+[运行时间：0.036961s] [吞吐率：27.06req/s] [内存消耗：2,500.38kb] [文件加载：96]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=krpn26297n06lusjnfqbk02740; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312288,1579410846,1579675198,1579741030; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579741030',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://118.190.135.107:8888/site',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-01-23T09:24:47+08:00 ] 221.231.70.96 GET hqlyapp.jinzhifm.com/login/login
+[运行时间：0.045348s] [吞吐率：22.05req/s] [内存消耗：3,334.67kb] [文件加载：102]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=krpn26297n06lusjnfqbk02740; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312288,1579410846,1579675198,1579741030; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579741030',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://118.190.135.107:8888/site',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-01-23T09:24:47+08:00 ] 221.231.70.96 GET hqlyapp.jinzhifm.com/login/login?lang=en-us
+[运行时间：0.047346s] [吞吐率：21.12req/s] [内存消耗：3,321.71kb] [文件加载：101]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=krpn26297n06lusjnfqbk02740; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312288,1579410846,1579675198,1579741030; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579741030',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyapp.jinzhifm.com/login/login',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'lang' => 'en-us',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/en-us.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-01-23T09:24:53+08:00 ] 221.231.70.96 POST hqlyapp.jinzhifm.com/login/loginsubmit
+[运行时间：0.083608s] [吞吐率：11.96req/s] [内存消耗：3,727.50kb] [文件加载：113]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=krpn26297n06lusjnfqbk02740; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312288,1579410846,1579675198,1579741030; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579741030',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyapp.jinzhifm.com/login/login?lang=en-us',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://hqlyapp.jinzhifm.com',
+  'accept' => '*/*',
+  'content-length' => '90',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+)
+[ info ] [ PARAM ] array (
+  'token' => '513bf3ec073a35439b4a7dbaf987f282',
+  'name' => '15251137102',
+  'password' => 'wang666,./',
+  'lang' => 'en-us',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000477s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user` [ RunTime:0.001206s ]
+[ sql ] [ SQL ] SELECT `id`,`status`,`is_first_login` FROM `ecshecom_user` WHERE  `moble` = '15251137102' LIMIT 1 [ RunTime:0.000322s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user_key` [ RunTime:0.000774s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_user_key` WHERE  `userid` = 47 LIMIT 1 [ RunTime:0.000215s ]
+[ sql ] [ SQL ] UPDATE `ecshecom_user`  SET `check_code` = 'DWYMKGFCZEAQ' , `ip` = '221.231.70.96'  WHERE  `id` = 47 [ RunTime:0.000325s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user_login` [ RunTime:0.000952s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_user_login` (`user_id` , `device` , `platform` , `login_type` , `ip` , `client_version` , `device_name` , `created_at`) VALUES (47 , '' , 1 , 1 , '221.231.70.96' , '' , '' , 1579742693) [ RunTime:0.000307s ]
+---------------------------------------------------------------
+[ 2020-01-23T09:24:55+08:00 ] 221.231.70.96 GET hqlyapp.jinzhifm.com/index/index
+[运行时间：0.066069s] [吞吐率：15.14req/s] [内存消耗：4,110.43kb] [文件加载：119]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=krpn26297n06lusjnfqbk02740; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312288,1579410846,1579675198,1579741030; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579742693',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyapp.jinzhifm.com/login/login?lang=en-us',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/index/index_finance.html [ array (
+  0 => 'username',
+  1 => 'userrole',
+  2 => 'userStatus',
+  3 => 'checkText',
+  4 => 'noticeStatus',
+  5 => 'pos',
+  6 => 'notices',
+  7 => 'page',
+  8 => 'demondInfos',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000464s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user` [ RunTime:0.001205s ]
+[ sql ] [ SQL ] SELECT `ip` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SELECT `u`.`username`,`u`.`status`,`u`.`check_email_c`,`u`.`level`,`u`.`email`,`u`.`invit_1`,`u`.`country`,`u`.`moble`,`r`.`role_id` FROM `ecshecom_user` `u` INNER JOIN `ecshecom_user_role` `r` ON `u`.`role_id`=`r`.`id` WHERE  `u`.`id` = '47' LIMIT 1 [ RunTime:0.000369s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user_notice` [ RunTime:0.000790s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_user_notice` WHERE  `user_id` = 47  AND `status` = 0 LIMIT 1 [ RunTime:0.000225s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_apple` [ RunTime:0.000729s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(*) AS think_count FROM `ecshecom_apple` `a` INNER JOIN `ecshecom_apple_details` `d` ON `a`.`id`=`d`.`apple_id` WHERE  `a`.`user_id` = '47' GROUP BY `d`.`apple_id` ) `_group_count_` LIMIT 1 [ RunTime:0.000226s ]
+[ sql ] [ SQL ] SELECT `d`.*,a.updated_at as apple_updated_at,a.created_at as apple_created_at,a.contract_type as apple_contract_type,a.process_type as apple_process_type,a.is_soft_first as apple_is_soft_first,a.is_public_rental as apple_is_public_rental,a.status as apple_status FROM `ecshecom_apple` `a` INNER JOIN `ecshecom_apple_details` `d` ON `a`.`id`=`d`.`apple_id` WHERE  `a`.`user_id` = '47' GROUP BY `d`.`apple_id` ORDER BY `a`.`updated_at` ASC LIMIT 0,30 [ RunTime:0.000593s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_user_notice` WHERE  `apple_id` IN (847,849,850,851,848,852,853,854,855,856,859,860,861,862) ORDER BY `created_at` DESC LIMIT 10 [ RunTime:0.000273s ]
+---------------------------------------------------------------
+[ 2020-01-23T09:24:56+08:00 ] 221.231.70.96 GET hqlyapp.jinzhifm.com/index/index?lang=en-us
+[运行时间：0.064349s] [吞吐率：15.54req/s] [内存消耗：4,097.63kb] [文件加载：118]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=krpn26297n06lusjnfqbk02740; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312288,1579410846,1579675198,1579741030; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579742693',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyapp.jinzhifm.com/index/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'lang' => 'en-us',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/en-us.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/index/index_finance.html [ array (
+  0 => 'username',
+  1 => 'userrole',
+  2 => 'userStatus',
+  3 => 'checkText',
+  4 => 'noticeStatus',
+  5 => 'pos',
+  6 => 'notices',
+  7 => 'page',
+  8 => 'demondInfos',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000429s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user` [ RunTime:0.002382s ]
+[ sql ] [ SQL ] SELECT `ip` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000231s ]
+[ sql ] [ SQL ] SELECT `u`.`username`,`u`.`status`,`u`.`check_email_c`,`u`.`level`,`u`.`email`,`u`.`invit_1`,`u`.`country`,`u`.`moble`,`r`.`role_id` FROM `ecshecom_user` `u` INNER JOIN `ecshecom_user_role` `r` ON `u`.`role_id`=`r`.`id` WHERE  `u`.`id` = '47' LIMIT 1 [ RunTime:0.000257s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user_notice` [ RunTime:0.000805s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_user_notice` WHERE  `user_id` = 47  AND `status` = 0 LIMIT 1 [ RunTime:0.000230s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_apple` [ RunTime:0.000734s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(*) AS think_count FROM `ecshecom_apple` `a` INNER JOIN `ecshecom_apple_details` `d` ON `a`.`id`=`d`.`apple_id` WHERE  `a`.`user_id` = '47' GROUP BY `d`.`apple_id` ) `_group_count_` LIMIT 1 [ RunTime:0.000220s ]
+[ sql ] [ SQL ] SELECT `d`.*,a.updated_at as apple_updated_at,a.created_at as apple_created_at,a.contract_type as apple_contract_type,a.process_type as apple_process_type,a.is_soft_first as apple_is_soft_first,a.is_public_rental as apple_is_public_rental,a.status as apple_status FROM `ecshecom_apple` `a` INNER JOIN `ecshecom_apple_details` `d` ON `a`.`id`=`d`.`apple_id` WHERE  `a`.`user_id` = '47' GROUP BY `d`.`apple_id` ORDER BY `a`.`updated_at` ASC LIMIT 0,30 [ RunTime:0.000585s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_user_notice` WHERE  `apple_id` IN (847,849,850,851,848,852,853,854,855,856,859,860,861,862) ORDER BY `created_at` DESC LIMIT 10 [ RunTime:0.000231s ]
+---------------------------------------------------------------
+[ 2020-01-23T09:27:57+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/
+[运行时间：0.063996s] [吞吐率：15.63req/s] [内存消耗：3,841.89kb] [文件加载：120]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579414992,1579675199,1579739147,1579742557; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579742557',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://118.190.135.107:8888/site',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/admin/view/index/index.html [ array (
+  0 => 'menu',
+  1 => 'nav',
+  2 => 'adminRole',
+  3 => 'group',
+  4 => 'admin',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.003165s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000417s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_setting` [ RunTime:0.001030s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `ecshecom_setting` [ RunTime:0.000230s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_group` [ RunTime:0.000794s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SELECT `rules` FROM `ecshecom_admin_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000172s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_rule` [ RunTime:0.000804s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `is_menu` = 1  AND `is_show` = 1  AND `status` = 1  AND `module` <> 'admin' ORDER BY `sort` ASC [ RunTime:0.000290s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `name` = 'admin/index/index'  AND `status` = 1 LIMIT 1 [ RunTime:0.000274s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000821s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000189s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000746s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/' , '' , '后台首页' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579742877) [ RunTime:0.000288s ]
+---------------------------------------------------------------
+[ 2020-01-23T09:27:57+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/index/console
+[运行时间：0.064545s] [吞吐率：15.49req/s] [内存消耗：3,798.25kb] [文件加载：118]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579414992,1579675199,1579739147,1579742557; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579742557',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/admin/view/index/console.html [ array (
+  0 => 'menu',
+  1 => 'nav',
+  2 => 'adminRole',
+  3 => 'group',
+  4 => 'admin',
+  5 => 'allUsers',
+  6 => 'messages',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.003023s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000399s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_setting` [ RunTime:0.000889s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `ecshecom_setting` [ RunTime:0.000191s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_group` [ RunTime:0.000811s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000192s ]
+[ sql ] [ SQL ] SELECT `rules` FROM `ecshecom_admin_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000172s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_rule` [ RunTime:0.000760s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `is_menu` = 1  AND `is_show` = 1  AND `status` = 1  AND `module` <> 'admin' ORDER BY `sort` ASC [ RunTime:0.000301s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `name` = 'admin/index/console'  AND `status` = 1 LIMIT 1 [ RunTime:0.000261s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user` [ RunTime:0.000951s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ecshecom_user` LIMIT 1 [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_activity` [ RunTime:0.000694s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ecshecom_activity` LIMIT 1 [ RunTime:0.000171s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000764s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000190s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000711s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/index/console' , '' , '仪表盘' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579742877) [ RunTime:0.000288s ]
+---------------------------------------------------------------
+[ 2020-01-23T09:27:59+08:00 ] 221.231.70.96 GET hqlyapp.jinzhifm.com/
+[运行时间：0.064562s] [吞吐率：15.49req/s] [内存消耗：4,109.65kb] [文件加载：119]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=krpn26297n06lusjnfqbk02740; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312288,1579410846,1579675198,1579741030; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579742693',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://118.190.135.107:8888/site',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/index/index_finance.html [ array (
+  0 => 'username',
+  1 => 'userrole',
+  2 => 'userStatus',
+  3 => 'checkText',
+  4 => 'noticeStatus',
+  5 => 'pos',
+  6 => 'notices',
+  7 => 'page',
+  8 => 'demondInfos',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000442s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user` [ RunTime:0.001280s ]
+[ sql ] [ SQL ] SELECT `ip` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000261s ]
+[ sql ] [ SQL ] SELECT `u`.`username`,`u`.`status`,`u`.`check_email_c`,`u`.`level`,`u`.`email`,`u`.`invit_1`,`u`.`country`,`u`.`moble`,`r`.`role_id` FROM `ecshecom_user` `u` INNER JOIN `ecshecom_user_role` `r` ON `u`.`role_id`=`r`.`id` WHERE  `u`.`id` = '47' LIMIT 1 [ RunTime:0.000299s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user_notice` [ RunTime:0.000833s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_user_notice` WHERE  `user_id` = 47  AND `status` = 0 LIMIT 1 [ RunTime:0.000266s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_apple` [ RunTime:0.000771s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(*) AS think_count FROM `ecshecom_apple` `a` INNER JOIN `ecshecom_apple_details` `d` ON `a`.`id`=`d`.`apple_id` WHERE  `a`.`user_id` = '47' GROUP BY `d`.`apple_id` ) `_group_count_` LIMIT 1 [ RunTime:0.000258s ]
+[ sql ] [ SQL ] SELECT `d`.*,a.updated_at as apple_updated_at,a.created_at as apple_created_at,a.contract_type as apple_contract_type,a.process_type as apple_process_type,a.is_soft_first as apple_is_soft_first,a.is_public_rental as apple_is_public_rental,a.status as apple_status FROM `ecshecom_apple` `a` INNER JOIN `ecshecom_apple_details` `d` ON `a`.`id`=`d`.`apple_id` WHERE  `a`.`user_id` = '47' GROUP BY `d`.`apple_id` ORDER BY `a`.`updated_at` ASC LIMIT 0,30 [ RunTime:0.000613s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_user_notice` WHERE  `apple_id` IN (847,849,850,851,848,852,853,854,855,856,859,860,861,862) ORDER BY `created_at` DESC LIMIT 10 [ RunTime:0.000285s ]
+---------------------------------------------------------------
+[ 2020-01-23T09:27:59+08:00 ] 221.231.70.96 GET hqlyapp.jinzhifm.com/?lang=en-us
+[运行时间：0.064182s] [吞吐率：15.58req/s] [内存消耗：4,097.15kb] [文件加载：118]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=krpn26297n06lusjnfqbk02740; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579312288,1579410846,1579675198,1579741030; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579742693',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyapp.jinzhifm.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'lang' => 'en-us',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/en-us.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/index/index_finance.html [ array (
+  0 => 'username',
+  1 => 'userrole',
+  2 => 'userStatus',
+  3 => 'checkText',
+  4 => 'noticeStatus',
+  5 => 'pos',
+  6 => 'notices',
+  7 => 'page',
+  8 => 'demondInfos',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000446s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user` [ RunTime:0.001164s ]
+[ sql ] [ SQL ] SELECT `ip` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SELECT `u`.`username`,`u`.`status`,`u`.`check_email_c`,`u`.`level`,`u`.`email`,`u`.`invit_1`,`u`.`country`,`u`.`moble`,`r`.`role_id` FROM `ecshecom_user` `u` INNER JOIN `ecshecom_user_role` `r` ON `u`.`role_id`=`r`.`id` WHERE  `u`.`id` = '47' LIMIT 1 [ RunTime:0.000269s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user_notice` [ RunTime:0.000797s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_user_notice` WHERE  `user_id` = 47  AND `status` = 0 LIMIT 1 [ RunTime:0.000222s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_apple` [ RunTime:0.000693s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM ( SELECT count(*) AS think_count FROM `ecshecom_apple` `a` INNER JOIN `ecshecom_apple_details` `d` ON `a`.`id`=`d`.`apple_id` WHERE  `a`.`user_id` = '47' GROUP BY `d`.`apple_id` ) `_group_count_` LIMIT 1 [ RunTime:0.000239s ]
+[ sql ] [ SQL ] SELECT `d`.*,a.updated_at as apple_updated_at,a.created_at as apple_created_at,a.contract_type as apple_contract_type,a.process_type as apple_process_type,a.is_soft_first as apple_is_soft_first,a.is_public_rental as apple_is_public_rental,a.status as apple_status FROM `ecshecom_apple` `a` INNER JOIN `ecshecom_apple_details` `d` ON `a`.`id`=`d`.`apple_id` WHERE  `a`.`user_id` = '47' GROUP BY `d`.`apple_id` ORDER BY `a`.`updated_at` ASC LIMIT 0,30 [ RunTime:0.000582s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_user_notice` WHERE  `apple_id` IN (847,849,850,851,848,852,853,854,855,856,859,860,861,862) ORDER BY `created_at` DESC LIMIT 10 [ RunTime:0.000224s ]
+---------------------------------------------------------------
+[ 2020-01-23T09:28:04+08:00 ] 59.37.97.53 GET hqlyapp.jinzhifm.com/
+[运行时间：0.035900s] [吞吐率：27.86req/s] [内存消耗：2,476.18kb] [文件加载：95]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'Keep-Alive',
+  'pragma' => 'no-cache',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML; like Gecko) Mobile/12F70 MicroMessenger/6.1.5 NetType/WIFI',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-01-23T09:35:36+08:00 ] 47.100.61.51 GET hqlyma.jinzhifm.com/
+[运行时间：0.038888s] [吞吐率：25.71req/s] [内存消耗：2,479.80kb] [文件加载：98]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000271s ]
+---------------------------------------------------------------
+[ 2020-01-23T09:35:36+08:00 ] 47.100.61.51 GET hqlyma.jinzhifm.com/login/login
+[运行时间：0.052971s] [吞吐率：18.88req/s] [内存消耗：3,550.11kb] [文件加载：113]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/admin/view/login/login.html [ array (
+  0 => 'captcha',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.000239s ]
+---------------------------------------------------------------
+[ 2020-01-23T09:35:38+08:00 ] 47.100.61.51 GET hqlyma.jinzhifm.com/captcha
+[运行时间：0.032544s] [吞吐率：30.73req/s] [内存消耗：1,943.39kb] [文件加载：80]
+[ info ] [ ROUTE ] array (
+  'rule' => 'captcha/<id?>',
+  'route' => '\\think\\captcha\\CaptchaController@index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-01-23T10:36:39+08:00 ] 47.97.216.82 GET hqlyapp.jinzhifm.com/
+[运行时间：0.037406s] [吞吐率：26.73req/s] [内存消耗：2,475.97kb] [文件加载：95]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-01-23T10:36:39+08:00 ] 47.97.216.82 GET hqlyapp.jinzhifm.com/login/login
+[运行时间：0.045017s] [吞吐率：22.21req/s] [内存消耗：3,319.06kb] [文件加载：101]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-01-23T10:36:41+08:00 ] 47.97.216.82 GET hqlyapp.jinzhifm.com/index/index
+[运行时间：0.038204s] [吞吐率：26.18req/s] [内存消耗：2,476.75kb] [文件加载：95]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+[ 2020-01-23T10:36:41+08:00 ] 47.97.216.82 GET hqlyapp.jinzhifm.com/login/firstlogin
+[运行时间：0.044042s] [吞吐率：22.71req/s] [内存消耗：3,317.25kb] [文件加载：101]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+---------------------------------------------------------------
+[ 2020-01-23T10:36:41+08:00 ] 47.97.216.82 GET hqlyapp.jinzhifm.com/login/login
+[运行时间：0.046058s] [吞吐率：21.71req/s] [内存消耗：3,319.06kb] [文件加载：101]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-01-23T10:36:41+08:00 ] 47.97.216.82 GET hqlyapp.jinzhifm.com/login/login
+[运行时间：0.046307s] [吞吐率：21.60req/s] [内存消耗：3,319.06kb] [文件加载：101]
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip',
+  'connection' => 'Keep-Alive',
+  'host' => 'hqlyapp.jinzhifm.com',
+  'user-agent' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-cn.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/index/view/login/login.html [ array (
+) ]
+---------------------------------------------------------------
+[ 2020-01-23T16:58:09+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/apply/lst
+[运行时间：0.066132s] [吞吐率：15.12req/s] [内存消耗：4,021.60kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579675199,1579739147,1579742557,1579742884; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579742884',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/admin/view/apply/lst.html [ array (
+  0 => 'menu',
+  1 => 'nav',
+  2 => 'adminRole',
+  3 => 'group',
+  4 => 'admin',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.003639s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000433s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_setting` [ RunTime:0.000917s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `ecshecom_setting` [ RunTime:0.000205s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_group` [ RunTime:0.000842s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000198s ]
+[ sql ] [ SQL ] SELECT `rules` FROM `ecshecom_admin_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000182s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_rule` [ RunTime:0.000754s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `is_menu` = 1  AND `is_show` = 1  AND `status` = 1  AND `module` <> 'admin' ORDER BY `sort` ASC [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `name` = 'admin/apply/lst'  AND `status` = 1 LIMIT 1 [ RunTime:0.000367s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000810s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000170s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000693s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/apply/lst' , '' , '申请列表' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579769889) [ RunTime:0.000280s ]
+---------------------------------------------------------------
+[ 2020-01-23T16:58:09+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/apply/lst?page=1&limit=20
+[运行时间：0.074514s] [吞吐率：13.42req/s] [内存消耗：3,854.27kb] [文件加载：120]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579675199,1579739147,1579742557,1579742884; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579742884',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/apply/lst',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.003734s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000418s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_setting` [ RunTime:0.000905s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `ecshecom_setting` [ RunTime:0.000206s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_group` [ RunTime:0.000804s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000200s ]
+[ sql ] [ SQL ] SELECT `rules` FROM `ecshecom_admin_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000161s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_rule` [ RunTime:0.000757s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `is_menu` = 1  AND `is_show` = 1  AND `status` = 1  AND `module` <> 'admin' ORDER BY `sort` ASC [ RunTime:0.000348s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `name` = 'admin/apply/lst'  AND `status` = 1 LIMIT 1 [ RunTime:0.000254s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_apple` [ RunTime:0.000748s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_apple` ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000209s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ecshecom_apple` LIMIT 1 [ RunTime:0.000176s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_apple_details` [ RunTime:0.001102s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 862 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000175s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user` [ RunTime:0.000881s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000281s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 861 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000207s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000144s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 860 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000151s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 859 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000174s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000157s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 856 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000143s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000156s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 855 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000170s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000153s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 854 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000147s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000137s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 853 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000165s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000155s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 852 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000137s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000142s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 851 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000167s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000157s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 850 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000158s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000139s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 849 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000155s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000157s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 848 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000144s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 847 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000140s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000147s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000812s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000169s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000691s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/apply/lst' , '{\"page\":\"1\",\"limit\":\"20\"}' , '获取租赁申请列表' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579769889) [ RunTime:0.000276s ]
+---------------------------------------------------------------
+[ 2020-01-23T16:58:42+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/apply/lst
+[运行时间：0.061352s] [吞吐率：16.30req/s] [内存消耗：3,867.84kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579675199,1579739147,1579742557,1579742884; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579742884',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/apply/lst',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/admin/view/apply/lst.html [ array (
+  0 => 'menu',
+  1 => 'nav',
+  2 => 'adminRole',
+  3 => 'group',
+  4 => 'admin',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.003580s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000412s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_setting` [ RunTime:0.000971s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `ecshecom_setting` [ RunTime:0.000218s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_group` [ RunTime:0.000794s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000203s ]
+[ sql ] [ SQL ] SELECT `rules` FROM `ecshecom_admin_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000151s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_rule` [ RunTime:0.000760s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `is_menu` = 1  AND `is_show` = 1  AND `status` = 1  AND `module` <> 'admin' ORDER BY `sort` ASC [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `name` = 'admin/apply/lst'  AND `status` = 1 LIMIT 1 [ RunTime:0.000252s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000825s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000171s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000691s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/apply/lst' , '' , '申请列表' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579769922) [ RunTime:0.000276s ]
+---------------------------------------------------------------
+[ 2020-01-23T16:58:43+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/apply/lst?page=1&limit=20
+[运行时间：0.074037s] [吞吐率：13.51req/s] [内存消耗：3,854.27kb] [文件加载：120]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579675199,1579739147,1579742557,1579742884; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579742884',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/apply/lst',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.003547s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000428s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_setting` [ RunTime:0.000897s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `ecshecom_setting` [ RunTime:0.000208s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_group` [ RunTime:0.000815s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000207s ]
+[ sql ] [ SQL ] SELECT `rules` FROM `ecshecom_admin_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000164s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_rule` [ RunTime:0.000816s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `is_menu` = 1  AND `is_show` = 1  AND `status` = 1  AND `module` <> 'admin' ORDER BY `sort` ASC [ RunTime:0.000293s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `name` = 'admin/apply/lst'  AND `status` = 1 LIMIT 1 [ RunTime:0.000279s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_apple` [ RunTime:0.000759s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_apple` ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000226s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ecshecom_apple` LIMIT 1 [ RunTime:0.000177s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_apple_details` [ RunTime:0.001128s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 862 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000199s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user` [ RunTime:0.000918s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000183s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 861 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000166s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000140s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 860 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000153s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000144s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 859 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000157s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000144s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 856 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000152s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000172s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 855 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000164s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000156s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 854 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000153s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000162s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 853 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000156s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000152s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 852 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000142s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000151s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 851 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000157s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000146s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 850 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000161s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000145s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 849 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000159s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000153s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 848 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000160s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000157s ]
+[ sql ] [ SQL ] SELECT `house_name` FROM `ecshecom_apple_details` WHERE  `apple_id` = 847 ORDER BY `created_at` DESC LIMIT 1 [ RunTime:0.000150s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_user` WHERE  `id` = 47 LIMIT 1 [ RunTime:0.000177s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000791s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000163s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000675s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/apply/lst' , '{\"page\":\"1\",\"limit\":\"20\"}' , '获取租赁申请列表' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579769923) [ RunTime:0.000281s ]
+---------------------------------------------------------------
+[ 2020-01-23T16:58:46+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/usernotice/index
+[运行时间：0.065584s] [吞吐率：15.25req/s] [内存消耗：4,009.68kb] [文件加载：124]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579675199,1579739147,1579742557,1579742884; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579742884',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-tw.php
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/admin/view/usernotice/sms_list.html [ array (
+  0 => 'menu',
+  1 => 'nav',
+  2 => 'adminRole',
+  3 => 'group',
+  4 => 'admin',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.003879s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000436s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_setting` [ RunTime:0.000916s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `ecshecom_setting` [ RunTime:0.000214s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_group` [ RunTime:0.000825s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000197s ]
+[ sql ] [ SQL ] SELECT `rules` FROM `ecshecom_admin_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000162s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_rule` [ RunTime:0.000799s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `is_menu` = 1  AND `is_show` = 1  AND `status` = 1  AND `module` <> 'admin' ORDER BY `sort` ASC [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `name` = 'admin/usernotice/index'  AND `status` = 1 LIMIT 1 [ RunTime:0.000369s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000809s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000172s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000721s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/usernotice/index' , '' , '' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579769926) [ RunTime:0.000303s ]
+---------------------------------------------------------------
+[ 2020-01-23T16:58:46+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/usernotice/index?page=1&limit=20
+[运行时间：0.062783s] [吞吐率：15.93req/s] [内存消耗：3,825.84kb] [文件加载：120]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579675199,1579739147,1579742557,1579742884; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579742884',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/usernotice/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] ../application/common/lang/zh-tw.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.003801s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000373s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_setting` [ RunTime:0.000906s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `ecshecom_setting` [ RunTime:0.000194s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_group` [ RunTime:0.000793s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000192s ]
+[ sql ] [ SQL ] SELECT `rules` FROM `ecshecom_admin_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000177s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_rule` [ RunTime:0.000781s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `is_menu` = 1  AND `is_show` = 1  AND `status` = 1  AND `module` <> 'admin' ORDER BY `sort` ASC [ RunTime:0.000281s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `name` = 'admin/usernotice/index'  AND `status` = 1 LIMIT 1 [ RunTime:0.000265s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_user_notice` [ RunTime:0.000698s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`username` FROM `ecshecom_user_notice` `n` INNER JOIN `ecshecom_user` `u` ON `n`.`user_id`=`u`.`id` ORDER BY `n`.`created_at` DESC LIMIT 0,20 [ RunTime:0.000637s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ecshecom_user_notice` `n` INNER JOIN `ecshecom_user` `u` ON `n`.`user_id`=`u`.`id` ORDER BY `n`.`created_at` DESC LIMIT 1 [ RunTime:0.000440s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000788s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000164s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000695s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/usernotice/index' , '{\"page\":\"1\",\"limit\":\"20\"}' , '' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579769926) [ RunTime:0.000283s ]
+---------------------------------------------------------------
+[ 2020-01-23T16:58:49+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/sms/index
+[运行时间：0.065294s] [吞吐率：15.32req/s] [内存消耗：3,967.90kb] [文件加载：122]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579675199,1579739147,1579742557,1579742884; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579742884',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/rent.niuguagua.com/application/admin/view/sms/sms_list.html [ array (
+  0 => 'menu',
+  1 => 'nav',
+  2 => 'adminRole',
+  3 => 'group',
+  4 => 'admin',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.003936s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000422s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_setting` [ RunTime:0.000986s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `ecshecom_setting` [ RunTime:0.000248s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_group` [ RunTime:0.000843s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000229s ]
+[ sql ] [ SQL ] SELECT `rules` FROM `ecshecom_admin_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000156s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_rule` [ RunTime:0.000776s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `is_menu` = 1  AND `is_show` = 1  AND `status` = 1  AND `module` <> 'admin' ORDER BY `sort` ASC [ RunTime:0.000274s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `name` = 'admin/sms/index'  AND `status` = 1 LIMIT 1 [ RunTime:0.000350s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000859s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000173s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000689s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/sms/index' , '' , '' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579769929) [ RunTime:0.000312s ]
+---------------------------------------------------------------
+[ 2020-01-23T16:58:49+08:00 ] 221.231.70.96 GET hqlyma.jinzhifm.com/sms/index?page=1&limit=20
+[运行时间：0.063414s] [吞吐率：15.77req/s] [内存消耗：3,783.37kb] [文件加载：118]
+[ info ] [ LANG ] /www/wwwroot/rent.niuguagua.com/framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=e53gsoeuhjbt7je010162q8u7m; Hm_lvt_eaa57ca47dacb4ad4f5a257001a3457c=1579675199,1579739147,1579742557,1579742884; Hm_lpvt_eaa57ca47dacb4ad4f5a257001a3457c=1579742884',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://hqlyma.jinzhifm.com/sms/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'hqlyma.jinzhifm.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog->run @app_end [ RunTime:0.003962s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000427s ] mysql:host=127.0.0.1;port=3306;dbname=rent;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_setting` [ RunTime:0.000919s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `ecshecom_setting` [ RunTime:0.000209s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_group` [ RunTime:0.000807s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `ecshecom_admin_auth_group` WHERE  `status` = 1 [ RunTime:0.000199s ]
+[ sql ] [ SQL ] SELECT `rules` FROM `ecshecom_admin_auth_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000150s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_auth_rule` [ RunTime:0.000745s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `is_menu` = 1  AND `is_show` = 1  AND `status` = 1  AND `module` <> 'admin' ORDER BY `sort` ASC [ RunTime:0.000310s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_admin_auth_rule` WHERE  `name` = 'admin/sms/index'  AND `status` = 1 LIMIT 1 [ RunTime:0.000255s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_sms_logs` [ RunTime:0.000702s ]
+[ sql ] [ SQL ] SELECT * FROM `ecshecom_sms_logs` WHERE  `id` <> 0  AND `is_show` = 1 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000237s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ecshecom_sms_logs` WHERE  `id` <> 0  AND `is_show` = 1  AND `id` <> 0  AND `is_show` = 1 ORDER BY `id` DESC LIMIT 1 [ RunTime:0.000190s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin` [ RunTime:0.000777s ]
+[ sql ] [ SQL ] SELECT `username` FROM `ecshecom_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000171s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ecshecom_admin_log` [ RunTime:0.000705s ]
+[ sql ] [ SQL ] INSERT INTO `ecshecom_admin_log` (`admin_id` , `username` , `module` , `action` , `param` , `title` , `content` , `ip` , `user_agent` , `create_time`) VALUES (1 , 'admin' , 'admin' , '/sms/index' , '{\"page\":\"1\",\"limit\":\"20\"}' , '' , '' , 3722921568 , 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3970.5 Safari/537.36' , 1579769929) [ RunTime:0.000317s ]

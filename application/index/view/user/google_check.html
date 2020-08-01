@@ -1,0 +1,228 @@
+{include file="public/shead" /}
+{include file="public/left" /}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet">
+<style>
+    .box {
+        box-shadow: none;
+    }
+    #code,.sendCode {
+        display: inline-block;
+    }
+    #code {
+        width: 50%;
+        margin-right: 2%;
+    }
+    .sendCode {
+        width: auto;
+        padding: 0.3rem 1rem;
+        position: relative;
+        top: -1px;
+        max-width: 30%;
+    }
+</style>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>{:lang('google_check')}</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i> {:lang('setting')}
+                </a>
+            </li>
+            <li class="breadcrumb-item active">{:lang('google_check')}</li>
+        </ol>
+    </section>
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="box box-solid bg-black">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <form action="#" method="post" enctype="multipart/form-data">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">{:lang("google_key")}</label>
+                                            <div class="col-sm-10">
+                                                <input readonly type="text" name="key" placeholder="" value="{$secret}" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">{:lang("google_code")}</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="code" placeholder="" value="" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 control-label">{:lang('msg')}</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="msg" class="form-control" placeholder="{:lang('msg')}" title="" required id="code" />
+                                                <input class="btn btn-block btn-primary btn-lg sendCode" value="{:lang('send')}" readonly />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label"></label>
+                                            <div class="col-sm-10">
+                                                {if condition="$checkStatus eq 0"}
+                                                <input class="btn btn-primary btn-lg btn-block settingMove" readonly data-send-href="{:url('googleSetting')}" value="{:lang('sure')}" />
+                                                {else /}
+                                                <input class="btn btn-primary btn-lg btn-block settingMove" readonly data-send-href="{:url('googleSetting')}" value="{:lang('changeGoogleSetting')}" />
+                                                {/if}
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{include file="public/bottom" /}
+<!--   Core JS Files   -->
+<script src="__WAP_PUBLIC__/js/layer.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/common1.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/bootstrap.min.14d449eb8876.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/template.eca497836b5a.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-switch/3.3.4/js/bootstrap-switch.min.js"></script>
+<script>
+$(function () {
+    $('.logout').click(function(){
+        //询问框
+        layer.open({
+            content: '{:lang("logout_tip")}'
+            ,skin: 'loginout'
+            ,btn: ['{:lang("yes")}', '{:lang("no")}']
+            ,yes: function(index){
+                window.location.href = "{:url('index/Login/logout')}";
+            }
+        });
+    });
+
+    $("input[ name='swtichbanzhuan']").on('switchChange.bootstrapSwitch', function (event,state) {
+        swtichbanzhuan = state;
+    });
+
+    var sendStatus = 0;
+    $("body").on("click", ".sendCode", function () {
+        if(sendStatus == 1)
+        {
+            // layer.open({
+            //     content: "{:lang('do_click_again')}"
+            //     ,skin: 'msg'
+            //     ,time: 2 //2秒后自动关闭
+            // });
+            layer.msg("{:lang('do_click_again')}",{time: 2000})
+
+            return false;
+        }
+
+        let that = $(this);
+        if(that.val() != '{:lang("send")}')
+        {
+            return false;
+        }
+        let token = $("input[ name='__token__']").val();
+        if(token == '')
+        {
+            // layer.open({
+            //     content: "{:lang('complete_the_parameters')}"
+            //     ,skin: 'msg'
+            //     ,time: 2 //2秒后自动关闭
+            // });
+            layer.msg("{:lang('complete_the_parameters')}",{time: 2000})
+
+            return false;
+        }
+        let lang = 'zh-tw';
+        if(getCookie('language'))
+        {
+            lang = getCookie('language');
+        }
+        var senData = {
+            token : token,
+            status : 1,
+            lang : lang,
+        };
+        sendStatus = 1;
+        $.post("{:url('/index/User/sendEmailCode')}",senData,
+            function(res){
+                var res = JSON.parse(res);
+                // layer.open({
+                //     content: res.info
+                //     ,skin: 'msg'
+                //     ,type:1
+                //     ,time: 2 //2秒后自动关闭
+                // });
+                layer.msg(res.info,{time: 2000},function(){
+                    countdown(60, that,that.val());
+                    $("input[ name='__token__']").attr('value',res.data.newtoken);
+                    sendStatus = 0;
+                })
+
+            });
+    });
+
+    $('.settingMove').click(function(){
+        let token = $("input[ name='__token__']").val();
+        let key = $("input[ name='key']").val();
+        let code = $("input[ name='code']").val();
+        let msg = $("input[ name='msg']").val();
+        if(token == '' || key == '' || code == '' || msg == '')
+        {
+            // layer.open({
+            //     content: "{:lang('complete_the_parameters')}"
+            //     ,skin: 'msg'
+            //     ,time: 2 //2秒后自动关闭
+            // });
+            layer.msg("{:lang('complete_the_parameters')}",{time: 2000})
+            return false;
+        }
+        let lang = 'zh-tw';
+        if(getCookie('language'))
+        {
+            lang = getCookie('language');
+        }
+        var senData = {
+            token : token,
+            key : key,
+            code : code,
+            msg : msg,
+            lang : lang,
+        };
+
+        // layer.open({
+        //     type: 2
+        //     ,content: '{:lang("sending_data")}'
+        // });
+        layer.open({
+            type: 3,
+            skin: 'loading_style'
+            // content: '{:lang("sending_data")}'
+        });
+        $.post($(this).attr('data-send-href'),senData,
+            function(res){
+                var res = JSON.parse(res);
+                setTimeout(function(){
+                    layer.closeAll();
+                    // layer.open({
+                    //     content: res.info
+                    //     ,skin: 'msg'
+                    //     ,time: 2 //2秒后自动关闭
+                    // });
+                    // setTimeout(function(){ window.location.reload();},2000);
+                    layer.msg(res.info,{time: 2000},function(){
+                        window.location.reload();
+                    })
+                },500);
+            });
+    });
+});
+</script>
+</body>
+
+</html>

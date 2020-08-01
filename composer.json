@@ -1,0 +1,50 @@
+{
+    "name": "topthink/think",
+    "description": "the new thinkphp framework",
+    "type": "project",
+    "keywords": [
+        "framework",
+        "thinkphp",
+        "ORM"
+    ],
+    "homepage": "http://thinkphp.cn/",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "liu21st",
+            "email": "liu21st@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "topthink/framework": "~5.1.0@dev",
+        "topthink/think-captcha": "^2.0",
+        "hightman/xunsearch": "*@beta",
+        "workerman/workerman":"*",
+        "workerman/phpsocket.io" : ">1.0.0",
+        "qiniu/php-sdk": "*",
+        "tencentcloud/tencentcloud-sdk-php": "*",
+        "nette/mail": "^2.4",
+        "sc0vu/web3.php": "dev-master",
+        "phpmailer/phpmailer": "^6.0",
+        "furqansiddiqui/http-client": "^0.4.4",
+        "jaggedsoft/php-binance-api": "@dev",
+        "signulls/poloniex-php-sdk": "^1.0",
+        "predis/predis": "^1.1",
+        "andreas-glaser/poloniex-php-client": "dev-master",
+        "kucoin/kucoin-php-sdk": "~1.1.0",
+        "php-curl-class/php-curl-class": "^8.6",
+        "alibabacloud/client": "^1.5"
+    },
+    "extra": {
+        "think-path": "framework"
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "autoload": {
+        "psr-4": {
+            "QcloudImage\\": "QcloudImage"
+        }
+    }
+}

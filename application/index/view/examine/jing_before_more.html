@@ -1,0 +1,304 @@
+{include file="public/shead" /}
+<link rel="stylesheet" href="__WAP_PUBLIC__/nowiconfont/iconfont.css">
+{include file="public/left" /}
+<style>
+    .box {
+        box-shadow: none;
+    }
+    .show-title {
+        margin: 0 0 0px;
+        font-size: 24px;
+        color: #6c757d;
+    }
+    .content-bottom {
+        margin-bottom: 10rem;
+    }
+    .show-module-all {
+        padding: 0;
+    }
+    .box-body-spec {
+        padding: 0;
+    }
+    .show-module {
+        display: inline-block;
+        padding: 0;
+        text-align: center;
+        font-size: 1rem;
+    }
+    .show-module:first-child {
+        margin-left: .9rem;
+    }
+    .table th, .table td {
+        border-bottom: 1px solid #dee2e6;
+        border-top: 0;
+        padding: .5rem 1rem;
+    }
+    .right-th {
+        text-align: right;
+    }
+    .show-module-sign {
+        color: #3c7fff;
+    }
+    .content-header-spec {
+        margin-top: .7rem;
+    }
+    .show-title {
+        margin: 0 0 0px;
+        font-size: 15px;
+        color: #6c757d;
+    }
+    .index_message .p1 {
+        padding-bottom: 0;
+    }
+    .p1,.p2 {
+        margin-bottom: 0;
+    }
+    .special-row {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .index_message {
+        border-radius: 8px !important;;
+    }
+    .special-row-m {
+        margin-top: 2rem;
+    }
+    .senData {
+        width: 48%;
+        display: block;
+        margin: 0 1% 0 1%;
+    }
+    .seeLog {
+        width: 48%;
+        display: block;
+        margin-left: 1%;
+    }
+    .show-title-special {
+        margin-top: 1rem;
+    }
+    .show-p {
+        position: relative;
+    }
+    .radio {
+        line-height: 2rem;
+    }
+    [type=radio]:not(:checked),[type=radio]:checked {
+        opacity: 1;
+        position: static;
+        margin: 0 .5rem;
+    }
+    .radio-text {
+        position: relative;
+        top: -2px;
+    }
+</style>
+<div class="content-wrapper">
+    <section class="content-header show-content-title">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a class="sendA" href="javascript:history.back(-1)">
+                    < &nbsp;
+                </a>
+            </li>
+            <li class="breadcrumb-item active sendContent">镇经管办预审</li>
+        </ol>
+    </section>
+    <section class="content-header content-bottom content-header-spec">
+        <div class="col-12">
+            <div class="box box-solid bg-black">
+                <div class="box-body box-body-spec">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="table-container show-module-content">
+                                <form id="examineInfo" name="examineInfo" action="{:url('getreleaseExamine')}" method="post">
+                                    <div class="form-group">
+                                        <label class="control-label" for="contract_type">合同类型</label>
+                                        <select name="contract_type" class="form-control margin-left-10" id="contract_type">
+                                            {volist name="contactType" id="vo"}
+                                            <option {if condition="$vo eq $examineInfo.contract_type"}selected{/if} value="{$vo}">{$vo}</option>
+                                            {/volist}
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">简易流程或常规流程</label>
+                                        <div class="show-p radio">
+                                            {volist name="contactProcess" id="vo"}
+                                            <label  class="radio-inline">
+                                                <input type="radio" name="process_type" {if condition="$key eq $examineInfo.process_type"}checked{/if} value="{$key}"><span class="radio-text">{$vo}</span>
+                                            </label>
+                                            {/volist}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">是否需要安全办审核</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.is_soft_first"}checked{/if} name="is_soft_first" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.is_soft_first"}checked{/if} name="is_soft_first" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">是否公开招租</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.is_public_rental"}checked{/if} name="is_public_rental" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.is_public_rental"}checked{/if} name="is_public_rental" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <h1 class="show-title show-title-special">审核信息</h1>
+                                    <div class="row special-row">
+                                        <textarea class="form-control" name="jing_before_examine_reason" id="jing_before_examine_reason" rows="5">{if condition="$examineInfo.jing_before_examine_reason eq ''"}无{else /}{$examineInfo.jing_before_examine_reason}{/if}</textarea>
+                                    </div>
+                                  
+                                  <!--新加的-->
+                                  <div class="form-group">
+                                        <label class="control-label">是否符合审核范围</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $demondInfo.status1"}checked{/if} name="" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $demondInfo.status1"}checked{/if} name="" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <h1 class="show-title show-title-special">审核信息</h1>
+                                    <div class="row special-row">
+                                        <textarea class="form-control" name="" id="" rows="5">{if condition="$demondInfo.content1 eq ''"}无{else /}{$demondInfo.content1}{/if}</textarea>
+                                    </div>
+                                  
+                                  <div class="form-group">
+                                        <label class="control-label">意向承租方资格是否符合规定</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $demondInfo.status2"}checked{/if} name="" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $demondInfo.status2"}checked{/if} name="" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <h1 class="show-title show-title-special">审核信息</h1>
+                                    <div class="row special-row">
+                                        <textarea class="form-control" name="" id="" rows="5">{if condition="$demondInfo.content2 eq ''"}无{else /}{$demondInfo.content2}{/if}</textarea>
+                                    </div>
+                                  
+                                  <div class="form-group">
+                                        <label class="control-label">租金价格是否符合规定</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $demondInfo.status3"}checked{/if} name="" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $demondInfo.status3"}checked{/if} name="" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <h1 class="show-title show-title-special">审核信息</h1>
+                                    <div class="row special-row">
+                                        <textarea class="form-control" name="" id="" rows="5">{if condition="$demondInfo.content3 eq ''"}无{else /}{$demondInfo.content3}{/if}</textarea>
+                                    </div>
+                                  
+                                  <div class="form-group">
+                                        <label class="control-label">租赁业态是否符合规定</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $demondInfo.status4"}checked{/if} name="" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $demondInfo.status4"}checked{/if} name="" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <h1 class="show-title show-title-special">审核信息</h1>
+                                    <div class="row special-row">
+                                        <textarea class="form-control" name="" id="" rows="5">{if condition="$demondInfo.content4 eq ''"}无{else /}{$demondInfo.content4}{/if}</textarea>
+                                    </div>
+                                  
+                                  <div class="form-group">
+                                        <label class="control-label">证明材料是否齐全</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $demondInfo.status5"}checked{/if} name="" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $demondInfo.status5"}checked{/if} name="" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <h1 class="show-title show-title-special">审核信息</h1>
+                                    <div class="row special-row">
+                                        <textarea class="form-control" name="" id="" rows="5">{if condition="$demondInfo.content5 eq ''"}无{else /}{$demondInfo.content5}{/if}</textarea>
+                                    </div>
+                                  
+                                  <div class="form-group">
+                                        <label class="control-label">是否提交镇领导审核</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $demondInfo.status6"}checked{/if} name="" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $demondInfo.status6"}checked{/if} name="" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <h1 class="show-title show-title-special">审核信息</h1>
+                                    <div class="row special-row">
+                                        <textarea class="form-control" name="" id="" rows="5">{if condition="$demondInfo.content6 eq ''"}无{else /}{$demondInfo.content6}{/if}</textarea>
+                                    </div>
+                                  
+                                  <div class="form-group">
+                                        <label class="control-label">审核信息</label>
+                                    </div>
+                                    <h1 class="show-title show-title-special">审核信息</h1>
+                                    <div class="row special-row">
+                                        <textarea class="form-control" name="" id="" rows="5">{if condition="$demondInfo.jing_before_examine_reason eq ''"}无{else /}{$demondInfo.jing_before_examine_reason}{/if}</textarea>
+                                    </div>
+                                  
+                                  
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+{include file="public/bottom" /}
+<!--   Core JS Files   -->
+<script src="__WAP_PUBLIC__/js/layer.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/common1.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/bootstrap.min.14d449eb8876.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/template.eca497836b5a.js"></script>
+<script>
+$(function () {
+
+    $('.getA').attr('href',$('.sendA').attr("href"));
+    $('.pageName').html($(".sendContent").html());
+
+    $('.logout').click(function(){
+        //询问框
+        layer.open({
+            content: '{:lang("logout_tip")}'
+            ,skin: 'loginout'
+            ,btn: ['{:lang("yes")}', '{:lang("no")}']
+            ,yes: function(index){
+                window.location.href = "{:url('index/Login/logout')}";
+            }
+        });
+    });
+
+});
+</script>
+</body>
+
+</html>

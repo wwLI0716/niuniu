@@ -1,0 +1,285 @@
+{include file="public/mobilehead" /}
+{include file="public/left" /}
+<style>
+    .content-header>.breadcrumb {
+        position: unset;
+    }
+    .webticker-4 {
+        padding: 1.25rem 0;
+    }
+    .webticker-3 {
+        height: 27px;
+        overflow: hidden;
+        position: relative;
+        padding: 0 1.25rem;
+    }
+    #webticker-2 {
+        list-style:none;
+        padding-left: 0;
+    }
+    #webticker-2 li {
+        width: 100%;
+        word-break: break-all;
+        word-wrap: break-word;
+        white-space: normal;
+        color: #6c757d;
+    }
+    .show-auto {
+        width: 32%;
+        margin-right: 0;
+    }
+    .dollar-value,.show-auto .media i {
+        display: block;
+        width: 100%;
+    }
+    .show-auto .media i {
+        font-size: 30px;
+    }
+    .show-auto .media,.dollar-value {
+        text-align: center;
+    }
+    .show-auto .box-body {
+        padding-left: .7rem;
+        padding-right: .7rem;
+    }
+    .page-dashboard .dollar-value {
+        font-size: 1rem;
+    }
+    .index_message {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .index_message>div:first-child {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .index_message>div:first-child p {
+        padding: 0;
+        margin: 0;
+    }
+
+    .index_message p {
+        padding: 0;
+        margin: 0;
+        line-height: 2rem;
+    }
+
+    .index_message p.p1 {
+        font-weight: 700;
+    }
+
+    .index_message p.p3 {
+        font-size: 18px;
+        line-height: 32px;
+        font-weight: 700;
+        color: rgb(221, 127, 12);
+    }
+
+    .index_message p.p4 span:last-child {
+        font-size: 16px;
+        font-weight: 700;
+        color: rgb(180, 132, 42);
+    }
+    .doing {
+        padding-left: .5rem;
+    }
+    .show-status {
+        padding: 0.1rem .5rem;
+        line-height: normal;
+    }
+    .btn-primary {
+        background-color: #3c7fff;
+        padding: 0.1rem 1rem;
+    }
+    .pagination li span {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        display: inline-block;
+        min-width: 25px;
+        padding: .4em 1em;
+        text-decoration: none;
+        cursor: pointer;
+        color: #adadad;
+        border: 1px solid transparent;
+        border-radius: 2px;
+        margin-left: 5px;
+        margin-right: 5px;
+        background-color: #ddd;
+    }
+</style>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+<!--        <div class="row">
+            <div class="col-12">
+                <div class="box box-inverse box-dark webticker-4">
+                    <div class="box-body tickers-block webticker-3">
+                        <ul id="webticker-2">
+                            {if condition="count($notices) neq 0"}
+                            {volist name="notices" id="vo"}
+                            <li>
+                                <i class="iconfont icon_iconfont-yijianfankui-"></i>
+                                <a href="/Examine/seeDemand?demandId={$vo.apple_id}">您的{$vo.description}</a>
+                            </li>
+                            {/volist}
+                            {else }
+                            <li>
+                                <i class="iconfont icon_iconfont-yijianfankui-"></i>
+                                <a href="javascript:void(0)">您暂无最新消息！</a>
+                            </li>
+                            {/if}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 show-auto">
+                <div class="box pull-up">
+                    <select class="form-control investment_mode" name="status">
+                        <option value="">选择审核状态</option>
+                        <option value="0" {if condition="$status neq '' && $status eq 0"}selected="selected"{/if}>待审核</option>
+                        <option value="1" {if condition="$status eq 1"}selected="selected"{/if}>审核中</option>
+                        <option value="2" {if condition="$status eq 2"}selected="selected"{/if}>审核通过</option>
+                        <option value="3" {if condition="$status eq 3"}selected="selected"{/if}>待复核</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 show-auto">
+                <div class="box pull-up">
+                    <select class="form-control investment_mode" name="countryid">
+                        <option value="">选择村企业</option>
+                        {volist name="allCountryInfo" id="vo"}
+                        <option value="{$vo.id}" {if condition="$vo.id eq $countryid"}selected="selected"{/if}>{$vo.username}</option>
+                        {/volist}
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 show-auto">
+                <div class="box pull-up">
+                    <select class="form-control investment_mode" name="type">
+                        <option value="">选择审核流程</option>
+                        <option value="1" {if condition="$type eq 1"}selected="selected"{/if}>常规需安全前置审核</option>
+                        <option value="2" {if condition="$type eq 2"}selected="selected"{/if}>常规不需安全前置审核</option>
+                        <option value="3" {if condition="$type eq 3"}selected="selected"{/if}>简易需安全前置审核</option>
+                        <option value="4" {if condition="$type eq 4"}selected="selected"{/if}>简易不需安全前置审核</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- RENOVATION -->
+        <div class="row row_message">
+            {volist name="demondInfos" id="vo"}
+            <div class="col-lg-6 col-md-12 margin-top-10">
+                <a href="/Examine/seeDemand?demandId={$vo.apple_id}">
+                    <div class="index_message">
+                        <div>
+                            <div>
+                                <p class="p2">租赁名称：{$vo.house_name}</p>
+                                <p class="p2">租赁地址：{$vo.house_address}</p>
+                                <p class="p1">租赁面积：{$vo.lease_area_now}/平方</p>
+                                <p class="p1">审核状态：<span class="doing">{if condition="$vo.apple_status eq 0"}<button type="button" class="btn btn-info show-status">待审核</button>{elseif condition="$vo.apple_status eq 1"}<button type="button" class="btn btn-warning show-status">审核中</button>{elseif condition="$vo.apple_status eq 2"}<button type="button" class="btn btn-success show-status">审核通过</button>{else /}<button type="button" class="btn btn-danger show-status">审核驳回</button>{/if}</span></p>
+                                <p class="p2">原租赁方：{$vo.original_tenant}</p>
+                            </div>
+                        </div>
+                        <p class="p3"><button type="button" class="btn btn-primary">查看</button></p>
+                    </div>
+                </a>
+            </div>
+            {/volist}
+        </div>
+        <div class="page">
+            {$page|raw}
+        </div>
+    </section>
+</div>
+</div>
+{include file="public/bottom" /}
+<!--   Core JS Files   -->
+<script src="__WAP_PUBLIC__/js/layer.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/common1.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/bootstrap.min.14d449eb8876.js" type="text/javascript"></script>
+
+<!-- webticker -->
+<script src="__WAP_PUBLIC__/js/jquery.webticker.min.f78e1731f573.js"></script>
+<!-- Crypto_Admin App -->
+<script src="__WAP_PUBLIC__/js/template.eca497836b5a.js"></script>
+<!-- 滾動樣式 -->
+<script src="__WAP_PUBLIC__/js/dashboard.89aa0af61d92.js"></script>
+<!-- Chart -->
+<script src="__WAP_PUBLIC__/js/chart.min.c508c360e58f.js"></script>
+<script src="__WAP_PUBLIC__/js/chartjs-int.b4511dbd6cc9.js"></script>
+<script src="__WAP_PUBLIC__/js/chartjs-int.b4511dbd6cc99.js"></script>
+<!-- easypiechart -->
+<script src="__WAP_PUBLIC__/js/jquery.easypiechart.0f1bfd4eb4e7.js"></script>
+<!-- chart-widgets -->
+<script src="__WAP_PUBLIC__/js/chart-widgets.0569c48737c0.js"></script>
+<script src="__WAP_PUBLIC__/js/moment-with-locales.min.a79a8710a351.js"></script>
+<script src="__WAP_PUBLIC__/js/moment-timezone-with-data.min.a3f47b485883.js"></script>
+<script src="__WAP_PUBLIC__/js/jquery.loading.f548d3016cfe.js"></script>
+<script>
+
+    $(function () {
+
+        $("select[name='status']").change(function(){
+            window.location.href = "/index?status=" + $("select[name='status']").val() + "&countryid=" + $("select[name='countryid']").val() + "&type=" + $("select[name='type']").val() + "&name=" + $("input[name='name']").val();
+        });
+
+        $("select[name='countryid']").change(function(){
+            window.location.href = "/index?status=" + $("select[name='status']").val() + "&countryid=" + $("select[name='countryid']").val() + "&type=" + $("select[name='type']").val() + "&name=" + $("input[name='name']").val();
+        });
+
+        $("select[name='type']").change(function(){
+            window.location.href = "/index?status=" + $("select[name='status']").val() + "&countryid=" + $("select[name='countryid']").val() + "&type=" + $("select[name='type']").val() + "&name=" + $("input[name='name']").val();
+        });
+
+        $(".icon-sousuo").click(function(){
+            window.location.href = "/index?status=" + $("select[name='status']").val() + "&countryid=" + $("select[name='countryid']").val() + "&type=" + $("select[name='type']").val() + "&name=" + $("input[name='name']").val();
+        });
+
+        var num=$("#webticker-2").find("li").length;
+        if (num>1) {
+            setInterval(function(){
+                $('#webticker-2').animate({
+                    marginTop:"-26px"
+                },500,function(){
+                    $(this).css({marginTop : "0"}).find("li:first").appendTo(this);
+                });
+            }, 3000);
+        }
+
+        'use strict';
+        $('.easypie').easyPieChart({
+            easing: 'easeOutBounce',
+            onStep: function (from, to, percent) {
+                $(this.el).find('.percent').text(Math.round(percent));
+            }
+        });
+        var chart = window.chart = $('.easypie').data('easyPieChart');
+        $('.js_update').on('click', function () {
+            chart.update(Math.random() * 200 - 100);
+        });
+
+        $('.logout').click(function(){
+            //询问框
+            layer.open({
+                content: '{:lang("logout_tip")}'
+                ,btn: ['{:lang("yes")}', '{:lang("no")}']
+                ,skin: 'loginout'
+                ,yes: function(index){
+                    window.location.href = "{:url('index/Login/logout')}";
+                }
+            });
+        });
+    });
+</script>
+</body>
+
+</html>

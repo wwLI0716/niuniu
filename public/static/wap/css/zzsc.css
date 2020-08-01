@@ -1,0 +1,16 @@
+
+
+
+
+#msform {
+	position: relative;
+	margin-top: 2rem;
+}
+#msform fieldset {
+	width: 100%;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+

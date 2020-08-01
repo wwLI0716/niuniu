@@ -1,0 +1,38 @@
+html {font-size: 312.5%;}
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;}
+select,input,img,select{vertical-align:middle;}
+a{ text-decoration:none;}
+*{font-family: arial,sans-serif,"Microsoft YaHei",STHeiti,"Droid Sans Fallback",sans-serif;cursor: pointer;}
+*{ -webkit-tap-highlight-color: rgba(0,0,0,0);}
+html, body { height: 100%;}
+a{text-decoration: none;}
+body{max-width: 750px;margin: 0 auto;line-height: inherit;overflow:hidden; }
+/****404*****/
+.miss-body{ background:#f3f3f3; position:relative; width:100%; height:100%;}
+.miss-body .miss-table{ display:table; text-align:center; width:100%; height:100%;}
+.miss-body .miss-table .miss-table-cell{ display:table-cell; text-align:center; vertical-align:middle;}
+.miss-body .miss-main{ width:100%; margin:0 auto; font-size:0;}
+.miss-body .miss-main .img{ width:2.38rem; height:2.88rem; display:inline-block; vertical-align:middle;}
+.miss-body .miss-main .tip{ color:#333333; font-size:.3rem; margin-top:.46rem;}
+.miss-body .miss-main .cause{ color:#999999; font-size:.28rem; margin-top:.38rem;}
+.miss-body .miss-main .link{ font-size:0;}
+.miss-body .miss-main .link a{ display:inline-block; vertical-align:middle; color:#507abd; font-size:.28rem; width:1.88rem; margin-top:.52rem; line-height:.7rem; margin-left:.37rem; margin-right:.37rem; position:relative;}
+.miss-body .miss-main .link a:before{ content: "";/* 注意这里为双引号 */
+    position: absolute; left:0; top:0;
+    width: 200%;
+    height: 200%;
+    border: 1px solid #507abd;
+    border-radius:35px;/* 也可以设置圆角 */
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scale(0.5, 0.5);
+    -ms-transform: scale(0.5, 0.5);
+    -o-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}

@@ -1,0 +1,98 @@
+﻿@charset "UTF-8";
+
+.navbar-static-top .icon_mulu,.show-content-title {
+    display: none;
+}
+body {
+    position: relative;
+}
+.content {
+    padding: 10px;
+}
+.navbar-nav {
+    width: 100%;
+}
+.spec-menu {
+    width: 65%;
+}
+.content-wrapper {
+    margin-top: 5rem;
+}
+.bottom-mulu {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    padding-top: 1rem;
+    color: #666;
+}
+.navbar-custom-menu {
+    width: 100%;
+}
+.bottom-mulu,.bottom-mulu-ul,.bottom-mulu .bottom-mulu-ul li {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.bottom-mulu .bottom-mulu-ul li {
+    display: inline-block;
+    width: 32.5%;
+    text-align: center;
+}
+.bottom-mulu .bottom-mulu-ul li .iconfont {
+    margin-right: 0;
+}
+.bottom-mulu .bottom-mulu-ul li a {
+    color: #666;
+}
+.on,.bottom-mulu-ul .on a {
+    color: #009688 !important;
+}
+.logout-div {
+    background-color: #fff;
+    padding: 1rem 0;
+    display: block !important;
+    margin-top: 2rem;
+    text-align: center;
+}
+.logout-div .logout {
+    color: #ff0000;
+}
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
+    padding-right: 0;
+    padding-left: 0;
+}
+.index_message {
+    border-radius: 0 !important;
+}
+.main-sidebar {
+    display: none;
+}
+.show-auto {
+    width: 32%;
+    margin-right: .32rem !important;
+}
+.content-header {
+    margin: 2rem 5px 0px 5px;
+}
+form .col-1, form .col-2, form .col-3, form .col-4, form .col-5, form .col-6, form .col-7, form .col-8, form .col-9, form .col-10, form .col-11, form .col-12, form .col, form .col-auto, form .col-sm-1, form .col-sm-2, form .col-sm-3, form .col-sm-4, form .col-sm-5, form .col-sm-6, form .col-sm-7, form .col-sm-8, form .col-sm-9, form .col-sm-10, form .col-sm-11, form .col-sm-12, form .col-sm, form .col-sm-auto, form .col-md-1, form .col-md-2, form .col-md-3, form .col-md-4, form .col-md-5, form .col-md-6, form .col-md-7, form .col-md-8, form .col-md-9, form .col-md-10, form .col-md-11, form .col-md-12, form .col-md, form .col-md-auto, form .col-lg-1, form .col-lg-2, form .col-lg-3, form .col-lg-4, form .col-lg-5, form .col-lg-6, form .col-lg-7, form .col-lg-8, form .col-lg-9, form .col-lg-10, form .col-lg-11, form .col-lg-12, form .col-lg, form .col-lg-auto, form .col-xl-1, form .col-xl-2, form .col-xl-3, form .col-xl-4, form .col-xl-5, form .col-xl-6, form .col-xl-7, form .col-xl-8, form .col-xl-9, form .col-xl-10, form .col-xl-11, form .col-xl-12, form .col-xl, form .col-xl-auto {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.logo {
+    display: none !important;
+}
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.spec-menu {
+    display: block;
+    float: left;
+}
+.header-top {
+    margin-top: 7rem !important;
+}
+.showLogoTip {
+    display: none;
+}

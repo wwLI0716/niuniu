@@ -1,0 +1,259 @@
+{include file="public/shead" /}
+{include file="public/left" /}
+<link rel="stylesheet" href="__WAP_PUBLIC__/css/dropify.min.cf55479bd0d3.css">
+<style>
+    .box {
+        box-shadow: none;
+    }
+    .showPic {
+        text-align: right;
+        color: #ff0000;
+        font-weight: 700;
+    }
+    .layui-layer-nobg {
+        width: 380px!important;
+        height: auto!important;
+    }
+</style>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>{:lang('real-name_authentication')}</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i> {:lang('setting')}
+                </a>
+            </li>
+            <li class="breadcrumb-item active">{:lang('real-name_authentication')}</li>
+        </ol>
+    </section>
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="box box-solid bg-black">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <form action="#" method="post" enctype="multipart/form-data">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">{:lang('full_name')}</label>
+                                            <div class="col-sm-10">
+                                                <input name="username" placeholder="{:lang('full_name')}" value="{if condition='$realInfo.name'}{$realInfo.name}{/if}" class="form-control" id="id_username" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">{:lang('user_card')}</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="card" placeholder="{:lang('user_card')}" value="{if condition='$realInfo.card'}{$realInfo.card}{/if}" class="form-control user_face" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">{:lang('user_card_face')} | <span class="showPic one">{:lang('check_exp')}</span></label>
+                                            <div class="col-sm-10">
+                                                <input type="file" {if condition="($realStatus eq 0) or ($realStatus eq 1) "} disabled {/if} data-max-file-size="1M" name="attachments" {if condition='$realInfo.face_img'}data-default-file="{$realInfo.face_img}"{/if} accept="image/*" class="user_face_img" title="" id="sfz_z" multiple="multiple" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">{:lang('user_card_back')} | <span class="showPic two">{:lang('check_exp')}</span></label>
+                                            <div class="col-sm-10">
+                                                <input type="file" {if condition="($realStatus eq 0) or ($realStatus eq 1) "} disabled {/if} data-max-file-size="1M" name="attachments" {if condition='$realInfo.back_img'}data-default-file="{$realInfo.back_img}"{/if} accept="image/*" class="user_back_img" title="" id="sfz_f" multiple="multiple" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">{:lang('get_user_card')} | <span class="showPic three">{:lang('check_exp')}</span></label>
+                                            <div class="col-sm-10">
+                                                <input type="file" {if condition="($realStatus eq 0) or ($realStatus eq 1) "} disabled {/if} data-max-file-size="1M" name="attachments" {if condition='$realInfo.user_take_card_img'}data-default-file="{$realInfo.user_take_card_img}"{/if} accept="image/*" class="user_take_card_img" title="" id="sfz_zj" multiple="multiple" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label"></label>
+                                            <div class="col-sm-10">
+                                                {if condition="$realStatus eq -1"}
+                                                <input class="btn btn-primary btn-lg btn-block sendRealData" value="{:lang('sure')}" data-status="0" data-send-href="{:url('sureRealNameAuthentication')}" readonly />
+                                                {elseif condition="$realStatus eq 0"}
+                                                <input class="btn btn-secondary btn-lg btn-block sendRealData" disabled value="{:lang('suring')}" data-status="1" data-send-href="{:url('sureRealNameAuthentication')}" readonly />
+                                                {elseif condition="$realStatus eq 1"}
+                                                <input class="btn btn-success btn-lg btn-block sendRealData" disabled value="{:lang('pass')}" data-status="1" data-send-href="{:url('sureRealNameAuthentication')}" readonly />
+                                                {else /}
+                                                <input class="btn btn-danger btn-lg btn-block sendRealData" value="{:lang('sure_fail')}" data-status="0" data-send-href="{:url('sureRealNameAuthentication')}" readonly />
+                                                {/if}
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{include file="public/bottom" /}
+<!--   Core JS Files   -->
+<script src="__WAP_PUBLIC__/js/layer.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/common1.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/bootstrap.min.14d449eb8876.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/template.eca497836b5a.js"></script>
+<script src="__WAP_PUBLIC__/js/dropify.min.c33a6db4b019.js"></script>
+<script>
+$('input[type="file"]').dropify({
+    showRemove: false,
+    messages: {
+        'default': '{:lang("img_tip")}',
+        'replace': '{:lang("img_replace")}',
+        'remove': '{:lang("remove")}',
+        'error': '{:lang("something_woring")}'
+    },
+    error: {
+        'fileSize': 'The file size is too big ( max).',
+        'minWidth': 'The image width is too small (}px min).',
+        'maxWidth': 'The image width is too big (}px max).',
+        'minHeight': 'The image height is too small (}px min).',
+        'maxHeight': 'The image height is too big (px max).',
+        'imageFormat': 'The image format is not allowed ( only).'
+    }
+});
+$(function () {
+    $('.showPic.three').click(function(){
+        if(document.body.clientWidth > 768)
+        {
+            var shoWidth = '516px';
+        } else {
+            var shoWidth = document.body.clientWidth / 3 * 2 + 'px';
+        }
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            area: shoWidth,
+            skin: 'layui-layer-nobg', //没有背景色
+            shadeClose: true,
+            content: '<img class="explame" src="/images/renzheng.png" />'
+        });
+    });
+    $('.showPic.two').click(function(){
+        if(document.body.clientWidth > 768)
+        {
+            var shoWidth = '516px';
+        } else {
+            var shoWidth = document.body.clientWidth / 3 * 2 + 'px';
+        }
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            area: shoWidth,
+            skin: 'layui-layer-nobg', //没有背景色
+            shadeClose: true,
+            content: '<img class="explame" src="/images/fanmian.png" />'
+        });
+    });
+    $('.showPic.one').click(function(){
+        if(document.body.clientWidth > 768)
+        {
+            var shoWidth = '516px';
+        } else {
+            var shoWidth = document.body.clientWidth / 3 * 2 + 'px';
+        }
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            area: shoWidth,
+            skin: 'layui-layer-nobg', //没有背景色
+            shadeClose: true,
+            content: '<img class="explame" src="/images/zhengmian.png" />'
+        });
+    });
+    $('.logout').click(function(){
+        //询问框
+        layer.open({
+            content: '{:lang("logout_tip")}'
+            ,skin: 'loginout'
+            ,btn: ['{:lang("yes")}', '{:lang("no")}']
+            ,yes: function(index){
+                window.location.href = "{:url('index/Login/logout')}";
+            }
+        });
+    });
+    $('.sendRealData').click(function(){
+        if($(this).attr('data-status') == 1)
+        {
+            return false;
+        }
+        let token = $("input[ name='__token__']").val();
+        let name = $("input[ name='username']").val();
+        let card = $("input[ name='card']").val();
+        let face_img = $('.user_face_img').next().find('img').attr('src');
+        let back_img = $('.user_back_img').next().find('img').attr('src');
+        let user_take_card_img = $('.user_take_card_img').next().find('img').attr('src');
+        if(token == '' || name == '' || card == '' || face_img == '' || back_img == '' || user_take_card_img == '')
+        {
+            // layer.open({
+            //     content: "{:lang('complete_the_parameters')}"
+            //     ,skin: 'msg'
+            //     ,time: 2 //2秒后自动关闭
+            // });
+            layer.msg("{:lang('complete_the_parameters')}", {time: 2000})
+            return false;
+        }
+        if(face_img == undefined || back_img == undefined || user_take_card_img == undefined)
+        {
+            // layer.open({
+            //     content: "{:lang('complete_the_parameters')}"
+            //     ,skin: 'msg'
+            //     ,time: 2 //2秒后自动关闭
+            // });
+            layer.msg("{:lang('complete_the_parameters')}", {time: 2000})
+            return false;
+        }
+        let lang = 'zh-tw';
+        if(getCookie('language'))
+        {
+            lang = getCookie('language');
+        }
+        var senData = {
+            token : token,
+            name : name,
+            card : card,
+            face_img : face_img,
+            back_img : back_img,
+            user_take_card_img : user_take_card_img,
+            lang : lang,
+        };
+        // layer.open({
+        //     type: 2
+        //     ,content: '{:lang("sending_data")}'
+        // });
+        layer.open({
+            type: 3,
+            skin: 'loading_style'
+            // content: '{:lang("sending_data")}'
+        })
+        $.post($(this).attr('data-send-href'),senData,
+        function(res){
+            var res = JSON.parse(res);
+            console.log(res.info);
+            setTimeout(function(){
+                layer.closeAll();
+                layer.open({
+                    content: res.info
+                    ,skin: 'msg'
+                    ,time: 2 //2秒后自动关闭
+                });
+                // setTimeout(function(){ window.location.reload();},2000);
+                layer.msg(res.info,{time: 2000},function(){
+                    window.location.reload();
+                })
+            },500);
+        });
+    });
+});
+</script>
+</body>
+
+</html>

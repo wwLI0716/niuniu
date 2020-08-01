@@ -1,0 +1,269 @@
+{include file="public/shead" /}
+<link rel="stylesheet" href="__WAP_PUBLIC__/nowiconfont/iconfont.css">
+<link rel="stylesheet" href="__WAP_PUBLIC__/css/dropify.min.cf55479bd0d3.css">
+{include file="public/left" /}
+<style>
+    .box {
+        box-shadow: none;
+    }
+    .show-title {
+        margin: 0 0 0px;
+        font-size: 24px;
+        color: #6c757d;
+    }
+    .content-bottom {
+        margin-bottom: 10rem;
+    }
+    .show-module-all {
+        padding: 0;
+    }
+    .box-body-spec {
+        padding: 0;
+    }
+    .show-module {
+        display: inline-block;
+        padding: 0;
+        text-align: center;
+        font-size: 1rem;
+    }
+    .show-module:first-child {
+        margin-left: .9rem;
+    }
+    .table th, .table td {
+        border-bottom: 1px solid #dee2e6;
+        border-top: 0;
+        padding: .5rem 1rem;
+    }
+    .right-th {
+        text-align: right;
+    }
+    .show-module-sign {
+        color: #3c7fff;
+    }
+    .content-header-spec {
+        margin-top: .7rem;
+    }
+    .show-title {
+        margin: 0 0 0px;
+        font-size: 15px;
+        color: #6c757d;
+    }
+    .index_message .p1 {
+        padding-bottom: 0;
+    }
+    .p1,.p2 {
+        margin-bottom: 0;
+    }
+    .special-row {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .index_message {
+        border-radius: 8px !important;;
+    }
+    .special-row-m {
+        margin-top: 2rem;
+    }
+    .senData {
+        width: 48%;
+        display: block;
+        margin: 0 1% 0 1%;
+    }
+    .seeLog {
+        width: 48%;
+        display: block;
+        margin-left: 1%;
+    }
+    .show-title-special {
+        margin-top: 1rem;
+    }
+    .show-p {
+        position: relative;
+    }
+    .radio {
+        line-height: 2rem;
+    }
+    [type=radio]:not(:checked),[type=radio]:checked {
+        opacity: 1;
+        position: static;
+        margin: 0 .5rem;
+    }
+    .radio-text {
+        position: relative;
+        top: -2px;
+    }
+</style>
+<div class="content-wrapper">
+    <section class="content-header show-content-title">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a class="sendA" href="javascript:history.back(-1)">
+                    < &nbsp;
+                </a>
+            </li>
+            <li class="breadcrumb-item active sendContent">安全办</li>
+        </ol>
+    </section>
+    <section class="content-header content-bottom content-header-spec">
+        <div class="col-12">
+            <div class="box box-solid bg-black">
+                <div class="box-body box-body-spec">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="table-container show-module-content">
+                                <form id="examineInfo" name="examineInfo" action="{:url('getreleaseExamine')}" method="post">
+                                    {if condition="$demondInfo.apple_is_soft_first eq 1"}
+                                    <div class="form-group">
+                                        <label class="control-label">1、是否建立、健全本单位安全生产责任制</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.safe_1"}checked{/if} name="safe_1" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.safe_1"}checked{/if} name="safe_1" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                        </div>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="safe_reason_1" id="safe_reason_1" rows="5">{if condition="$examineInfo.safe_reason_1 eq ''"}请输入审核意见{else /}{$examineInfo.safe_reason_1}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">2、是否组织制定本单位安全生产、消防安全规章制度和操作规程</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.safe_2"}checked{/if} name="safe_2" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.safe_2"}checked{/if} name="safe_2" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                        </div>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="safe_reason_2" id="safe_reason_2" rows="5">{if condition="$examineInfo.safe_reason_2 eq ''"}请输入审核意见{else /}{$examineInfo.safe_reason_2}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">3、建筑物二次装修是否经消防验收合格（未经消防验收合格禁止投入使用）</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.safe_3"}checked{/if} name="safe_3" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.safe_3"}checked{/if} name="safe_3" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                        </div>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="safe_reason_3" id="safe_reason_3" rows="5">{if condition="$examineInfo.safe_reason_3 eq ''"}请输入审核意见{else /}{$examineInfo.safe_reason_3}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">4、是否制定并实施安全生产教育和培训计划或消防演练</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.safe_4"}checked{/if} name="safe_4" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.safe_4"}checked{/if} name="safe_4" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                        </div>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="safe_reason_4" id="safe_reason_4" rows="5">{if condition="$examineInfo.safe_reason_4 eq ''"}请输入审核意见{else /}{$examineInfo.safe_reason_4}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">5、是否落实安全资金投入，定期对消防设施或器材进行检查检测</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.safe_5"}checked{/if} name="safe_5" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.safe_5"}checked{/if} name="safe_5" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                        </div>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="safe_reason_5" id="safe_reason_5" rows="5">{if condition="$examineInfo.safe_reason_5 eq ''"}请输入审核意见{else /}{$examineInfo.safe_reason_5}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">6、是否建立健全安全生产事故隐患排查治理制度，及时发现、消除事故隐患并如实记录</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.safe_6"}checked{/if} name="safe_6" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.safe_6"}checked{/if} name="safe_6" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                        </div>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="safe_reason_6" id="safe_reason_6" rows="5">{if condition="$examineInfo.safe_reason_6 eq ''"}请输入审核意见{else /}{$examineInfo.safe_reason_6}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">上传文件</label>
+                                        <div class="show-p radio">
+                                            <input type="file" {if condition="$examineInfo.safe_img neq ''"} disabled data-default-file="{$examineInfo.safe_img}"{/if} data-max-file-size="200M" name="attachments" accept="image/*" class="safe_img" placeholder="请上传附件" title="" multiple="multiple" />
+                                        </div>
+                                    </div>
+                                    {/if}
+                                    <h1 class="show-title show-title-special">审核信息</h1>
+                                    <div class="row special-row">
+                                        <textarea class="form-control" name="security_examine_reason" id="security_examine_reason" rows="5">{if condition="$examineInfo.security_examine_reason eq ''"}无{else /}{$examineInfo.security_examine_reason}{/if}</textarea>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+{include file="public/bottom" /}
+<!--   Core JS Files   -->
+<script src="__WAP_PUBLIC__/js/layer.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/common1.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/bootstrap.min.14d449eb8876.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/template.eca497836b5a.js"></script>
+<script src="__WAP_PUBLIC__/js/dropify.min.c33a6db4b019.js"></script>
+<script>
+$(function () {
+
+    $('.getA').attr('href',$('.sendA').attr("href"));
+    $('.pageName').html($(".sendContent").html());
+
+    $('input[type="file"]').dropify({
+        showRemove: false,
+        messages: {
+            'default': '{:lang("img_tip")}',
+            'replace': '{:lang("img_replace")}',
+            'remove': '{:lang("remove")}',
+            'error': '{:lang("something_woring")}'
+        },
+        error: {
+            'fileSize': 'The file size is too big ( max).',
+            'minWidth': 'The image width is too small (}px min).',
+            'maxWidth': 'The image width is too big (}px max).',
+            'minHeight': 'The image height is too small (}px min).',
+            'maxHeight': 'The image height is too big (px max).',
+            'imageFormat': 'The image format is not allowed ( only).'
+        }
+    });
+
+    $('.logout').click(function(){
+        //询问框
+        layer.open({
+            content: '{:lang("logout_tip")}'
+            ,skin: 'loginout'
+            ,btn: ['{:lang("yes")}', '{:lang("no")}']
+            ,yes: function(index){
+                window.location.href = "{:url('index/Login/logout')}";
+            }
+        });
+    });
+
+});
+</script>
+</body>
+
+</html>

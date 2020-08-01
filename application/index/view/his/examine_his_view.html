@@ -1,0 +1,415 @@
+{include file="public/shead" /}
+<link rel="stylesheet" href="__WAP_PUBLIC__/nowiconfont/iconfont.css">
+<link rel="stylesheet" href="__WAP_PUBLIC__/css/dropify.min.cf55479bd0d3.css">
+{include file="public/left" /}
+<style>
+    .box {
+        box-shadow: none;
+    }
+
+    .show-title {
+        margin: 0 0 0px;
+        font-size: 24px;
+        color: #6c757d;
+    }
+
+    .content-bottom {
+        margin-bottom: 10rem;
+    }
+
+    .show-module-all {
+        padding: 0;
+    }
+
+    .box-body-spec {
+        padding: 0;
+    }
+
+    .show-module {
+        display: inline-block;
+        padding: 0;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .show-module:first-child {
+        margin-left: .9rem;
+    }
+
+    .table th, .table td {
+        border-bottom: 1px solid #dee2e6;
+        border-top: 0;
+        padding: .5rem 1rem;
+    }
+
+    .right-th {
+        text-align: right;
+    }
+
+    .show-module-sign {
+        color: #3c7fff;
+    }
+
+    .content-header-spec {
+        margin-top: .7rem;
+    }
+
+    .show-title {
+        margin: 0 0 0px;
+        font-size: 15px;
+        color: #6c757d;
+    }
+
+    .index_message .p1 {
+        padding-bottom: 0;
+    }
+
+    .p1, .p2 {
+        margin-bottom: 0;
+    }
+
+    .special-row {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .index_message {
+        border-radius: 8px !important;;
+    }
+
+    .special-row-m {
+        margin-top: 2rem;
+    }
+
+    .senData {
+        width: 48%;
+        display: block;
+        margin: 0 1% 0 1%;
+    }
+
+    .seeLog {
+        width: 48%;
+        display: block;
+        margin-left: 1%;
+    }
+
+    .show-title-special {
+        margin-top: 1rem;
+    }
+
+    .show-p {
+        position: relative;
+    }
+
+    .radio {
+        line-height: 2rem;
+    }
+
+    [type=radio]:not(:checked), [type=radio]:checked {
+        opacity: 1;
+        position: static;
+        margin: 0 .5rem;
+    }
+
+    .radio-text {
+        position: relative;
+        top: -2px;
+    }
+</style>
+<div class="content-wrapper">
+    <section class="content-header show-content-title">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a class="sendA" href="javascript:history.back(-1)">
+                    < &nbsp;
+                </a>
+            </li>
+            <li class="breadcrumb-item active sendContent">{$roleName}</li>
+        </ol>
+    </section>
+    <section class="content-header header-top">
+        <div class="col-12">
+            <div class="box box-solid bg-black">
+                <div class="box-body box-body-spec">
+                    <div class="row">
+                        <div class="col-12 show-module-all">
+                            <div class="col-2 show-module show-module-sign">审核跟踪</div>
+                            <div class="col-3 show-module">基本信息</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content-header content-bottom content-header-spec">
+        <div class="col-12">
+            <div class="box box-solid bg-black">
+                <div class="box-body box-body-spec">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="table-container show-module-content">
+                                <form id="examineInfo" name="examineInfo" action="{:url('bidExamine')}" method="post">
+                                    <input type="hidden" id="bid_id" name="bid_id" value="{$demondInfo.id}">
+                                    <input type="hidden" id="roleId"  value="{$roleId}">
+                                    {if condition="($demondInfo.status eq 0) or ($demondInfo.status eq 1)"}
+                                    {if condition="$roleId eq 1"}
+                                    <input type="hidden" id="jing_before_examine_status" name="jing_before_examine_status" value="1">
+                                    <div class="form-group">
+                                        <label class="control-label">审核意见</label>
+                                        <div class="row special-row">
+                                                <textarea class="form-control" name="jing_before_examine_reason" id="jing_before_examine_reason" rows="8">{if condition="$examineInfo.jing_before_examine_reason eq ''"}请输入审核意见{else /}{$examineInfo.jing_before_examine_reason}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    {if condition="$examineInfo.jing_before_examine_status eq 0"}
+                                    <div class="row special-row special-row-m">
+                                        <input class="btn btn-primary btn-lg senData toUrl" type="submit" value="同意" name="jing_before_examine_status"
+                                               readonly/>
+                                        <input class="btn btn-primary btn-lg seeLog toUrl" type="submit" value="不同意" name="jing_before_examine_status"
+                                               readonly/>
+                                    </div>
+                                    {/if}
+                                    {elseif condition="$roleId eq 3"/ }
+                                    <input type="hidden" id="farmer_examine_status" name="farmer_examine_status" value="1">
+                                    <div class="form-group">
+                                        <label class="control-label">审核意见</label>
+                                        <div class="row special-row">
+                                                    <textarea class="form-control" name="farmer_examine_reason" id="farmer_examine_reason" rows="8">{if condition="$examineInfo.farmer_examine_reason eq ''"}请输入审核意见{else /}{$examineInfo.farmer_examine_reason}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    {if condition="$examineInfo.farmer_examine_status eq 0 "}
+                                    <div class="row special-row special-row-m">
+                                        <input class="btn btn-primary btn-lg senData toUrl" type="submit" value="同意" name="farmer_examine_status" readonly/>
+                                        <input class="btn btn-primary btn-lg seeLog toUrl" type="submit" value="不同意" name="farmer_examine_status" readonly/>
+                                    </div>
+                                    {/if}
+                                    {else /}
+                                    <input type="hidden" id="management_examine_status" name="management_examine_status" value="1">
+                                    <div class="form-group">
+                                        <label class="control-label">审核意见</label>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="management_examine_reason" id="management_examine_reason" rows="8">{if condition="$examineInfo.management_examine_reason eq ''"}请输入审核意见{else /}{$examineInfo.management_examine_reason}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    {if condition="$examineInfo.management_examine_status eq 0"}
+                                    <div class="row special-row special-row-m">
+                                        <input class="btn btn-primary btn-lg senData toUrl" type="submit" value="同意" name="management_examine_status"
+                                               readonly/>
+                                        <input class="btn btn-primary btn-lg seeLog toUrl" type="submit" value="不同意" name="management_examine_status"
+                                               readonly/>
+                                    </div>
+                                    {/if}
+                                    {/if}
+                                    {/if}
+                                </form>
+                            </div>
+                            <div class="table-container table-responsive show-module-content" style="display: none;">
+                                <table class="table">
+                                    <tr>
+                                        <th class="orderable">
+                                            租赁方
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.rent_name}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            楼宇名称
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.rent_house}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            租赁开始时间
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.enrol_start_time}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            租赁结束时间
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.enrol_end_time}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            租赁层数
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.rent_floor}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            租赁面积
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.rent_area}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            租赁价格
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.rent_price}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            合同扫描件
+                                        </th>
+                                        <th class="orderable right-th">
+                                            <a target="_blank" href="{$demondInfo.pdf}">点击查看</a>
+                                        </th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+{include file="public/bottom" /}
+<!--   Core JS Files   -->
+<script src="__WAP_PUBLIC__/js/layer.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/common1.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/bootstrap.min.14d449eb8876.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/template.eca497836b5a.js"></script>
+<script src="__WAP_PUBLIC__/js/dropify.min.c33a6db4b019.js"></script>
+<script>
+    $(function () {
+
+        $('.getA').attr('href', $('.sendA').attr("href"));
+        $('.pageName').html($(".sendContent").html());
+
+        $('input[type="file"]').dropify({
+            showRemove: false,
+            messages: {
+                'default': '{:lang("img_tip")}',
+                'replace': '{:lang("img_replace")}',
+                'remove': '{:lang("remove")}',
+                'error': '{:lang("something_woring")}'
+            },
+            error: {
+                'fileSize': 'The file size is too big ( max).',
+                'minWidth': 'The image width is too small (}px min).',
+                'maxWidth': 'The image width is too big (}px max).',
+                'minHeight': 'The image height is too small (}px min).',
+                'maxHeight': 'The image height is too big (px max).',
+                'imageFormat': 'The image format is not allowed ( only).'
+            }
+        });
+
+        $('.logout').click(function () {
+            //询问框
+            layer.open({
+                content: '{:lang("logout_tip")}'
+                , skin: 'loginout'
+                , btn: ['{:lang("yes")}', '{:lang("no")}']
+                , yes: function (index) {
+                    window.location.href = "{:url('index/Login/logout')}";
+                }
+            });
+        });
+
+        $('.show-module').click(function () {
+            $(this).siblings().removeClass("show-module-sign");
+            $(this).addClass("show-module-sign");
+            var sinId = $(this).index();
+            $('.show-module-content').eq(sinId).css("display", "block");
+            $('.show-module-content').eq(sinId).siblings().css("display", "none");
+        });
+
+        //当表单提交时，调用所有的校验方法
+        $('.toUrl').click(function () {
+            if( $("#roleId").val() == 1){
+                if($(this).val() == "同意"){
+                    $("#jing_before_examine_status").val(1);
+                }else{
+                    $("#jing_before_examine_status").val(2);
+                }
+            }
+            if( $("#roleId").val() == 3){
+                if($(this).val() == "同意"){
+                    $("#farmer_examine_status").val(1);
+                }else{
+                    $("#farmer_examine_status").val(2);
+                }
+            }
+            if( $("#roleId").val() == 8){
+                if($(this).val() == "同意"){
+                    $("#management_examine_status").val(1);
+                }else{
+                    $("#management_examine_status").val(2);
+                }
+            }
+            console.log($("#jing_before_examine_status").val())
+            $("#examineInfo").submit(function () {
+                var forthat = $(this);
+                //询问框
+                layer.open({
+                    content: '确认提交吗？'
+                    , btn: ['是', '否']
+                    , skin: 'loginout'
+                    , yes: function (index) {
+                        var status = 1;
+                        //验证
+                        $('input').each(function () {
+                            var that = $(this);
+                            if ($(this).attr('name') != 'id' && $(this).attr('name') != 'bid_id' && $(this).attr('name') != undefined && $(this).attr('name') != '') {
+                                if ($(this).val() == '') {
+                                    layer.msg(that.attr('placeholder'), {time: 2000});
+                                    status = 0;
+                                    return false;
+                                }
+                            }
+                        });
+
+                        if (status == 0) {
+                            return false;
+                        }
+
+                        layer.open({
+                            type: 3,
+                            skin: 'loading_style'
+                        });
+                        //1.发送数据到服务器
+                        $.post("{:url('His/hisExamine')}", forthat.serialize(), function (res) {
+                            var res = JSON.parse(res);
+                            layer.closeAll();
+                            layer.msg(res.info, {time: 2000}, function () {
+                                if (res.code == 100) {
+                                    setTimeout(function () {
+                                        window.history.back(-1);
+                                    }, 500);
+                                }
+                            })
+                        });
+                        //2.不让页面跳转
+                        return false;
+                        //如果这个方法没有返回值，或者返回为true，则表单提交，如果返回为false，则表单不提交
+                    }
+                    , no: function (index) {
+                        return false;
+                    }
+                });
+
+                return false;
+            });
+        });
+
+    });
+</script>
+</body>
+
+</html>

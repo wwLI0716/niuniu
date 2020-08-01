@@ -1,0 +1,880 @@
+{include file="public/shead" /}
+<link rel="stylesheet" href="__WAP_PUBLIC__/nowiconfont/iconfont.css">
+<link rel="stylesheet" href="__WAP_PUBLIC__/css/dropify.min.cf55479bd0d3.css">
+{include file="public/left" /}
+<style>
+    .box {
+        box-shadow: none;
+    }
+    .show-title {
+        margin: 0 0 0px;
+        font-size: 24px;
+        color: #6c757d;
+    }
+    .content-bottom {
+        margin-bottom: 10rem;
+    }
+    .show-module-all {
+        padding: 0;
+    }
+    .box-body-spec {
+        padding: 0;
+    }
+    .show-module {
+        display: inline-block;
+        padding: 0;
+        text-align: center;
+        font-size: 1rem;
+    }
+    .show-module:first-child {
+        margin-left: .9rem;
+    }
+    .table th, .table td {
+        border-bottom: 1px solid #dee2e6;
+        border-top: 0;
+        padding: .5rem 1rem;
+    }
+    .right-th {
+        text-align: right;
+    }
+    .show-module-sign {
+        color: #3c7fff;
+    }
+    .content-header-spec {
+        margin-top: .7rem;
+    }
+    .show-title {
+        margin: 0 0 0px;
+        font-size: 15px;
+        color: #6c757d;
+    }
+    .index_message .p1 {
+        padding-bottom: 0;
+    }
+    .p1,.p2 {
+        margin-bottom: 0;
+    }
+    .special-row {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .index_message {
+        border-radius: 8px !important;;
+    }
+    .special-row-m {
+        margin-top: 2rem;
+    }
+    .senData {
+        width: 48%;
+        display: block;
+        margin: 0 1% 0 1%;
+    }
+    .seeLog {
+        width: 48%;
+        display: block;
+        margin-left: 1%;
+    }
+    .show-title-special {
+        margin-top: 1rem;
+    }
+    .show-p {
+        position: relative;
+    }
+    .radio {
+        line-height: 2rem;
+    }
+    [type=radio]:not(:checked),[type=radio]:checked {
+        opacity: 1;
+        position: static;
+        margin: 0 .5rem;
+    }
+    .radio-text {
+        position: relative;
+        top: -2px;
+    }
+</style>
+<div class="content-wrapper">
+    <section class="content-header show-content-title">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a class="sendA" href="javascript:history.back(-1)">
+                    < &nbsp;
+                </a>
+            </li>
+            <li class="breadcrumb-item active sendContent">楼宇审核</li>
+        </ol>
+    </section>
+    <section class="content-header header-top">
+        <div class="col-12">
+            <div class="box box-solid bg-black">
+                <div class="box-body box-body-spec">
+                    <div class="row">
+                        <div class="col-12 show-module-all">
+                            <div class="col-2 show-module show-module-sign">审核跟踪</div>
+                            <div class="col-3 show-module">楼宇基本信息</div>
+                            <div class="col-3 show-module">原租赁信息</div>
+                            <div class="col-3 show-module">拟租赁信息</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content-header content-bottom content-header-spec">
+        <div class="col-12">
+            <div class="box box-solid bg-black">
+                <div class="box-body box-body-spec">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="table-container show-module-content">
+                                <form id="examineInfo" name="examineInfo" action="{:url('getreleaseExamine')}" method="post">
+                                    <input type="hidden" id="apple_id" name="apple_id" value="{$demondInfo.apple_id}">
+                                    <input type="hidden" id="id" name="id" value="{$demondInfo.id}">
+                                    <input type="hidden" id="house_name" name="house_name" value="{$demondInfo.house_name}">
+                                    <input type="hidden" id="examine_id" name="examine_id" value="{$examineInfo.id}">
+                                    {if condition="$demondInfo.apple_is_soft_first eq 1"}
+                                    <input type="hidden" id="safe_img" name="safe_img" placeholder="请上传附件" value="{$examineInfo.safe_img}">
+                                    {/if}
+                                    <input type="hidden" id="security_examine_status" name="security_examine_status" value="0">
+                                    <h1 class="show-title">村企业提交信息</h1>
+                                    <div class="row special-row">
+                                        {volist name="demandDetailsInfos" id="vo"}
+                                        <div class="col-lg-6 col-md-12 margin-top-10">
+                                            <div class="index_message">
+                                                <p class="p1">{$takeTimes[$key]}</p>
+                                                <p class="p2"><span class="iconfont icon-shijian"></span>提交时间：{:date('Y-m-d H:i:s',$vo.updated_at)}</p>
+                                            </div>
+                                        </div>
+                                        {/volist}
+                                    </div>
+                                    {if condition="$demondInfo.apple_is_soft_first eq 1"}
+                                    <h1 class="show-title show-title-special">审核信息</h1>
+                                    <div class="form-group">
+                                        <label class="control-label">1、是否建立、健全本单位安全生产责任制</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.safe_1"}checked{/if} name="safe_1" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.safe_1"}checked{/if} name="safe_1" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                        </div>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="safe_reason_1" id="safe_reason_1" rows="5">{if condition="$examineInfo.safe_reason_1 eq ''"}请输入审核意见{else /}{$examineInfo.safe_reason_1}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">2、是否组织制定本单位安全生产、消防安全规章制度和操作规程</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.safe_2"}checked{/if} name="safe_2" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.safe_2"}checked{/if} name="safe_2" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                        </div>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="safe_reason_2" id="safe_reason_2" rows="5">{if condition="$examineInfo.safe_reason_2 eq ''"}请输入审核意见{else /}{$examineInfo.safe_reason_2}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">3、建筑物二次装修是否经消防验收合格（未经消防验收合格禁止投入使用）</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.safe_3"}checked{/if} name="safe_3" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.safe_3"}checked{/if} name="safe_3" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                        </div>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="safe_reason_3" id="safe_reason_3" rows="5">{if condition="$examineInfo.safe_reason_3 eq ''"}请输入审核意见{else /}{$examineInfo.safe_reason_3}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">4、是否制定并实施安全生产教育和培训计划或消防演练</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.safe_4"}checked{/if} name="safe_4" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.safe_4"}checked{/if} name="safe_4" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                        </div>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="safe_reason_4" id="safe_reason_4" rows="5">{if condition="$examineInfo.safe_reason_4 eq ''"}请输入审核意见{else /}{$examineInfo.safe_reason_4}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">5、是否落实安全资金投入，定期对消防设施或器材进行检查检测</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.safe_5"}checked{/if} name="safe_5" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.safe_5"}checked{/if} name="safe_5" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                        </div>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="safe_reason_5" id="safe_reason_5" rows="5">{if condition="$examineInfo.safe_reason_5 eq ''"}请输入审核意见{else /}{$examineInfo.safe_reason_5}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">6、是否建立健全安全生产事故隐患排查治理制度，及时发现、消除事故隐患并如实记录</label>
+                                        <div class="show-p radio">
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="1 eq $examineInfo.safe_6"}checked{/if} name="safe_6" value="1"><span class="radio-text">是</span>
+                                            </label>
+                                            <label  class="radio-inline">
+                                                <input type="radio" {if condition="0 eq $examineInfo.safe_6"}checked{/if} name="safe_6" value="0"><span class="radio-text">否</span>
+                                            </label>
+                                        </div>
+                                        <div class="row special-row">
+                                            <textarea class="form-control" name="safe_reason_6" id="safe_reason_6" rows="5">{if condition="$examineInfo.safe_reason_6 eq ''"}请输入审核意见{else /}{$examineInfo.safe_reason_6}{/if}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">上传文件</label>
+                                        <div class="show-p radio">
+                                            <input type="file" {if condition="$examineInfo.safe_img neq ''"} disabled data-default-file="{$examineInfo.safe_img}"{/if} data-max-file-size="200M" name="attachments" accept="image/*" class="safe_img" placeholder="请上传附件" title="" multiple="multiple" />
+                                        </div>
+                                    </div>
+                                    {/if}
+                                    <h1 class="show-title show-title-special">审核信息</h1>
+                                    <div class="row special-row">
+                                        <textarea class="form-control" name="security_examine_reason" id="security_examine_reason" rows="5">{if condition="$examineInfo.security_examine_reason eq ''"}请输入审核意见{else /}{$examineInfo.security_examine_reason}{/if}</textarea>
+                                    </div>
+                                    {if condition="$examineInfo.security_examine_status eq 0"}
+                                    <div class="row special-row special-row-m">
+                                        <input class="btn btn-primary btn-lg senData toUrl" type="submit" value="同意" readonly />
+                                        <input class="btn btn-primary btn-lg seeLog toUrl" type="submit" value="不同意" readonly />
+                                    </div>
+                                    {/if}
+                                </form>
+                            </div>
+                            <div class="table-container table-responsive show-module-content" style="display: none;">
+                                <table class="table">
+                                    <tr>
+                                        <th class="orderable">
+                                            楼宇名称
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.house_name}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            楼宇地址
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.house_address}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            地上层数
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.house_up_height}/层
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            地下层数
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.house_down_height}/层
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            地上面积
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.house_up_area}/平方
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            地下面积
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.house_down_area}/平方
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            投资方式
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.investment_mode}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            投资比例%
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.investment_rate}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            投资总额
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.investment_total}/万
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            楼宇性质
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.house_nature}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            开工时间
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.build_at}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            竣工时间
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.finished_at}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            房产权证号
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.house_card_number}
+                                        </th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="table-container table-responsive show-module-content" style="display: none;">
+                                <table class="table">
+                                    <tr>
+                                        <th class="orderable">
+                                            原租赁方
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.original_tenant}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            租赁开始时间
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_start}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            租赁结束时间
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_end}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            租赁位置
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_position}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            地上位置
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.up_position}/层
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            地下位置
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.down_position}/层
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            租赁面积
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_area}/平方
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            地上面积
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_up_area}/平方
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            地下面积
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_down_area}/平方
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            合同终止原因
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.end_reason}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            合同终止日
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_end_day}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            租赁单价
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_price}/元
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            物业管理费
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_manager_price}/元
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            递增方式
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.incremental_way}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            退租违约金
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.falsify}/元
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            房屋保证金
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.house_deposit}/元
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            风险保证金
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.risk_deposit}/元
+                                        </th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="table-container table-responsive show-module-content" style="display: none;">
+                                <table class="table">
+                                    <tr>
+                                        <th class="orderable">
+                                            合同类型
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.contract_mode}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            租赁方式
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_mode}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            租赁位置
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_position_now}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            地上位置
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.up_position_now}/层
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            地下位置
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.down_position_now}/层
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            租赁面积
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_area_now}/平方
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            地上面积
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_up_area_now}/平方
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            地下面积
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_down_area_now}/平方
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            租赁年限
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_year}/年
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            租赁开始时间
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_start_now}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            租赁结束时间
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_end_now}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            免租期
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.rent_free_period}/天
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            租金起算日
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.rent_start_day}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            租赁单价
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_price_now}/元
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            物业管理费
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_manager_price_now}/元
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            递增方式
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.incremental_way_now}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            退租违约金
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.falsify_now}/元
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            房屋保证金
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.house_deposit_now}/元
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            风险保证金
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.risk_deposit_now}/元
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            意向承租企业名称
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_unit}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            企业性质
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.lease_unit_nature}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            注册资金
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.register_capital}/万
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            经营范围
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.business_scope}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            商务税务落地
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.tax_landing}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            承租后实际用途
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.purpose}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            实际经营状态
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.management_state}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            上半年税收
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.last_tax}/万
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            承诺实际税收
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.real_tax}/万
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            特殊情况说明
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {$demondInfo.explain}
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="orderable">
+                                            查看附件
+                                        </th>
+                                        <th class="orderable right-th">
+                                            {if condition="$demondInfo.annex_address neq ''"}
+                                            <a class="nowAnnex" href="{$demondInfo.annex_address}" download="{$demondInfo.annex_address}">点击下载</a>
+                                            {else /}
+                                            暂无
+                                            {/if}
+                                        </th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+{include file="public/bottom" /}
+<!--   Core JS Files   -->
+<script src="__WAP_PUBLIC__/js/layer.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/common1.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/bootstrap.min.14d449eb8876.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/template.eca497836b5a.js"></script>
+<script src="__WAP_PUBLIC__/js/dropify.min.c33a6db4b019.js"></script>
+<script>
+$(function () {
+
+    $('.getA').attr('href',$('.sendA').attr("href"));
+    $('.pageName').html($(".sendContent").html());
+
+    $('input[type="file"]').dropify({
+        showRemove: false,
+        messages: {
+            'default': '{:lang("img_tip")}',
+            'replace': '{:lang("img_replace")}',
+            'remove': '{:lang("remove")}',
+            'error': '{:lang("something_woring")}'
+        },
+        error: {
+            'fileSize': 'The file size is too big ( max).',
+            'minWidth': 'The image width is too small (}px min).',
+            'maxWidth': 'The image width is too big (}px max).',
+            'minHeight': 'The image height is too small (}px min).',
+            'maxHeight': 'The image height is too big (px max).',
+            'imageFormat': 'The image format is not allowed ( only).'
+        }
+    });
+
+    $('.logout').click(function(){
+        //询问框
+        layer.open({
+            content: '{:lang("logout_tip")}'
+            ,skin: 'loginout'
+            ,btn: ['{:lang("yes")}', '{:lang("no")}']
+            ,yes: function(index){
+                window.location.href = "{:url('index/Login/logout')}";
+            }
+        });
+    });
+
+    $('.show-module').click(function(){
+        $(this).siblings().removeClass("show-module-sign");
+        $(this).addClass("show-module-sign");
+        var sinId = $(this).index();
+        $('.show-module-content').eq(sinId).css("display","block");
+        $('.show-module-content').eq(sinId).siblings().css("display","none");
+    });
+
+    //当表单提交时，调用所有的校验方法
+    $('.toUrl').click(function(){
+        if($(this).val() == "同意")
+        {
+            $("#security_examine_status").val(1);
+        } else {
+            $("#security_examine_status").val(0);
+        }
+        $("#safe_img").val($('.safe_img').next().find('img').attr('src'));
+        $("#examineInfo").submit(function(){
+            var forthat = $(this);
+            //询问框
+            layer.open({
+                content: '确认提交吗？'
+                ,btn: ['是', '否']
+                ,skin: 'loginout'
+                ,yes: function(index){
+                    var status = 1;
+                    //验证
+                    $('input').each(function () {
+                        var that = $(this);
+                        if($(this).attr('name') != 'id' && $(this).attr('name') != 'apple_id' && $(this).attr('name') != undefined && $(this).attr('name') != '')
+                        {
+                            if($(this).val() == '')
+                            {
+                                layer.msg(that.attr('placeholder'), {time: 2000});
+                                status = 0;
+                                return false;
+                            }
+                        }
+                    });
+
+                    if(status == 0)
+                    {
+                        return false;
+                    }
+
+                    /*layer.open({
+                        type: 3,
+                        skin: 'loading_style'
+                    });*/
+                    //1.发送数据到服务器
+                    $.post("{:url('Examine/getsaftExamine')}",forthat.serialize(),function(res){
+                        var res = JSON.parse(res);
+                        /*layer.closeAll();*/
+                        layer.msg(res.info, {time: 2000}, function () {
+                            if(res.code == 100)
+                            {
+                                setTimeout(function(){ window.location.reload();},2000);
+                            }
+                        })
+                    });
+                    //2.不让页面跳转
+                    return false;
+                    //如果这个方法没有返回值，或者返回为true，则表单提交，如果返回为false，则表单不提交
+                }
+                ,no: function (index) {
+                    return false;
+                }
+            });
+
+            return false;
+        });
+    });
+
+});
+</script>
+</body>
+
+</html>

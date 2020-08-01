@@ -1,0 +1,325 @@
+{include file="public/head" /}
+{include file="public/left" /}
+<style xmlns="http://www.w3.org/1999/html">
+    .index_message {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .index_message>div:first-child {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .index_message>div:first-child p {
+        padding: 0;
+        margin: 0;
+    }
+
+    .index_message p {
+        padding: 0;
+        margin: 0;
+        line-height: 2rem;
+    }
+
+    .index_message p.p1 {
+        font-weight: 700;
+    }
+
+    .index_message p.p3 {
+        font-size: 18px;
+        line-height: 32px;
+        font-weight: 700;
+        color: rgb(221, 127, 12);
+    }
+
+    .index_message p.p4 span:last-child {
+        font-size: 16px;
+        font-weight: 700;
+        color: rgb(180, 132, 42);
+    }
+    .show-head {
+        width: 3rem;
+        margin-right: 1rem;
+    }
+    .table th, .table td {
+        border-bottom: 1px solid #dee2e6;
+        border-top: 0;
+    }
+    .logout-div {
+        display: none;
+    }
+    .first-one {
+        margin-top: 0;
+    }
+</style>
+<div class="content-wrapper">
+    <div class="content">
+        <div class="row row_message">
+            <div class="col-lg-12 col-md-12 margin-top-20 first-one">
+                <a href="/">
+                    <div class="index_message">
+                        <div>
+                            <img class="show-head" src="/images/logo-touming.png">
+                            <div>
+                                <p class="p1">{$userrole}</p>
+                                <p class="p2">{$username}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-sm-12">
+                <div class="box box-solid bg-black">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="table-container table-responsive">
+                                    <table class="table">
+                                        <tr>
+                                            <th class="orderable">
+                                                <a href="/User/profile">
+                                                    <i class="iconfont icon_iconfont-shezhitouxiang-"></i>密码修改
+                                                </a>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="orderable">
+                                                <a href="/User/changeMoble">
+                                                    <i class="iconfont icon_iconfont-shezhitouxiang-"></i>绑定手机
+                                                </a>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="orderable">
+                                                <a href="/News/lst">
+                                                    <i class="iconfont icon_iconfont-shezhitouxiang-"></i>消息通知
+                                                </a>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="orderable">
+                                                <a href="/Tools/membershipMessage">
+                                                    <i class="iconfont icon_iconfont-shezhitouxiang-"></i>意见反馈
+                                                </a>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="orderable">
+                                                <a href="javascript:void(0)" class="showTips">
+                                                    <i class="iconfont icon_iconfont-shezhitouxiang-"></i>版本更新
+                                                </a>
+                                            </th>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row logout-div">
+            <a class="logout" href="javascript:void(0);">退出登录</a>
+        </div>
+    </div>
+</div>
+</div>
+{include file="public/bottom" /}
+<!--   Core JS Files   -->
+<script src="__WAP_PUBLIC__/js/layer.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/common1.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/bootstrap.min.14d449eb8876.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/template.eca497836b5a.js"></script>
+<script>
+$(function () {
+    $('.logout').click(function(){
+        //询问框
+        layer.open({
+            content: '{:lang("logout_tip")}'
+            ,skin: 'loginout'
+            ,btn: ['{:lang("yes")}', '{:lang("no")}']
+            ,yes: function(index){
+                window.location.href = "{:url('/Login/logout')}";
+            }
+        });
+    });
+
+    function checkpassword(v){
+        var numasc = 0;
+        var charasc = 0;
+        var otherasc = 0;
+        if(0==v.length){
+            return "{:lang('pw_not_null')}";
+        }else if(v.length<6||v.length>12){
+            return "{:lang('pw_length_tip')}";
+        }else{
+            for (var i = 0; i < v.length; i++) {
+                var asciiNumber = v.substr(i, 1).charCodeAt();
+                if (asciiNumber >= 48 && asciiNumber <= 57) {
+                    numasc += 1;
+                }
+                if ((asciiNumber >= 65 && asciiNumber <= 90)||(asciiNumber >= 97 && asciiNumber <= 122)) {
+                    charasc += 1;
+                }
+                if ((asciiNumber >= 33 && asciiNumber <= 47)||(asciiNumber >= 58 && asciiNumber <= 64)||(asciiNumber >= 91 && asciiNumber <= 96)||(asciiNumber >= 123 && asciiNumber <= 126)) {
+                    otherasc += 1;
+                }
+            }
+            if(0==numasc) {
+                return "{:lang('pw_contain_nb')}";
+            }else if(0==charasc){
+                return "{:lang('pw_contain_char')}";
+            }else if(0==otherasc){
+                return "{:lang('pw_contain_spec')}";
+            }else{
+                return 1000;
+            }
+        }
+    };
+
+    $("#id_password").on('focus',function(){
+        let that = this;
+        let str = `<p>1.{:lang('pwd_check_msg1')}</p>
+                    <p>2.{:lang('pwd_check_msg2')}</p>
+                    <p>3.{:lang('pwd_check_msg3')}</p>`
+        layer.tips(str, that, {tips: 3, skin: 'pwdmsg', time: 0})
+    });
+
+    $('.showTips').on("click", function () {
+        layer.msg("暂无版本更新！",{time: 2000})
+    });
+
+    $("#id_password").on('blur',function(){
+        layer.closeAll();
+    });
+
+    var sendStatus = 0;
+    $("body").on("click", ".sendCode", function () {
+        if(sendStatus == 1)
+        {
+            layer.msg("{:lang('do_click_again')}",{time: 2000})
+
+            return false;
+        }
+        let that = $(this);
+        if(that.val() != '{:lang("send")}')
+        {
+            return false;
+        }
+        let token = $("input[ name='__token__']").val();
+        if(token == '')
+        {
+            // layer.open({
+            //     content: "{:lang('complete_the_parameters')}"
+            //     ,skin: 'msg'
+            //     ,time: 2 //2秒后自动关闭
+            // });
+            layer.msg("{:lang('complete_the_parameters')}",{time: 2000})
+
+            return false;
+        }
+        let lang = 'zh-tw';
+        if(getCookie('language'))
+        {
+            lang = getCookie('language');
+        }
+        var senData = {
+            token : token,
+            status : 1,
+            lang : lang,
+        };
+        sendStatus = 1;
+        $.post("{:url('/User/sendEmailCode')}",senData,
+            function(res){
+                var res = JSON.parse(res);
+                // layer.open({
+                //     content: res.info
+                //     ,skin: 'msg'
+                //     ,type:1
+                //     ,time: 2 //2秒后自动关闭
+                // });
+                layer.msg(res.info,{time: 2000},function(){
+                    countdown(60, that,that.val());
+                    $("input[ name='__token__']").attr('value',res.data.newtoken);
+                    sendStatus = 0;
+                })
+
+            });
+    });
+$('.personInfo').click(function(){
+    let token = $("input[ name='__token__']").val();
+    var phone = $("input[ name='phone']").val();
+    let email = $("input[ name='useremail']").val();
+    let password = $("input[ name='password']").val();
+    let country = $('#id_country  option:selected').val();
+    let code = $("input[ name='code']").val();
+
+    if(phone == undefined)
+    {
+        phone = '';
+    }
+
+    if(token == '' || country == '' || email == '' || code == '')
+    {
+        layer.msg("{:lang('complete_the_parameters')}", {time: 2000})
+        return false;
+    }
+    if(!email.match(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/))
+    {
+        layer.msg("{:lang('please_fill_in_the_correct_email_address')}",{time: 2000});
+        return false;
+    }
+    if(password != '')
+    {
+        if(checkpassword(password) != 1000){
+            layer.msg(checkpassword(password),{time: 2000});
+            return false;
+        }
+    }
+
+    let lang = 'zh-tw';
+    if(getCookie('language'))
+    {
+        lang = getCookie('language');
+    }
+    var senData = {
+        token : token,
+        phone : phone,
+        country : country,
+        email : email,
+        password : password,
+        code : code,
+        lang : lang,
+    };
+    layer.open({
+        type: 3,
+        skin: 'loading_style'
+    })
+    $.post($(this).attr('data-send-href'),senData,
+        function(res){
+            var res = JSON.parse(res);
+            setTimeout(function(){
+                layer.closeAll();
+                layer.msg(res.info, {time: 2000},function(){
+                    window.location.reload();
+                })
+                // layer.open({
+                //     content: res.info
+                //     ,skin: 'msg'
+                //     ,time: 2 //2秒后自动关闭
+                // });
+                // setTimeout(function(){ window.location.reload();},2000);
+            },500);
+        });
+});
+});
+</script>
+</body>
+
+</html>

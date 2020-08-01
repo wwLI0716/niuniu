@@ -1,0 +1,244 @@
+/*跑马灯夺宝*/
+.page_pmd{
+    background: #fbeeeb;
+    height: 100%;
+}
+.page_pmd .header{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.page_pmd .header img{
+    width: 100%;
+    display: block;
+    font-size: 0;
+}
+.page_pmd .pmd .explain{
+    color: #fff;
+}
+.page_pmd .pmd .explain p{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px
+}
+.page_pmd .pmd .explain .left{
+    float: left;
+}
+.page_pmd .pmd .explain .right{
+    float: right;
+}
+.page_pmd .pmd .explain .right span{
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #155EBE;
+    background: #fff;
+}
+.page_pmd .pmd .lottery{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.page_pmd .pmd .tip{
+    margin-bottom: 10px;
+    text-align: justify;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: 15px;
+    word-break: break-all;
+}
+.page_pmd .pmd{
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.page_pmd .list_box{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.page_pmd .list_box .mywin_info,.page_pmd .list_box .win_list{
+    background: #F7EDB9;
+    padding: 10px 0;
+    border-radius: 8px;
+    /*margin-bottom: 10px;*/
+    margin-bottom: 20px;
+}
+.page_pmd .list_box .activity_rule{
+    background: #F7EDB9;
+    padding: 10px 0;
+    border-radius: 8px;
+    margin-bottom: 62px;
+}
+.page_pmd .list_box .mywin_info .title,.page_pmd .list_box .win_list .title,.page_pmd .list_box .activity_rule .title{
+    text-align: center;
+    margin-bottom: 10px;
+    color: #000B2C;
+    font-size: 18px;
+    font-weight: bold;
+}
+.mywin_info ul,.win_listpmd ul,.activity_rule .rule_content{color:#000B2C;}
+.page_pmd .list_box .mywin_info .left{
+    float: left;
+    margin-left: 18px;
+}
+.page_pmd .list_box .mywin_info .right{
+    float: right;
+    margin-right: 18px;
+}
+.page_pmd .list_box .win_list{
+    position: relative;
+}
+.page_pmd .list_box .win_list img{
+    width: 42px;
+    position: absolute;
+    top: 50px;
+    left: 18px;
+}
+.page_pmd .list_box .win_list .left{
+    float: left;
+    margin-left: 82px;
+}
+.page_pmd .list_box .win_list .right{
+    float: right;
+    margin-right: 18px;
+}
+.page_pmd .activity_rule .rule_content{
+    margin-left: 18px;
+    margin-right: 18px;
+    text-align: justify;
+    line-height: 26px;
+    max-width: 100%;
+    word-break: break-all;
+}
+.page_pmd .activity_rule .rule_content img{
+    max-width: 100%;
+}
+.page_pmd .btn_getmore{
+    width: 100%;
+    height: 52px;
+    line-height: 52px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99999;
+    background: #FFF;
+}
+.page_pmd .btn_getmore .left{
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 14px;
+}
+.page_pmd .btn_getmore .left span{
+    color: #ec6538;
+    font-size: 26px;
+}
+.page_pmd .btn_getmore .right{
+    display: block;
+    float: right;
+    color: #FFF;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 8px;
+    padding: 0 20px;
+    background: #ec6538;
+    vertical-align: middle;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+/*夺宝中奖名单*/
+.page_pmdlist ul li{
+    padding: 15px 0;
+    /*border-top: 1px solid #eaebeb;*/
+    position: relative;
+    background: white;
+}
+.page_pmdlist ul li:after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #dedfe0;
+    -webkit-transform: scale(1,.5);
+    transform: scale(1,.5);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+}
+/*.page_pmdlist ul li:last-child{*/
+/*border-bottom: 1px solid #eaebeb;*/
+/*}*/
+.page_pmdlist ul li .item_box{
+    display: -webkit-box;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.page_pmdlist ul li img{
+    width: 112px;
+    height: 75px;
+    margin-right: 10px;
+    background:url(/static/store/images/goods_default.png) no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+}
+.page_pmdlist ul li .right{
+    -webkit-box-flex: 1;
+}
+.page_pmdlist ul li .right .name,.page_pmdlist ul li .right .time{
+    color: #333;
+    line-height: 24px;
+}
+.page_pmdlist ul li .right .name{
+    font-size: 17px;
+    margin-top: 4px;
+}
+.page_pmdlist ul li .right .time{
+    color: #a0a0a0;
+    /*font-size: 16px;*/
+    font-size: 15px;
+}
+.page_pmdlist ul .join{
+    float: right;
+    display: inline-block;
+    text-align: right;
+    height: 25px;
+    line-height: 25px;
+    /*margin-top: 20px;*/
+    /*padding: 0 10px;*/
+    border-radius: 3px;
+    /*background: #EC6538;*/
+    /*border: 1px solid #EC6538;;*/
+    width: 80px;
+    text-align: center;
+}
+/*开奖活动按钮的三种情况*/
+.join_grey,.join_seemore{
+    color: #BBB;
+    border: 1px solid #BBB;
+}
+.join_red{
+    color: #FF6633;
+    border: 1px solid #FF6633;
+}
+.red_right{
+    color: #FF6633;
+}
+.grey_right{
+    color: #BBB;
+}
+/*没有登录*/
+.no_login{
+    display: inline-block;
+    font-size: 16px;
+    color: #FFF;
+    text-align: center;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 8px;
+    width: 90%;
+    background: #bbb;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-left: 5%;
+}

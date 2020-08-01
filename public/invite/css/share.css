@@ -1,0 +1,180 @@
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;}
+body{color:#333; font-size:14px;max-width: 750px;min-width: 320px;margin: 0 auto;}
+*{
+	font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+	cursor: pointer;
+}
+ul,ol{list-style-type:none;}
+select,input,img,select{vertical-align:middle;}
+input{ font-size:14px;}
+a{ text-decoration:none; color:#000;}
+a:hover{color:#333; text-decoration:none;}
+a:link{color: #333333;}
+.clearfix{*zoom:1;}
+.clearfix:before,.clearfix:after{display:table;content:"";line-height:0;}
+.clearfix:after{clear:both;}
+.fl{float: left;}
+.fr{float: right;}
+*{-webkit-tap-highlight-color: rgba(0,0,0,0);}
+
+body{
+	background-color: #fdcb4e;
+	background-image: url(../images/bg_sun.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+/*package*/
+.package_box{
+	width: 100%;
+	margin-bottom: 10px;
+}
+.package_top,.package_bottom{
+	position: relative;
+	width: 100%;
+}
+.package_box .person_info{
+	position: absolute;
+	bottom: -15px;
+	left: 41%;
+	width: 18%;
+	text-align: center;
+	z-index: 9999;
+	padding-bottom: 19px;
+}
+.package_box .person_info img{
+	width: 100%;
+	border-radius: 50%;
+}
+p.person_name{
+	white-space: nowrap;
+	color: #FFF;
+	font-size: 14px;
+	text-align: center;
+	margin-bottom: -19px;
+	position: absolute;
+	top:0;
+	left: 10%;
+	width: 80%;
+}
+.package_box .package_bottom i{
+	background-image: url(../images/icons_total.png);
+	background-repeat: no-repeat;
+	background-size: 20px 250px;
+	background-position: -3px -45px;
+	width: 10px;
+	height:10px;
+	display: block;
+	position: absolute;
+	left: 49%;
+	top: 20px;
+}
+.package_box .package_cipher{
+	background: #FFF;
+	color: #f8847a;
+	font-size: 12px;
+	width: 80%;
+	margin-left: 10%;
+	position: absolute;
+	top:5px;
+	border-radius: 5px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 20px;
+}
+.package_box .package_cipher p{
+	line-height: 18px;
+	width: 90%;
+	margin-left: 5%;
+}
+.package_box .package_cipher span{
+	text-decoration: underline;
+}
+/*btn*/
+.btn_download{
+	width: 100%;
+}
+.btn_download a{
+	display: block;
+	font-size: 17px;
+	color: #fff;
+	width: 90%;
+	height: 40px;
+	margin-left: 5%;
+	line-height: 40px;
+	text-align: center;
+	background: #ff5858;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.btn_download a:last-child{
+	margin-top: 22px;
+}
+.new_friends{
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 40px;
+}
+.new_friends .title{
+	font-size: 12px;
+	color: #db4b4b;
+	border-bottom: 1px solid #db4b4b;
+	padding: 6px 0;
+}
+.new_friends ul{
+	width: 100%;
+	margin-top: 20px;
+}
+.new_friends ul li{
+	position: relative;
+	color: #db4b4b;
+	margin-bottom: 20px;
+}
+.new_friends li a img{
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	position: absolute;
+	left: 0;
+	top: 1px;
+}
+.new_friends li .discuss_box{
+	margin-left: 50px;
+	max-width: 70%;
+}
+.new_friends li .discuss_name{
+	font-size: 14px;
+	color: #db4b4b;
+	display: inline-block;
+	line-height: 15px;
+	/*max-width: 100px;
+    white-space: nowrap;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis*/
+}
+.new_friends .discuss_name .name{
+	max-width: 100px;
+	white-space: nowrap;
+	word-break: break-all;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
+}
+.new_friends .discuss_name .time_box{
+	font-size: 11px;
+}
+.new_friends li .back_content{
+	font-size: 11px;
+	margin-top: 5px;
+}
+.new_friends li .get_gold{
+	position: absolute;
+	right: 0;
+	top: 10px;
+}
+/*下载*/
+.download_layer{ z-index:2; position:fixed; width:100%; max-width:750px; height:100%; left:auto; top:0px; background:rgba(0,0,0,0.7) url(../../../download/wap/images/right-tip.png) top 0.3rem right 0.5rem no-repeat; background-size:58% auto; display:none;}
+
+
+

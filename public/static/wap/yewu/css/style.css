@@ -1,0 +1,25 @@
+html, body { color:#222; font-family:Microsoft YaHei, Helvitica, Verdana, Tohoma, Arial, san-serif; margin:0; padding: 0; text-decoration: none; }
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td { margin:0; padding:0; }
+img { border:0; }
+ol, ul { list-style: none outside none; margin:0; padding: 0; }
+a { color:#000000; text-decoration: none; }
+.clr { display:block; clear:both; height:0; overflow:hidden; }
+.copyright { padding:8px; text-align:center; font-size:14px; color:#666; display: none;}
+.copyright a { color:#666; }
+h2 { font-size:16px; }
+
+.waibiankuang{
+    border:1px solid #36A1DB;
+    border-radius:5px;
+    overflow:hidden;
+    margin:1%;
+    width:98%;
+}
+.neibiankuang{
+}
+.dengluneibiankuang{
+}
+
+ 
+#Head{width:100%;overflow:hidden;text-align:center;}
+#Head img{width:100%; height:auto}

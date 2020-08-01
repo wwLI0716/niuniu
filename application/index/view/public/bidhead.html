@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>ANTTRADE</title>
+<link rel="stylesheet" href="__WAP_PUBLIC__/iconfont/iconfont.css">
+<link rel="stylesheet" href="__WAP_PUBLIC__/nowiconfont/iconfont.css">
+<link rel="stylesheet" href="__WAP_PUBLIC__/css/bootstrap.d59729439a20.css">
+<link rel="stylesheet" href="__WAP_PUBLIC__/css/bootstrap-extend.0f113029eba9.css">
+<link rel="stylesheet" href="__WAP_PUBLIC__/css/master_style.45157f3d858b.css">
+<link rel="stylesheet" href="__WAP_PUBLIC__/css/general.06bf784cb4f7.css">
+<link rel="stylesheet" href="__WAP_PUBLIC__/css/_all-skins.663f7ae35658.css ">
+<link rel="stylesheet" href="__WAP_PUBLIC__/css/select2.min.4765adee4f66.css ">
+<link rel="stylesheet" href="__WAP_PUBLIC__/css/layer.css">
+<link rel="stylesheet" href="__WAP_PUBLIC__/css/website.9576659c0ec6.css ">
+<script src="__WAP_PUBLIC__/js/jquery.min.473957cfb255.js" type="text/javascript"></script>
+</head>
+<body class="hold-transition skin-green sidebar-mini">
+<div class="wrapper page-dashboard">
+<header class="main-header">
+    <a href="/" class="logo">
+        <span class="logo-lg">
+            <img src="__WAP_PUBLIC__/picture/logo.png" alt="logo" class="img-responsive light-logo"
+                 style="max-width:140px;">
+        </span>
+    </a>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top">
+        <a href="#" class="iconfont icon_mulu" data-toggle="push-menu" role="button"></a>
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!--<li class="dropdown user user-menu" style="position: relative;width: 65%">
+                    <a href="" class="dropdown-toggle getA">
+                        <span class="bigger"><</span>&nbsp;<span class="pageName"></span>
+                    </a>
+                </li>-->
+
+                {if condition="$role eq 0"}
+                <li class="dropdown user user-menu" style="position: relative;width: 20%;text-align: center;">
+                    <a href="/Bid/saveView" class="dropdown-toggle">
+                        <i class="iconfont icon-icon-test" style="margin-right: 0;font-size: 2.5rem;"></i>
+                        <span class="showLogoTip">创建发布</span>
+                    </a>
+                </li>
+                {else /}
+                <li class="dropdown user user-menu" style="position: relative">
+                    <a href="{:url('news/lst')}" class="dropdown-toggle">
+                        <i class="iconfont icon_iconfont-yijianfankui-" style="margin-right: 0;font-size: 2.5rem;"></i>
+                        <span class="showLogoTip">消息通知</span>
+                    </a>
+                    {if condition="$noticeStatus eq 1"}
+                    <div class="red_icon"></div>
+                    {/if}
+                </li>
+                {/if}
+
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="iconfont icon_iconfont-xiugainicheng-" style="margin-right: 0;font-size: 2.5rem;"></i>
+                        <span class="showLogoTip">个人中心</span>
+                    </a>
+                    <ul class="dropdown-menu scale-up">
+                        <li class="user-body">
+                            <div class="row no-gutters">
+                                <div class="col-12 text-left col-12-spec">
+                                    <a href="javascript:void(0)">{$username} / {$userrole}</a>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<style>
+.red_icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #ff0000;
+    animation: opacityX 1s infinite;
+}
+.showLogoTip {
+    font-size: .8rem;
+}
+@keyframes opacityX {
+    0%{
+        opacity: 100%;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+</style>

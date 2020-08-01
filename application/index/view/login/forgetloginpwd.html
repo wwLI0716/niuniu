@@ -1,0 +1,123 @@
+{include file="public/header" /}
+<div class="login-box">
+    <div class="register-logo">
+        <img src="__WAP_PUBLIC__/picture/logo.png" class="img-responsive" alt="">
+    </div>
+    <div class="login-box-body">
+        <p class="login-box-msg">{:lang('forget_pw')}</p>
+        <form id="id-form-login" method="post" class="form-element form-register">
+            <input type="hidden" name="__token__" value="{$Request.token}" />
+            <div class="form-group">
+                <label class="control-label" for="id_auth-username">{:lang('username')}</label>
+                <input type="text" name="auth-username" autofocus maxlength="254" class="form-control" placeholder="{:lang('username')}" title="" required id="id_auth-username" />
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="id_auth-password">{:lang('email')}</label>
+                <input type="email" name="auth-email" class="form-control" placeholder="{:lang('email')}" title="" required id="id_auth-password" />
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <input class="btn btn-info btn-register btn-block margin-top-10 login" readonly value="{:lang('find_pw')}" data-send-href="{:url('findSubmit')}" />
+                </div>
+            </div>
+        </form>
+        <div class=" row margin-top-20 text-center">
+            <p class="col-6" style="text-align: left;"><a class="link-login" data-href="{:url('login')}" data-parameter="">{:lang('login')}</a></p>
+        </div>
+    </div>
+</div>
+<style>
+.loading_style{
+    color: #fff;
+}
+</style>
+<script>
+
+    if(getCookie('language') && getCookie('language') != '')
+    {
+        var language = getCookie('language');
+    } else {
+        var language = 'zh-tw';
+    }
+    $('.checkLanguage option').each(function(){
+        if($(this).val() == language)
+        {
+            $(this).attr("selected",true);
+        }
+    });
+
+    $('.login').click(function(){
+        let token = $("input[ name='__token__']").val();
+        let name = $("input[ name='auth-username']").val();
+        let email = $("input[ name='auth-email']").val();
+        if(token == '' || name == '' || email == '')
+        {
+            // layer.open({
+            //     content: "{:lang('complete_the_parameters')}"
+            //     ,skin: 'msg'
+            //     ,time: 2 //2秒后自动关闭
+            // });
+            layer.msg("{:lang('complete_the_parameters')}",{time:2000})
+            return false;
+        }
+        if(!email.match(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/))
+        {
+            // layer.open({
+            //     content: "{:lang('please_fill_in_the_correct_email_address')}"
+            //     ,skin: 'msg'
+            //     ,time: 2 //2秒后自动关闭
+            // });
+            layer.msg("{:lang('please_fill_in_the_correct_email_address')}",{time:2000})
+
+            return false;
+        }
+        let lang = 'zh-tw';
+        if(getCookie('language'))
+        {
+            lang = getCookie('language');
+        }
+        var senData = {
+            token : token,
+            name : name,
+            email : email,
+            lang : lang,
+        };
+        // layer.open({
+        //     type: 2
+        //     ,content: '{:lang("sending_data")}'
+        // });
+        layer.open({
+            type: 3,
+            skin: 'loading_style'
+            // content: '{:lang("sending_data")}'
+        })
+        $.post($(this).attr('data-send-href'),senData,
+            function(res){
+                var res = JSON.parse(res);
+                setTimeout(function(){
+                    layer.closeAll();
+                    layer.msg(res.info, {time: 2000}, function () {
+                        if(res.code == 200)
+                        {
+                            window.location.reload();
+                        } else {
+                            window.location.href="{:url('Login/login')}";
+                        }
+                    })
+                    // layer.open({
+                    //     content: res.info
+                    //     ,skin: 'msg'
+                    //     ,time: 2 //2秒后自动关闭
+                    // });
+                    // if(res.code == 200)
+                    // {
+                    //     setTimeout(function(){ window.location.reload();},2000);
+                    // } else {
+                    //     setTimeout(function(){ window.location.href="{:url('Login/login')}";},2000);
+                    // }
+                },500);
+            });
+    });
+</script>
+</body>
+</html>

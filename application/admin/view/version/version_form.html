@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>版本记录编辑</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="__LAYUI__/layui/css/layui.css" media="all">
+    <style>
+        .layui-form-item input {width: 350px;}
+        .layui-form-select input {width: 200px;}
+    </style>
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header">版本记录编辑</div>
+        <div class="layui-card-body" style="padding: 15px;">
+            <form class="layui-form" action="" method="post" lay-filter="community-notice-form">
+                <input type="hidden" name="id" value="{$info.id}" class="layui-input">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">站点名称</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="site_name" value="{$info.site_name}" lay-verify="required" placeholder="请输入站点名称"
+                               autocomplete="off" class="layui-input" />
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">平台</label>
+                    <div class="layui-input-inline">
+                        <select name="platform"  id="platform" style="height:38px;">
+                            <option value="" selected>请选择平台</option>
+                            {foreach platform_list as $k => $v}
+                            <option value="{$k}" {if $info.platform== $k}selected{/if}>{$v}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">APP版本</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="app_version" value="{$info.app_version}" lay-verify="required" placeholder="请输入APP版本"
+                               autocomplete="off" class="layui-input"/>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">版本号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="version_code" value="{$info.version_code}" lay-verify="required" placeholder="请输入版本号"
+                               autocomplete="off" class="layui-input" />
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">版本描述</label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入版本描述" class="layui-textarea" name="version_desc">{$info.version_desc}</textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">下载路径</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="download_url" value="{$info.download_url}" lay-verify="required" placeholder="请输入下载路径"
+                               autocomplete="off" class="layui-input" />
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">分享链接</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="share_url" value="{$info.share_url}" lay-verify="required" placeholder="请输入分享链接"
+                               autocomplete="off" class="layui-input" />
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <div class="layui-footer" style="left: 0;">
+                            <button class="layui-btn" lay-submit="" lay-filter="component-form-demo" >立即提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="__LAYUI__/layui/layui.js"></script>
+<script>
+    layui.config({
+        base: '__LAYUI__/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index', 'form','layer','upload'], function () {
+        var layer = layui.layer,
+            $ = layui.jquery,
+            form = layui.form;
+        form.render(null, 'community-notice-form');
+        /* 监听提交 */
+        form.on('submit(component-form-demo)', function(data){
+            var field = data.field; //获取提交的字段
+            //console.log(field);return false;
+            $.post("{:url('version/versionForm')}", {
+                id:field.id,
+                site_name:field.site_name,
+                platform:field.platform,
+                app_version:field.app_version,
+                version_code:field.version_code,
+                version_desc:field.version_desc,
+                download_url:field.download_url,
+                share_url:field.share_url,
+            }, function (res) {
+                if (res.code === 1) {
+                    layer.msg(res.msg);
+                    setTimeout(function(){
+                        parent.layui.index.openTabsPage('/admin/version/versionList','版本列表');
+                    }, 2000);
+                } else {
+                    layer.msg(res.msg);
+                }
+            });
+            return false;
+        });
+    })
+</script>
+</body>
+</html>

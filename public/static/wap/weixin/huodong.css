@@ -1,0 +1,265 @@
+﻿body,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,legend,li,ol,p,table,td,th,ul {
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-width: 320px;
+    font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+    color: #333;
+    -webkit-text-size-adjust: none;
+}
+fieldset,img {
+    border: 0;
+}
+ol,ul {
+    list-style: none;
+}
+address,em {
+    font-style: normal;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+table {
+    border-collapse: collapse;
+}
+#clear {
+    clear: both;
+    width: 100%;
+    background-color: #fff;
+}
+#clear:after {
+    display: block;
+    clear: both;
+    height: 1px;
+    content: '';
+}
+img, fieldset {
+    border: 0;
+}
+img {
+    height: auto;
+    width: auto\9;
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
+}
+pre{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break:break-all;
+    text-align:justify;
+}
+.content-step ul li .red{ color:#5ba1f5; background:none; width:inherit; vertical-align:inherit;}
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.doc {
+    padding:0 auto;
+    margin: 0 auto;
+}
+.doc h1 {font-size:16px;color:#333;padding:10px 0;font-weight:500;}
+.shop-title {padding:0 auto;}
+.author {padding:10px 0;font-size:12px;}
+.author span {color:#333;}
+.author a {color:#2B8CB2;}
+.content {padding:0 auto;zoom:1;overflow:auto;word-wrap:break-word;}
+.f-bold {margin-left:20px;color:#5ba1f5;padding:5px;line-height:30px;font-size:16px;}
+.content p {padding:0px 20px 0px 20px;line-height:30px;font-size:14px;}
+.content-time {padding:20px 0;color:#000;font-weight:500;line-height:40px;}
+.content-time span {color:#000;}
+.content-time em {color:#5ba1f5;}
+.content-title{padding:0px 0px 0px 20px;font-size:18px;line-height:40px;font-weight:bold;}
+.content-jiezhi{height:30px;margin-right:20px;font-size:16px;line-height:30px;color:#5ba1f5;font-weight:bold;text-align:right;}
+.content-step {}
+.content-step ul {padding:20px 0;}
+.content-step ul li {line-height:30px;color:#5D5D5D; font-size:14px; padding-top:0}
+.content-step ul li .icon{ display:inline-block; background:url({$Think.const.INDEX_IMG_URL}list.gif) no-repeat scroll; width:20px; height:20px; background-size:20px 20px; vertical-align:middle; margin-right:8px;}
+.shop-list {}
+.shop-list li {text-align:center;padding:20px 0;}
+.shop-list li p {text-align:left;color:#7A7878; text-indent:2em;}
+.shop-list li img {margin:0 auto;}
+.content-contact {color:#F15050;padding:20px 10px;line-height:30px;text-indent:2em;}
+.cmbc-qrcode {text-align:center;padding:20px 0;}
+.down-cmbc {text-align:center;display:block;margin:0 auto;}
+.down-cmbc img {margin:0 auto;}
+.list li{display:-moz-box;
+    display:-webkit-box;
+    display:box;}
+.list li p{ width:90%}
+.last{ text-align:right ; font-size:12px; color:#bdbdbd; padding-right:20px; margin-bottom:10px;}
+.text{font-size: 14px;}
+.text p{font-size: 14px;text-align:justify;}
+.clear{clear:both; height:0;}
+body,td,th {
+    font-family: "microsoft yahei", Verdana, Arial, Helvetica, sans-serif;
+}
+#foot{position:fixed;_position:absolute;bottom:0px;_bottom:0px;_margin-top:expression(this.style.pixelHeight+document.documentElement.scrollTop)}
+
+.header {
+    margin: 10px auto;
+    text-align: left;
+    width: 100%;
+    height:60px;
+    overflow:hidden;
+}
+.header .logo{
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: 0px 10px 0px 20px;
+    float: left;
+}
+.header .logo img{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    background:#fff;
+    border:1px solid #ccc;
+    padding:2px;
+}
+/*个人名片*/
+.xiantiao{
+    width:100%;
+    height:10px;
+}
+.mingpiantiao {
+    margin:0;
+    padding:0;
+    width:100%;
+    border:1px solid #cccccc;
+    border-radius:5px;
+    background-color: #ffffff;
+    line-height:40px;
+    font-size:14px;
+}
+.mingpiantiao .leftzi{
+    margin: 0;
+    padding-left:10px ;
+    color:#0068ce;
+    font-weight:bold;
+    font-size:14px;
+    width: 80px;
+    display:inline-block;
+    vertical-align: top;
+}
+.mingpiantiao .rightzi{
+    color:#232323;
+    font-weight:500;
+    font-size:14px;
+    display:inline-block;
+}
+.mingpiantiao .xian{
+    width:100%;
+    height:1px;
+    background-color: #cccccc;
+}
+.mingpiantiao .jianjie{
+    width:96%;
+    color:#333333;
+    font-size:12px;
+    line-height:30px;
+    text-align:justify;
+}
+
+.mingpiantiao .personalimage{
+    color:#333333;
+    font-size:12px;
+}
+
+/*个人名片*/
+.xiantiao_edit{
+    width:100%;
+    height:20px;
+}
+
+.mingpiantiao_edit {
+    border-radius:5px;
+    text-align: left;
+}
+.mingpiantiao_edit span{
+    float:left;
+    width:70px;
+    height:25px;
+    margin-left: 20px;
+    font-weight:bold;
+    font-size:14px;
+    color : #8A8A8A;
+}
+
+.mingpiantiao_edit div{
+    border-radius: 5px;
+    height: 25px;
+    margin-left: 100px;
+    margin-right: 20px;
+}
+.mingpiantiao_edit .xian{
+    width:100%;
+    height:1px;
+    background-color: #cccccc;
+}
+.mingpiantiao_edit .jianjie{
+    width:96%;
+    color:#333333;
+    font-size:12px;
+}
+
+.mingpiantiao_edit .personalimage{
+    color:#333333;
+    font-size:12px;
+}
+
+/*.mingpiantiao .personalimage .imgcss{*/
+    /*float:left;*/
+    /*width:100px;*/
+    /*height:100px;*/
+    /*overflow:hidden;*/
+    /*text-align:center;*/
+    /*font-size:0;*/
+    /*border:1px solid red;*/
+    /*margin:10px;*/
+    /*background-color: #ffffff;*/
+/*}*/
+/*.mingpiantiao .personalimage .imgcss{*/
+    /*margin-left: 2px;*/
+    /*margin-right: 2px;*/
+    /*border-radius: 5px;*/
+    /*background-color: #ff4286;*/
+/*}*/
+
+.beijing{
+    padding:0 auto;
+    zoom:1;
+    overflow:auto;
+    background-color: rgba(0,0,0,0.1);/* IE9、标准浏览器、IE6和部分IE7内核的浏览器(如QQ浏览器)会读懂 */
+}
+.beijing p{
+    padding:0px 0px 0px 20px;
+    line-height:40px;
+    font-size:14px;
+    color: #FFFFFF;
+}
+@media \0screen\,screen\9 {/* 只支持IE6、7、8 */
+    .beijing{
+        padding:0 auto;
+        zoom:1;
+        overflow:auto;
+        filter:Alpha(opacity=10);
+        position:static; /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
+        *zoom:1; /* 激活IE6、7的haslayout属性，让它读懂Alpha */
+    }
+    .beijing p{
+        padding:0px 0px 0px 20px;
+        line-height:40px;
+        font-size:14px;
+        color: #FFFFFF;
+        position:relative;/* 设置子元素为相对定位，可让子元素不继承Alpha值 */
+    }
+}

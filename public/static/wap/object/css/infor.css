@@ -1,0 +1,40 @@
+/** base **/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td, img{border:medium none;margin: 0;padding: 0;}
+body,button, input, select, textarea{font: 14px/1.5 'Microsoft Yahei',tahoma, Srial, helvetica, sans-serif!important;}
+h1, h2, h3, h4, h5, h6{font-size: 100%;}
+em{font-style:normal;}
+ul, ol{list-style: none;}
+a{text-decoration: none;color:#fff; cursor: pointer;}
+a:hover{text-decoration: none;  color:#D09A05;  -moz-transition: all 0.3s ease-in;  -webkit-transition: all 0.3s ease-in;  -o-transition:all 0.3s ease-in;  transition: all 0.3s ease-in; }
+img{border:0px;  outline-width:0px;  vertical-align:top;}
+.fl{ float:left;}
+.fr{ float:right;}
+
+
+/** label **/
+.label{ width: 94%; margin:0 auto;}
+.label-selected{  min-height:38px;  margin:10px 0;  background-color: #fff;  position: relative; }
+.label_tit{ overflow: hidden;}
+.label-selected .label_fix{ float: right; color: #fff; background: #107DF2; padding:1px 18px; border-radius: 20px; margin-top: 13px;}
+.cell{  display: block;  width:90px;  height:28px;  line-height: 28px;  border:3px;  background:#009688;  color:#fff;  text-align: center; }
+.label-selected li {  display: inline-block;  height: 34px;  line-height: 34px;  font-size: .8rem;  padding: 0 1rem;  border: 1px solid #e6e6e6;  border-radius: 2px;  cursor: pointer;  margin: 4px 6px 6px 0;  color: #666;  float: left;}
+.label-selected li:nth-child(1n+0){ background: #F0E9CF; color: #745230; border:1px solid #E7DFC2;}
+.label-selected li:nth-child(odd){ background: #DEE9F4; color: #324778; border:1px solid #C4D4E5;}
+.label-selected li:nth-child(3n+0){ background: #E2F1CF; color: #577A37; border:1px solid #D5E1C6;}
+.label-selected li span{ float: right; margin-left: 14px;}
+#labelItem{  margin-bottom: 10px;   }
+.label-item li {  display: block;  height: 2rem;  line-height: 2rem;  font-size: .8rem;  text-align: center;   border-radius: 2px;  cursor: pointer;  margin-bottom: 10px;  color: #666;    float: left;  padding:0 6px;}
+.label-item{ width:100%; overflow:auto;  background-color:#F6F6F8; position:fixed; left:0; bottom:0; z-index:1001; word-wrap: break-word; padding:20px 10px; box-sizing: border-box; border-top:1px solid #EFEFF1;height: 320px; }
+.label-item li{opacity: 1;}
+.label-item li span{opacity: 1; color: #000;background: #FEFEFE;border: 1px solid #e6e6e6; display: inline-block; width: 100%; height: 100%;padding:0 10px;}
+.label-item .selected span {  color: #565656; background: #E6E6E6;}
+.label_box{ position: fixed;bottom: 2rem; width: 100%; left:0;}
+.layui-btn-sm{ display: block; width: 84%; margin: 4px auto;  background: #107DF2; color: #fff;  text-align: center; height: 2.4rem; line-height: 2.4rem; border-radius: 0.6rem;}
+.label_txt{ height: 3rem; line-height: 3rem; color: #142B9B; font-size: 1.2rem; float: left;}
+
+.l_title img{ max-width: 100%; margin:1em auto;}
+.label_list{ width: 92%; margin:0 auto; overflow: hidden;}
+.label_list li{ padding:0.14em 1em; margin-right: 1.2%; border-radius: 50px; float: left; margin-bottom: 10px;}
+.label_list li:nth-child(odd){ background: #8CAAF1; color: #fff;}
+.label_list li:nth-child(even){ background: #8FCCD1; color: #fff;}
+

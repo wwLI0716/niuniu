@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>模块管理</title>
+    <link rel="stylesheet" href="__LAYUI__/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="__LAYUI__/style/admin.css" media="all">
+    <link rel="stylesheet" href="__LAYUI__/style/oc.css" media="all">
+    <style>
+        .laytable-cell-1-logo{
+            height:100%;
+            max-width: 100%;
+        }
+        .laytable-cell{
+            text-align: center;
+        }
+        .layui-form-item .layui-input-inline{
+            width:auto;
+        }
+        .layui-form-item .layui-input{
+            width:101px;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-tab layui-tab-card">
+        <ul class="layui-tab-title">
+            <li class="layui-this">模块管理</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <div style="padding-bottom: 10px;">
+                    <button class="layui-btn layuiadmin-btn-useradmin" data-type="add">添加</button>
+                    <a class="layui-btn layuiadmin-btn-useradmin" data-type="del">删除</a>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-inline">
+                        <input style="width: auto;" type="text" id="title" name="title"  placeholder="请输入模块标题" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-input-inline " style="width: 130px">
+                        <select name="type" lay-verify="" id="type" style="height:38px">
+                            <option value="" selected>请选择模块分类</option>
+                            {foreach $group as $k => $v}
+                            <option value="{$v.id}">{$v.name}</option>
+                            {/foreach}
+                        </select>
+                     </div>
+                    <label class="layui-form-label">显示时间:</label>
+                   <div class="layui-input-inline">
+                        <input name="start_time"  id="datestart" lay-verify="date" placeholder="开始时间"
+                       autocomplete="off"
+                       class="layui-input" type="text">
+                    </div>
+                    <div class="layui-form-mid">-</div>
+                    <div class="layui-input-inline">
+                        <input name="end_time" id="dateend" lay-verify="date" placeholder="结束时间"
+                       autocomplete="off"
+                       class="layui-input" type="text">
+                    </div>
+                     <div class="layui-input-inline " style="width: 130px">
+                        <select name="status" lay-verify="" id="status" style="height:38px">
+                            <option value="" selected>请选择状态</option>
+                            <option value="0">隐藏</option>
+                            <option value="1" >显示</option>
+                        </select>
+                     </div>
+                    <div class="layui-input-inline " style="width: 90px">
+                        <button class="layui-btn layuiadmin-btn-useradmin"  data-type="reload">
+                            <i class="layui-icon" style="font-size: 20px; "></i> 搜索
+                        </button>
+                    </div>
+                </div>
+                <table id="list" lay-filter="list"></table>
+                <script type="text/html" id="barDemo">
+                    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>             
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="__LAYUI__/layui/layui.js"></script>
+<script>
+    layui.use(['table', 'jquery','laydate'], function () {
+        var table = layui.table,
+            $ = layui.$;
+        var laydate = layui.laydate;
+
+        var start = laydate.render({
+            elem: '#datestart'
+            ,max: new Date().valueOf()
+            ,done: function(value, date, endDate){
+                var startDate = new Date(value).getTime();
+                var endTime = new Date($('#dateend').val()).getTime();
+                if (endTime < startDate) {
+                    layer.msg('结束时间不能小于开始时间');
+                    $('#datestart').val($('#dateend').val());
+                }
+            }
+        });
+        var end = laydate.render({
+            elem: '#dateend'
+            ,max: new Date().valueOf()
+            ,done: function(value, date, endDate){
+                var startDate = new Date($('#datestart').val()).getTime();
+                var endTime = new Date(value).getTime();
+                if (endTime < startDate) {
+                    layer.msg('结束时间不能小于开始时间');
+                    $('#dateend').val($('#datestart').val());
+                }
+            }
+        });
+        table.render({
+            elem: '#list',
+            url: "{:url('module/index')}", //数据接口
+            title: '模块表',
+            toolbar: 'true',
+            defaultToolbar: ['filter', 'print', 'exports'],
+            page: true,
+            loading: true,
+            limit: 20,
+            limits: [10, 20, 50, 100],
+            cols: [[
+                {type: 'checkbox', fixed: 'left'},
+                {field: 'id', title: 'ID', sort: true, fixed: 'left'},
+                {field: 'logo', title: '模块图片', templet:'<div><img src="{{d.logo}}" width="35px" height="35px"/></div>', width:100},
+                {field: 'belong_type', title: '类型', sort: true},
+                {field: 'name', title: '标题'},
+                {field: 'acname', title: '模块分类', sort: true, width:100},
+                {field: 'begin_time', title: '开始时间', sort: true, width:160},
+                {field: 'end_time', title: '结束时间', sort: true, width:160},
+                {field: 'status', title: '状态', sort: true, width:80},
+                {fixed: 'right', width: 120, align: 'center', toolbar: '#barDemo',title:'操作'}
+            ]]
+        });
+
+        //事件
+        var active = {
+            del: function () {
+                var checkStatus = table.checkStatus('list')
+                    , checkData = checkStatus.data; //得到选中的数据
+                if (checkData.length === 0) {
+                    return layer.msg('请选择数据');
+                }
+                var ids = [];
+                for (var v in checkData) {
+                    ids.push(checkData[v].id);
+                }
+                layer.confirm('确定删除吗？', function (index) {
+                    $.post("{:url('module/delModule')}", {id: ids}, function (res) {
+                        if (res.code === 1) {
+                            layer.close(index);
+                            table.reload('list');
+                            layer.msg(res.msg);
+                        } else {
+                            layer.msg(res.msg);
+                        }
+                    }, 'json')
+                })
+            }
+            , add: function () {
+                parent.layui.index.openTabsPage('/admin/module/moduleForm','模块添加');
+                
+            },
+            reload: function () {
+                var title=$('#title').val();
+                var type=$('#type').val();
+                var datestart=$('#datestart').val();
+                var dateend=$('#dateend').val();
+                var status=$('#status').val();
+                    var index = layer.msg('查询中，请稍候...',{icon: 16,time:false,shade:0});
+
+                    setTimeout(function(){
+                        table.reload('list', { //表格的id
+                            page: {
+                                curr: 1 //重新从第 1 页开始
+                            },
+                            where: {
+                                title:$.trim(title),
+                                type:$.trim(type),
+                                datestart:$.trim(datestart),
+                                dateend:$.trim(dateend),
+                                status:$.trim(status)
+                            }
+                        });
+                        layer.close(index);
+                    },800);
+                    table.render();
+            }
+        };
+        $('.layuiadmin-btn-useradmin').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+
+        //监听行工具事件
+        table.on('tool(list)', function (obj) {
+            var data = obj.data;
+            var layEvent = obj.event;
+            if (layEvent === 'del') {
+                layer.confirm('真的删除行么', function (index) {
+                    $.post('{:url("module/delModule")}', {id: [data.id]}, function (res) {
+                        if (res.code === 1) {
+                            obj.del();
+                            layer.close(index);
+                            layer.msg(res.msg);
+                        } else {
+                            layer.msg(res.msg);
+                        }
+                    });
+                });
+            } else if (layEvent === 'edit') {
+                parent.layui.index.openTabsPage('/admin/module/moduleForm?aid=' + data.id,'模块修改');
+                
+            }
+        });
+    });
+</script>
+</body>
+</html>

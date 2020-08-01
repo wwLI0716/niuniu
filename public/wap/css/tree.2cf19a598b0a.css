@@ -1,0 +1,182 @@
+﻿        ol,
+        ul {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+            list-style: none;
+        }
+
+        /*DL, DT, DD TAGS LIST DATA*/
+
+        dl {
+            margin-bottom: 50px;
+        }
+
+        dl dt {
+            float: left;
+            font-weight: bold;
+            margin-right: 10px;
+            padding: 5px;
+        }
+
+        dl dd {
+            margin: 2px 0;
+            padding: 5px 0;
+        }
+
+        .bintree {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        .bintree ul {
+            padding-top: 20px;
+            position: relative;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+
+        .bintree li {
+            float: left;
+            text-align: center;
+            list-style-type: none;
+            position: relative;
+            padding: 15px;
+            padding-top: 20px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            z-index: 99;
+        }
+
+        /*We will use::before and::after to draw the connectors*/
+
+        .bintree li::before,
+        .bintree li::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50%;
+            border-top: 1px solid #9eba46;
+            width: 50%;
+            height: 20px;
+        }
+
+        .bintree li::after {
+            right: auto;
+            left: 50%;
+            border-left: 1px solid #9eba46;
+        }
+
+        /*We need to remove left-right connectors from elements without any siblings*/
+
+        .bintree li:only-child::after,
+        .bintree li:only-child::before {
+            display: none;
+        }
+
+        /*Remove space from the top of single children*/
+
+        .bintree li:only-child {
+            padding-top: 0;
+        }
+
+        /*Remove left connector from first child and right connector from last child*/
+
+        .bintree li:first-child::before,
+        .bintree li:last-child::after {
+            border: 0 none;
+        }
+
+        /*Adding back the vertical connector to the last nodes*/
+
+        .bintree li:last-child::before {
+            border-right: 1px solid #9eba46;
+            border-radius: 0 5px 0 0;
+            -webkit-border-radius: 0 5px 0 0;
+            -moz-border-radius: 0 5px 0 0;
+        }
+
+        .bintree li:first-child::after {
+            border-radius: 5px 0 0 0;
+            -webkit-border-radius: 5px 0 0 0;
+            -moz-border-radius: 5px 0 0 0;
+        }
+
+        /*Time to add downward connectors from parents*/
+
+        .bintree ul ul::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-left: 1px solid #9eba46;
+            width: 0;
+            height: 20px;
+        }
+
+        .bintree li a {
+            padding: 0;
+            text-decoration: none;
+            color: #666;
+            font-family: arial, verdana, tahoma;
+            font-size: 11px;
+            display: inline-block;
+            background: none;
+        }
+
+        .bintree li a:hover {
+            border-radius: 8px;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            background: #f4f2f2;
+        }
+
+        .bintree img {
+            width: 48px;
+            height: 48px;
+            z-index: -1;
+        }
+
+        /* ESQUERDA*/
+
+        .central {
+            margin-left: 1px;
+        }
+
+        .lado-esquerdo {
+            margin-left: 1px;
+        }
+
+        .lado-esquerdo .esquerda-esquerda {
+            margin-right: 0px;
+        }
+
+        .lado-esquerdo .esquerda-direita {
+            margin-left: 0px;
+        }
+
+        /* // ESQUERDA*/
+
+        /* DIREITA*/
+
+        .lado-direita .central-direita {
+            margin-left: 1px;
+        }
+
+        .lado-direita .direita-esquerda {
+            margin-right: 0px;
+        }
+
+        .lado-direita .direita-direita {
+            margin-left: 0px;
+        }
+
+        .popover {
+            z-index: 999999;
+            width: 250px;
+        }

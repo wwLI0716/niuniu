@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+namespace think;
+// +----------------------------------------------------------------------
+// | ThinkPHP [ WE CAN DO IT JUST THINK ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2006-2016 http://thinkphp.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | Author: yunwuxin <448901948@qq.com>
+// +----------------------------------------------------------------------
+
+// 定义项目路径
+ini_set('memory_limit',"1024M");
+set_time_limit(36000);
+
+
+// 加载框架引导文件
+require 'framework/base.php';
+// 加载框架引导文件
+// 执行应用
+Container::get('app', [defined('APP_PATH') ? APP_PATH : ''])->initialize();
+Console::init();

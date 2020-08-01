@@ -1,0 +1,25 @@
+/** newsDet **/
+.news_det_box{ width: 94%; margin:0 auto;padding-bottom: 3rem;}
+.nd_tit{font-size: 1.2rem; font-weight: normal; line-height: 1.4rem; margin:1rem 0; width: 100%; text-align: justify;}
+.nd_num{ overflow: hidden;}
+.nd_num li{ float: left; color: #C4C5C5; margin-right: 0.6rem;}
+.nd_num li:nth-child(3){ color: #3B96F6;}
+.nd_content{ text-align: justify; margin:1rem 0;}
+.nd_content p{ text-indent: 2rem; color: #101010; font-size: 1rem;}
+.nd_comment{ overflow: hidden; padding: 0.8rem 0; box-sizing: border-box; border-top:1px solid #ededed;}
+.nd_com_portrait{ width: 18%;}
+.nd_com_portrait img{ border-radius: 50%; width: 52px; height: 52px;}
+.nd_com_content{ width: 80%;}
+.nd_com_content li:nth-child(1){overflow: hidden;}
+.nd_com_content li:nth-child(1) p{ float: left; color: #101010; font-size: 1.1rem; font-weight: bold;}
+.news_det_bot{ position: fixed; bottom:0; background: #fff; border-top:1px solid #EEEEEE; height: 60px; width: 100%;display:flex;  align-items:center;justify-content:space-between; padding:0 0.6rem;}
+.edit_com{display:flex;  align-items:center; position: relative; width: 54%;}
+.edit_com input{ background: #F3F4F6; border: 1px solid #E6E6E6; border-radius: 4rem; box-sizing: border-box;}
+.mui-badge{ position: absolute; }
+.mui-icon-extra-like{ color: #3B96F6; position: relative;}
+.det_bot{width: 40%; display: flex; justify-content: space-around; color: #A7A7A7; background: #fff;}
+.db1{color: #A7A7A7;}
+.mui-content a.active span{color: #3B96F6;}
+
+/** buddyList **/
+

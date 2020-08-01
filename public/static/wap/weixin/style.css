@@ -1,0 +1,288 @@
+*{margin:0px;padding:0px;font-size:15px;color:#333;list-style:none;text-decoration:none;}
+body{max-width:640px;margin:0 auto;}
+a{text-decoration:none;color:#333;}
+a{blr:expression(this.onFocus=this.blur());}
+a:focus{outline:none;}
+a:hover{color:#111;}
+
+
+
+.list_page{text-align:center;margin:10px;margin:0 auto;width:280px;padding: 20px 0;}
+.list_page a{background:#fff;margin:0px 1px;padding:4px 6px;border:1px solid #90CBF9;color:#333;}
+.list_page span{margin:0px 1px;padding:4px 6px;}
+.list_page b{background:#fff;margin:0px 1px;padding:4px 6px;border:1px solid #90CBF9;color:#333;}
+.list_page b input{border:0;margin:0;padding:0;font-size:15px;font-weight:normal;width:12px;vertical-align:middle;text-align:center;}
+.list_page li{float:left;}
+.list_page .pageinfo{display:none;}
+
+
+input, textarea, select {
+    font-size: 100%;
+    outline: medium none;
+	border:1px solid #ccc;
+	margin: 3px 0px;
+}
+select{}
+ 
+ 
+#Head{width:100%;overflow:hidden;text-align:center;}
+#Head img{width:100%; height:auto}
+/**/
+.List{ width:100%; overflow:hidden; margin-top:1%; }
+.List a img{width:100%; height:auto}
+.List1{ width:96%; overflow:hidden; margin-top:2%; margin-left:2%; }
+.List1 a img{width:100%; height:auto}
+.List2{ width:100%; overflow:hidden;}
+.List2 a img{width:100%; height:auto}
+
+.List3{ width:90%; overflow:hidden;margin-left:5%}
+.List3 a img{width:100%; height:auto}
+
+
+/**/
+.malla a{font-size:15px;}
+
+#main{width:100%;overflow:hidden;text-align:center; background:#005A9B}
+
+#main1{width:100%;overflow:hidden;text-align:center; background:#E7F3F3 }
+
+#main2{
+    background-attachment: fixed;
+    background-image: url("Img/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+#main3{
+	width:90%; margin-left:5%;
+    background-attachment: fixed;
+    background-image: url("Img/img2.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+#main4{width:93%;overflow:hidden;text-align:center; margin-left:3%;}
+#main4 .text{width:80%;height:20px;line-height:20px;padding-left:5px;}
+#main4 .yzm{width:30%;}
+
+
+#main5{width:100%;overflow:hidden;text-align:center; background:#fff }
+
+.td1 {
+    background: #F8F8F8 none repeat scroll 0% 0%;
+    border-bottom: 1px solid #E1E1E1;
+    border-left: 1px solid #E1E1E1;
+    padding-left: 5px;
+}
+.td2 {
+    border-bottom: 1px solid #E1E1E1;
+    border-left: 1px solid #E1E1E1;
+    padding-left: 5px;
+}
+
+.td11 {
+    border-bottom: 1px solid #CBE7F8;
+    border-left: 1px solid #CBE7F8;
+    padding-left: 0px;
+}
+.td22{
+    border-bottom: 1px solid #CBE7F8;
+    border-left: 1px solid #CBE7F8;
+    padding-left: 5px;
+}
+
+#countent {
+    width: 100%;
+    margin: 0px auto;
+}
+#countent img{
+	width:100%;
+	height:auto;
+}
+
+
+
+#PrshowA a {
+    display: block;
+    width: 47%;
+    float: left;
+    background: #FAFAFA none repeat scroll 0% 0%;
+    padding: 3px;
+    border: 1px solid #F1F1F1;
+    margin-left: 0px;
+    margin-right: 1px;
+    margin-bottom: 3px;
+}
+
+#PrshowA a img {
+    width: 100%;
+    height: 100px;
+}
+
+
+
+
+.a-upload {
+    padding: 4px 10px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #888;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+
+.a-upload  input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+
+.a-upload:hover {
+    color: #444;
+    background: #eee;
+    border-color: #ccc;
+    text-decoration: none
+}
+
+
+.file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+
+
+.jyyw_jjtg fieldset{padding: 20px 20px 0 20px;}
+.jyyw_jjtg .lineBox li{padding: 0px;}
+
+.lineBox input.pic_file{width:100px;height:60px;border:1px solid #ccc;opacity: 100;background:#fff url(Img/tjzp.png) no-repeat 5px center / 50px 50px;font-size:0px;line-height:150px;text-indent:-9999px;}
+
+.lineBox input.bfpic_file{width:60px;height:60px;border:1px solid #ccc;opacity: 100;background:#fff url(images/icon_ssp.jpg) no-repeat 5px center / 50px 50px;font-size:0px;line-height:150px;text-indent:-9999px;margin-top:0px;margin-left:2px;}
+
+/*户政选择地区*/
+ul.hz_dq {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    border-top: 1px solid;
+}
+ul.hz_dq li {
+    float: left;
+    width: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 20px;
+}
+ul.hz_dq li a{}
+
+
+
+#wrap{  
+    width:100%;  
+    margin:0 auto;
+	}  
+
+#container{  
+    position:relative;  
+    margin:20px;  
+    height:100%;  
+}  
+
+#left_side{  
+    position:absolute;  
+    top:0px;  
+    left:0px;  
+    width:100%;  
+    height:100%;  
+}  
+#content{  
+    position:absolute;  
+    width:100%;  
+    height:100%;  
+}  
+#right_side{  
+    position:absolute;  
+    top:0px;  
+    right:0px;  
+    width:100%;  
+    height:100%;  
+}  
+
+
+/*办理须知*/
+.hz_xuz {
+    width: 98%;
+    height: 150px;
+    border: 3px solid #DDDDDD;
+}
+.hz_xuz_tit {
+    width: 10%;
+    height: 100px;
+    float: left;
+    border-right: 2px solid #ddd;
+    margin-top: 15px;
+    text-align: center;
+    padding-top: 20px;
+    color: #B31A1B;
+    font-weight: bold;
+	font-size:16px;
+}
+.hz_xuz_con {
+    width: 80%;
+    height: 130px;
+    float: left;
+    padding: 5px 10px 10px 10px;
+    padding-left: 12px;
+    overflow: hidden;
+}
+
+
+
+#dept_area{
+appearance:none;
+-moz-appearance:none;
+-webkit-appearance:none;
+background:#fff url(img/arrow.png) no-repeat 95% center;
+}
+#dept_id{
+appearance:none;
+-moz-appearance:none;
+-webkit-appearance:none;
+background:#fff url(img/arrow.png) no-repeat 95% center;
+}
+

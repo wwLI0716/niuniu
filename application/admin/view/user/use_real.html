@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户实名认证</title>
+    <link rel="stylesheet" href="__LAYUI__/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="__LAYUI__/style/admin.css" media="all">
+    <link rel="stylesheet" href="__LAYUI__/style/oc.css" media="all">
+    <style>
+        .showImg {
+            height: 25px !important;
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-tab layui-tab-card">
+        <ul class="layui-tab-title">
+            <li class="layui-this">用户实名认证</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <div class="layui-form-item">
+                    <div class="layui-input-inline">
+                        <input style="width: auto;" type="text" id="username" name="username"  placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-input-inline " style="width: 90px">
+                        <button class="layui-btn layuiadmin-btn-useradmin"  data-type="reload">
+                            <i class="layui-icon" style="font-size: 20px; "></i> 搜索
+                        </button>
+                    </div>
+                </div>
+                <table id="list" lay-filter="list"></table>
+                <script type="text/html" id="barDemo">
+                    {{#  if(d.status === 0){ }}
+                    <a class="layui-btn layui-btn-xs" lay-event="pass">通过</a>
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">驳回</a>
+                    {{#  } }}
+                </script>
+            </div>
+
+            <div class="layui-tab-item">
+                <table id="data-list" lay-filter="list"></table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="__LAYUI__/layui/layui.js"></script>
+<script>
+    layui.use(['table', 'jquery'], function () {
+        var table = layui.table,
+            $ = layui.$;
+        table.render({
+            elem: '#list',
+            url: "{:url('user/useReal')}", //数据接口
+            title: '用户表',
+            toolbar: 'true',
+            defaultToolbar: ['filter', 'print', 'exports'],
+            page: true,
+            loading: true,
+            limit: 20,
+            limits: [10, 20, 50, 100],
+            cols: [[
+                {field: 'id', title: 'ID', sort: true, fixed: 'left',width:100},
+                {field: 'username', title: '用户名', sort: true,width:150},
+                {field: 'name', title: '真实姓名', sort: true, width:150},
+                {field: 'card', title: '身份证号', sort: true, width:200},
+                {field: 'face_img', title: '正面照', templet:'<div><a target="_blank" href="{{d.face_img}}"><img class="showImg" src="{{d.face_img}}" /></a></div>'},
+                {field: 'back_img', title: '背面照', templet:'<div><a target="_blank" href="{{d.back_img}}"><img class="showImg" src="{{d.back_img}}" /></a></div>'},
+                {field: 'back_img', title: '手持身份证', templet:'<div><a target="_blank" href="{{d.user_take_card_img}}"><img class="showImg" src="{{d.user_take_card_img}}" /></a></div>'},
+                {field: 'is_real_text', title: '实名状态', sort: true, width:100},
+                {field: 'addtime', title: '注册时间', sort: true},
+                {fixed: 'right', width: 165, align: 'center', toolbar: '#barDemo',title:"操作", width:150}
+            ]],
+        });
+
+        //事件
+        var active = {
+            reload: function () {
+                var username=$('#username').val();
+                var index = layer.msg('查询中，请稍候...',{icon: 16,time:false,shade:0});
+
+                setTimeout(function(){
+                    table.reload('list', { //表格的id
+                        page: {
+                            curr: 1 //重新从第 1 页开始
+                        },
+                        where: {
+                            username:$.trim(username),
+                        }
+                    });
+                    layer.close(index);
+                },800);
+                table.render();
+            }
+        };
+        $('.layuiadmin-btn-useradmin').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+
+        //监听行工具事件
+        table.on('tool(list)', function (obj) {
+            var data = obj.data;
+            var layEvent = obj.event;
+            if (layEvent === 'del') {
+                layer.confirm('真的驳回吗', function (index) {
+                    $.post('{:url("user/delReal")}', {id: [data.id]}, function (res) {
+                        if (res.code === 1) {
+                            table.reload('list');
+                            layer.close(index);
+                            layer.msg(res.msg);
+                        } else {
+                            layer.msg(res.msg);
+                        }
+                    });
+                });
+            } else if(layEvent === 'pass'){
+                layer.confirm('真的通过吗？', function (index) {
+                    $.post('{:url("user/passReal")}', {id:data.id}, function (res) {
+                        if (res.code === 1) {
+                            table.reload('list');
+                            layer.close(index);
+                            layer.msg(res.msg);
+                        } else {
+                            layer.msg(res.msg);
+                        }
+                    });
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

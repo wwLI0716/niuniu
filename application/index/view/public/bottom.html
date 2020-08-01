@@ -1,0 +1,24 @@
+<div class="bottom-mulu col-12">
+    <ul class="bottom-mulu-ul col-12">
+        <li>
+            <i class="iconfont icon_iconfont-shouye"></i><br /><a href="/" data-url="Index">首页</a>
+        </li>
+        <li>
+            <i class="iconfont icon_iconfont-xinxizhongxin-"></i><br /><a href="/Examine/showReleaseDemand?status=2"  data-url="Examine">已审核</a>
+        </li>
+        <li>
+            <i class="iconfont icon_iconfont-fengxiangqudao-duanxin-"></i><br /><a href="/Bid/bidList"  data-url="Bid">招标</a>
+        </li>
+        <li>
+            <i class="iconfont icon_iconfont-xiugainicheng-"></i><br /><a href="/user/personInfo" data-url="User">我的</a>
+        </li>
+    </ul>
+</div>
+<script>
+    $('.bottom-mulu-ul li').each(function () {
+        if($(this).children('a').attr('data-url').toLowerCase() == '{$pos}'.toLowerCase())
+        {
+            $(this).addClass('on');
+        }
+    });
+</script>

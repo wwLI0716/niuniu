@@ -1,0 +1,360 @@
+{include file="public/shead" /}
+<link rel="stylesheet" href="__WAP_PUBLIC__/css/flatpickr.min.css">
+<link rel="stylesheet" href="__WAP_PUBLIC__/layui/css/layui.css">
+{include file="public/left" /}
+<style>
+    .box {
+        box-shadow: none;
+    }
+
+    .show-title {
+        margin: 0 0 0px;
+        font-size: 24px;
+        color: #6c757d;
+    }
+
+    .content-bottom {
+        margin-bottom: 10rem;
+    }
+
+    .show-module {
+        display: inline-block;
+        padding: 0;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .show-module-sign {
+        color: #3c7fff;
+    }
+    .none {
+        display: none;
+    }
+    .layui-upload-file{
+        display: none;
+    }
+</style>
+<div class="content-wrapper">
+    <section class="content-header show-content-title">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a class="sendA" href="javascript:history.back(-1)">
+                    < &nbsp;
+                </a>
+            </li>
+            <li class="breadcrumb-item active sendContent">提交申请</li>
+        </ol>
+    </section>
+<!--    <section class="content-header header-top">-->
+<!--        <div class="col-12">-->
+<!--            <div class="box box-solid bg-black">-->
+<!--                <div class="box-body box-body-spec">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-12 show-module-all">-->
+<!--                            <div class="col-4 show-module show-module-sign">招标基本信息</div>-->
+<!--                            <div class="col-3 show-module">对竞投方资格要求</div>-->
+<!--                            <div class="col-3 show-module">对承租方经营出租物要求</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+    <section class="content-header content-bottom">
+        <div class="col-12">
+            <div class="box box-solid bg-black">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <form id="demandInfo" name="demandInfo" action="" enctype="multipart/form-data" method="post">
+                                <input type="hidden" id="bid_id" name="bid_id" value="{$demondInfo.id}">
+                                <div>
+                                    <div class="show-module-content">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">报名开始时间</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="enrol_start_time" name="enrol_start_time"
+                                                       class="form-control datepicker enrol_start_time"
+                                                       placeholder="请输入报名开始时间" value="{$demondInfo.enrol_start_time}"/>
+
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">报名结束时间</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="enrol_end_time" name="enrol_end_time"
+                                                       class="form-control datepicker enrol_end_time"
+                                                       placeholder="请输入报名结束时间"
+                                                       value="{$demondInfo.enrol_end_time}" required/>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">	租赁方</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="rent_name" class="form-control"
+                                                       placeholder="" value="{$demondInfo.rent_name}"
+                                                       required/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">楼宇名称</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="rent_house" class="form-control"
+                                                       placeholder="" value="{$demondInfo.rent_house}"
+                                                       required/>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">租赁层数</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="rent_floor" class="form-control"
+                                                       placeholder="" value="{$demondInfo.rent_floor}"
+                                                       required/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">出租面积</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="rent_area" class="form-control"
+                                                       placeholder="" value="{$demondInfo.rent_area}"
+                                                       required/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">	租赁价格</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="rent_price" class="form-control"
+                                                       placeholder="" value="{$demondInfo.rent_price}"
+                                                       required/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">合同扫描件</label>
+                                            <div class="col-sm-4">
+                                                <button type="button" class="layui-btn" id="file-a1">上传</button>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input type="hidden" id="va_file-a1" name="pdf" class="input normal upload-path" />
+                                               <p id="pdfview"></p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label"></label>
+                                    <div class="col-sm-2">
+                                        <input class="btn btn-primary btn-lg btn-block submit" type="submit" value="提交"
+                                               readonly/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+{include file="public/bottom" /}
+<!--   Core JS Files   -->
+<script src="__WAP_PUBLIC__/js/2a559aaccaa34fb78270f9dc5f3dcac1.js"></script>
+<script src="__WAP_PUBLIC__/js/layer.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/common1.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/bootstrap.min.14d449eb8876.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/template.eca497836b5a.js"></script>
+<script src="__WAP_PUBLIC__/js/jquery.form.js"></script>
+<script src="__WAP_PUBLIC__/layui/layui.js"></script>
+<script>
+    var  admin_uploadimg = "uploadimg";
+    var imglist = [
+        'file-a1'
+    ];
+
+    $.each(imglist,function (k,v) {
+        layui.use(['form','layer','upload'], function(){
+            var form = layui.form,
+                layer = layui.layer;
+            upload = layui.upload;
+            var $ = layui.jquery;
+
+            //拖拽上传
+            upload.render({
+                elem: '#'+v
+                ,url: admin_uploadimg
+                ,accept:"file"
+                ,acceptMime:"application/pdf"
+                ,before: function(obj){
+                }
+                ,done: function(res){
+                    if(res.code==200){
+                        $("#va_"+v).val(res.data.msg);
+                        layer.msg('上传成功',{
+                            icon: 1,
+                            time: 1000 //2秒关闭（如果不配置，默认是3秒）
+                        });
+                         $('#pdfview').html(res.data.msg); //图片链接（base64）zs_file-a1
+                    }else{
+                        layer.msg('上传失败');
+                    }
+                    //上传成功
+                }
+                ,error: function(){
+                    alert("上传失败，稍后重试");
+                }
+            });
+        });
+
+    })
+</script>
+<script>
+  function upload_file(){
+            console.log(222)
+            $.ajax({
+                url: "{:url('Bid/uploadBidAttach')}",
+                type: "post",
+                data: formdata,
+                processData: false,    // 不处理数据
+                contentType: false,    // 不设置内容类型
+                success: function (res) {
+                    var res = JSON.parse(res);
+                    layer.msg(res.info);
+                    if (res.code == 100) {
+                        $("#annex_address").val(res.data.address);
+                        $(".showNowAnnex").html("<a href='" + res.data.address + "' download='" + res.data.address + "'>当前附件</a>");
+                    }
+                }
+            })
+        }
+    $(function () {
+        function upload_file(){
+            console.log(222)
+            $.ajax({
+                url: "{:url('Bid/uploadBidAttach')}",
+                type: "post",
+                data: formdata,
+                processData: false,    // 不处理数据
+                contentType: false,    // 不设置内容类型
+                success: function (res) {
+                    var res = JSON.parse(res);
+                    layer.msg(res.info);
+                    if (res.code == 100) {
+                        $("#annex_address").val(res.data.address);
+                        $(".showNowAnnex").html("<a href='" + res.data.address + "' download='" + res.data.address + "'>当前附件</a>");
+                    }
+                }
+            })
+        }
+        $('.getA').attr('href', $('.sendA').attr("href"));
+        $('.pageName').html($(".sendContent").html());
+
+        flatpickr(".datepicker", {
+            onReady: function (dateObj, dateStr, instance) {
+                var $cal = $(instance.calendarContainer);
+                if ($cal.find('.flatpickr-clear').length < 1) {
+                    $cal.append('<div class="flatpickr-clear">Clear</div>');
+                    $cal.find('.flatpickr-clear').on('click', function () {
+                        instance.clear();
+                        instance.close();
+                    });
+                }
+            }
+        });
+
+
+
+        $('.show-module').click(function () {
+            $(this).siblings().removeClass("show-module-sign");
+            $(this).addClass("show-module-sign");
+            var sinId = $(this).index();
+            $('.show-module-content').eq(sinId).css("display", "block");
+            $('.show-module-content').eq(sinId).siblings().css("display", "none");
+        });
+
+        $("input[type=radio][name=bidder_type]").change(function () {
+            if (this.value == "1") {
+                $(".bid_files1").removeClass("none");
+                !$(".bid_files1").hasClass("none") && $(".bid_files2").addClass("none");
+            }
+            if (this.value == "2") {
+                $(".bid_files2").removeClass("none");
+                !$(".bid_files2").hasClass("none") && $(".bid_files1").addClass("none");
+            }
+        });
+
+
+
+        //当表单提交时，调用所有的校验方法
+        $("#demandInfo").submit(function () {
+            var forthat = $(this);
+            //询问框
+            layer.open({
+                content: '确认提交吗？'
+                , btn: ['是', '否']
+                , skin: 'loginout'
+                , yes: function (index) {
+                    var status = 1;
+                    //验证
+                    $('input').each(function () {
+                        var that = $(this);
+                        if ($(this).attr('name') != 'bid_id' && $(this).attr('name') != undefined && $(this).attr('name') != '' && $(this).attr('name') != 'other_require'&& $(this).attr('name') != 'file' ) {
+                            if ($(this).val() == '') {
+                                alert($(this).attr('name'))
+                                layer.msg(that.attr('placeholder'), {time: 2000});
+                                status = 0;
+                                return false;
+                            }
+                        }
+                    });
+
+                    if (status == 0) {
+                        return false;
+                    }
+                    layer.open({
+                        type: 3,
+                        skin: 'loading_style'
+                    });
+                    //1.发送数据到服务器
+                    $.post(
+                        "{:url('His/saveHis')}",
+                        forthat.serialize(),
+                        function (res) {
+                            var res = JSON.parse(res);
+                            layer.closeAll();
+                            layer.msg(res.info, {time: 2000}, function () {
+                                if (res.code == 100) {
+                                    setTimeout(function () {
+                                        window.history.go(-1);
+                                    }, 500);
+                                }
+                            })
+                        });
+                    //2.不让页面跳转
+                    return false;
+                    //如果这个方法没有返回值，或者返回为true，则表单提交，如果返回为false，则表单不提交
+                }
+                , no: function (index) {
+                    return false;
+                }
+            });
+
+            return false;
+        });
+
+
+        $('.logout').click(function () {
+            //询问框
+            layer.open({
+                content: '{:lang("logout_tip")}'
+                , skin: 'loginout'
+                , btn: ['{:lang("yes")}', '{:lang("no")}']
+                , yes: function (index) {
+                    window.location.href = "{:url('index/Login/logout')}";
+                }
+            });
+        });
+    });
+</script>
+</body>
+
+</html>

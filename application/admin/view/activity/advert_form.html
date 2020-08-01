@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>留言回复</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="__LAYUI__/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="__LAYUI__/style/admin.css" media="all">
+    <style>
+        .layui-upload-img {
+    width: 190px;
+    height: 92px;
+    margin: 0 10px 10px 0;
+}
+    </style>
+</head>
+<body>
+
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header">留言回复</div>
+        <div class="layui-card-body" style="padding: 15px;">
+            <form class="layui-form" action="" lay-filter="component-form-group">
+                <input type="hidden" name="id" value="{$info.id}" class="layui-input">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">留言内容</label>
+                    <div class="layui-input-block">
+                        <textarea name="description" placeholder="" class="layui-textarea">{$info.description}</textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">管理员回复</label>
+                    <div class="layui-input-block">
+                        <textarea name="reply" placeholder="请输入管理员回复" class="layui-textarea">{$info.reply}</textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-layout-admin">
+                    <div class="layui-input-block">
+                        <div class="layui-footer" style="left: 0;">
+                            <button class="layui-btn" lay-submit="" lay-filter="component-form-demo">立即提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="__LAYUI__/layui/layui.js"></script>
+<script>
+    layui.config({
+        base: '__LAYUI__/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index', //主入口模块
+        selectM: '../lib/extend/selectM'
+    }).use(['index', 'form','upload','selectM','laydate'],function() {
+        var $ = layui.jquery,
+            upload = layui.upload,
+            form = layui.form;
+            var laydate = layui.laydate;
+
+        /* 监听提交 */
+        form.on('submit(component-form-demo)', function(data){
+            var field = data.field; //获取提交的字段
+            $.post("{:url('activity/advertForm')}", field, function (res) {
+                if (res.code === 1) {
+                    layer.msg(res.msg);
+                    window.location.href="{:url('advert')}";
+                } else {
+                    layer.msg(res.msg);
+                }
+            });
+            return false;
+        });
+          
+    });
+</script>
+</body>
+</html>

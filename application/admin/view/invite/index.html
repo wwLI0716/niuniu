@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>邀请记录列表管理</title>
+    <link rel="stylesheet" href="__LAYUI__/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="__LAYUI__/style/admin.css" media="all">
+    <link rel="stylesheet" href="__LAYUI__/style/oc.css" media="all">
+    <style>
+        .laytable-cell-1-icon{
+            height:100%;
+            max-width: 100%;
+        }
+        .laytable-cell{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-fluid">
+    <div class="layui-tab layui-tab-card">
+        <ul class="layui-tab-title">
+            <li class="layui-this">邀请记录列表管理</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <div class="layui-form-item">
+                    <div class="layui-input-inline">
+                        <input style="width: auto;" type="text" id="keyword" name="keyword"  placeholder="请输入用户ID/名称" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-input-inline " style="width: 90px">
+                        <button class="layui-btn layuiadmin-btn-useradmin"  data-type="reload">
+                            <i class="layui-icon" style="font-size: 20px; "></i> 搜索
+                        </button>
+                    </div>
+                </div>
+                <table id="list" lay-filter="list"></table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="__LAYUI__/layui/layui.js"></script>
+<script>
+    layui.use(['table', 'jquery'], function () {
+        var table = layui.table,
+            $ = layui.$;
+        var xxx = table.render({
+            elem: '#list',
+            url: "{:url('invite/index')}", //数据接口
+            title: '邀请表',
+            toolbar: 'true',
+            defaultToolbar: ['filter', 'print', 'exports'],
+            page: true,
+            loading: true,
+            limit: 20,
+            limits: [10, 20, 50, 100],
+            cols: [[
+                {type: 'checkbox', fixed: 'left'},
+                {field: 'id', title: 'ID', sort: true, fixed: 'left'},
+                {field: 'code', title: '邀请码',sort:true},
+                {field: 'from_username', title: '邀请用户用户名',templet:'<a href="/admin/invite/index?from_username={{d.from_username}}">{{d.from_username}}</a>'},
+                {field: 'from_num', title: '邀请用户获得积分数量',sort:true},
+                {field: 'to_username', title: '助力用户用户名',templet:'<a href="/admin/invite/index?to_username={{d.to_username}}">{{d.to_username}}</a>'},
+                {field: 'to_num',title:'助力用户获得积分数量',sort:true},
+                {field: 'created_at',title:'助力时间',sort:true}
+            ]]
+        });
+
+        //事件
+        var active = {
+
+            reload: function () {
+                var keyword=$('#keyword').val();
+                var index = layer.msg('查询中，请稍候...',{icon: 16,time:false,shade:0});
+                setTimeout(function(){
+                    xxx.reload({ //表格的id
+                        page: {
+                            curr: 1 //重新从第 1 页开始
+                        },
+                        where: {
+                            keyword:$.trim(keyword)
+                        }
+                    });
+                    layer.close(index);
+                },800);
+            }
+        };
+
+        $('.layuiadmin-btn-useradmin').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+
+    });
+</script>
+</body>
+</html>

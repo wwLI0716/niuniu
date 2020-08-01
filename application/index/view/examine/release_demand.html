@@ -1,0 +1,719 @@
+{include file="public/shead" /}
+<link rel="stylesheet" href="__WAP_PUBLIC__/css/flatpickr.min.css">
+<link rel="stylesheet" href="__WAP_PUBLIC__/layui/css/layui.css">
+{include file="public/left" /}
+<style>
+    .box {
+        box-shadow: none;
+    }
+
+    .show-title {
+        margin: 0 0 0px;
+        font-size: 24px;
+        color: #6c757d;
+    }
+
+    .content-bottom {
+        margin-bottom: 10rem;
+    }
+
+    .specSearch {
+        border: 0 !important;
+        background-color: #eee !important;
+        color: #555 !important;
+    }
+
+    .show-module {
+        display: inline-block;
+        padding: 0;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .show-module-sign {
+        color: #3c7fff;
+    }
+</style>
+<div class="content-wrapper">
+    <section class="content-header show-content-title">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a class="sendA" href="javascript:history.back(-1)">
+                    < &nbsp;
+                </a>
+            </li>
+            <li class="breadcrumb-item active sendContent">提交申请</li>
+        </ol>
+    </section>
+    <section class="content-header header-top">
+        <div class="col-12">
+            <div class="box box-solid bg-black">
+                <div class="box-body box-body-spec">
+                    <div class="row">
+                        <div class="col-12 show-module-all">
+                            <div class="col-4 show-module show-module-sign">楼宇基本信息</div>
+                            <div class="col-3 show-module">原租赁信息</div>
+                            <div class="col-3 show-module">拟租赁信息</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content-header content-bottom">
+        <div class="col-12">
+            <div class="box box-solid bg-black">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <form id="demandInfo" name="demandInfo" action="{:url('getreleaseDemand')}"
+                                  enctype="multipart/form-data" method="post">
+                                <input type="hidden" id="id" name="id" value="{$demondInfo.id}">
+                                <input type="hidden" id="apple_id" name="apple_id" value="{$demondInfo.apple_id}">
+                                <input type="hidden" id="methods" name="methods" value="">
+                                <div>
+                                    <div class="show-module-content">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">楼宇名称</label>
+                                            <div class="col-sm-4 input-group">
+                                                <input type="text" name="house_name" class="form-control"
+                                                       placeholder="请输入楼宇名称" value="{$demondInfo.house_name}"/>
+                                                {if condition="!isset($demondInfo)"}<span
+                                                    class="input-group-addon specSearch">搜索</span>{/if}
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">楼宇地址</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="house_address" class="form-control"
+                                                       placeholder="请输入楼宇地址" value="{$demondInfo.house_address}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">地上层数/层</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" name="house_up_height" class="form-control"
+                                                       placeholder="请输入地上层数" value="{$demondInfo.house_up_height}"/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">地下层数/层</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" name="house_down_height" class="form-control"
+                                                       placeholder="请输入地下层数" value="{$demondInfo.house_down_height}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">地上面积</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="house_up_area" class="form-control"
+                                                       placeholder="请输入地上面积" value="{$demondInfo.house_up_area}"/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">地下面积</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="house_down_area" class="form-control"
+                                                       placeholder="请输入地下面积" value="{$demondInfo.house_down_area}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">投资方式</label>
+                                            <div class="col-sm-4">
+                                                <!--<input type="text" name="investment_mode" class="form-control" placeholder="请输入投资方式" value="{$demondInfo.investment_mode}" required />-->
+                                                <select name="investment_mode" class="form-control investment_mode">
+                                                    {volist name="investment_mode" id="vo"}
+                                                    <option value="{$vo}" {if
+                                                            condition="$demondInfo.investment_mode eq $vo"
+                                                            }selected="selected" {
+                                                    /if}>{$vo}</option>
+                                                    {/volist}
+                                                </select>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">投资比例%</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="investment_rate" class="form-control"
+                                                       placeholder="请输入投资比例" value="{$demondInfo.investment_rate}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">投资总额/万</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="investment_total" class="form-control"
+                                                       placeholder="请输入投资总额/万" value="{$demondInfo.investment_total}"/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">楼宇性质</label>
+                                            <div class="col-sm-4">
+                                                <!--<input type="text" name="house_nature" class="form-control" placeholder="请输入楼宇性质" value="{$demondInfo.house_nature}" required />-->
+                                                <select name="house_nature" class="form-control house_nature">
+                                                    {volist name="nature_of_building" id="vo"}
+                                                    <option value="{$vo}" {if
+                                                            condition="$demondInfo.house_nature eq $vo"
+                                                            }selected="selected" {
+                                                    /if}>{$vo}</option>
+                                                    {/volist}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label" for="build_at">开工时间</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="build_at" name="build_at"
+                                                       class="form-control  build_at" placeholder="请输入开工时间"
+                                                       value="{$demondInfo.build_at}"/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">竣工时间</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="finished_at" name="finished_at"
+                                                       class="form-control  finished_at" placeholder="请输入竣工时间"
+                                                       value="{$demondInfo.finished_at}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">房产权证号</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="house_card_number" class="form-control"
+                                                       placeholder="请输入房产权证号" value="{$demondInfo.house_card_number}"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="show-module-content" style="display: none;">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">原租赁方</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="original_tenant" class="form-control"
+                                                       placeholder="请输入原租赁方" value="{$demondInfo.original_tenant}"/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">租赁开始时间</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="lease_start" name="lease_start"
+                                                       class="form-control datepicker lease_start"
+                                                       placeholder="请输入租赁开始时间" value="{$demondInfo.lease_start}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">租赁结束时间</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="lease_end" name="lease_end"
+                                                       class="form-control datepicker lease_end" placeholder="请输入租赁结束时间"
+                                                       value="{$demondInfo.lease_end}"/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">租赁位置</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="lease_position" class="form-control"
+                                                       placeholder="请输入租赁位置" value="{$demondInfo.lease_position}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">地上位置/层</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" name="up_position" class="form-control"
+                                                       placeholder="请输入地上位置" value="{$demondInfo.up_position}"/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">地下位置/层</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" name="down_position" class="form-control"
+                                                       placeholder="请输入地下位置" value="{$demondInfo.down_position}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">租赁面积</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="lease_area" class="form-control"
+                                                       placeholder="请输入租赁面积" value="{$demondInfo.lease_area}"/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">地上面积</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="lease_up_area"
+                                                       class="form-control" placeholder="请输入租赁地上面积"
+                                                       value="{$demondInfo.lease_up_area}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">地下面积</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="lease_down_area"
+                                                       class="form-control" placeholder="请输入租赁地下面积"
+                                                       value="{$demondInfo.lease_down_area}"/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">合同终止原因</label>
+                                            <div class="col-sm-4">
+                                                <!--<input type="text" name="end_reason" class="form-control" placeholder="请输入合同终止原因" value="{$demondInfo.end_reason}" required />-->
+                                                <select name="end_reason" class="form-control end_reason">
+                                                    {volist name="reasons_for_termination" id="vo"}
+                                                    <option value="{$vo}" {if condition="$demondInfo.end_reason eq $vo"
+                                                            }selected="selected" {
+                                                    /if}>{$vo}</option>
+                                                    {/volist}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row" style='display:flex;'>
+                                            <label class="col-sm-2 col-form-label">合同终止日</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="lease_end_day" name="lease_end_day"
+                                                       class="form-control datepicker lease_end_day"
+                                                       placeholder="请输入合同终止日" value="{$demondInfo.lease_end_day}"/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">租赁单价</label>
+                                            <div class="col-sm-3">
+                                                <input type="number" step="0.01" name="lease_price" class="form-control"
+                                                       placeholder="请输入租赁单价/元" value="{$demondInfo.lease_price}"/>
+                                            </div><div style='align-self:center;'>元</div>
+                                        </div>
+                                        <div class="form-group row" style='display:flex;'>
+                                            <label class="col-sm-2 col-form-label">物业管理费</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="lease_manager_price"
+                                                       class="form-control" placeholder="请输入物业管理费/元"
+                                                       value="{$demondInfo.lease_manager_price}"/>
+                                            </div><div style='align-self:center;'>元</div>
+                                            <label class="col-sm-2 col-form-label">递增方式</label>
+                                            <div class="col-sm-3">
+                                                <input type="text" name="incremental_way" class="form-control"
+                                                       placeholder="请输入递增方式" value="{$demondInfo.incremental_way}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row" style='display:flex;'>
+                                            <label class="col-sm-2 col-form-label">退租违约金</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="falsify" class="form-control"
+                                                       placeholder="请输入退租违约金/元" value="{$demondInfo.falsify}"/>
+                                            </div><div style='align-self:center;'>元</div>
+                                            <label class="col-sm-2 col-form-label">房屋保证金</label>
+                                            <div class="col-sm-3">
+                                                <input type="number" step="0.01" name="house_deposit"
+                                                       class="form-control" placeholder="请输入房屋保证金/元"
+                                                       value="{$demondInfo.house_deposit}"/>
+                                            </div><div style='align-self:center;'>元</div>
+                                        </div>
+                                        <div class="form-group row" style='display:flex;'>
+                                            <label class="col-sm-2 col-form-label">风险保证金</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="risk_deposit" class="form-control"
+                                                       placeholder="请输入风险保证金/元" value="{$demondInfo.risk_deposit}"/>
+                                            </div><div style='align-self:center;'>元</div>
+                                        </div>
+                                    </div>
+                                    <div class="show-module-content" style="display: none;">
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">合同类型</label>
+                                            <div class="col-sm-4">
+                                                <!--<input type="text" name="contract_mode" class="form-control" placeholder="请输入合同类型" value="{$demondInfo.contract_mode}" required />-->
+                                                <select name="contract_mode" class="form-control contract_mode">
+                                                    {volist name="type_of_contract" id="vo"}
+                                                    <option value="{$vo}" {if condition="$demondInfo.contract_mode eq $vo" }selected="selected" {/if}>{$vo}</option>
+                                                    {/volist}
+                                                </select>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">租赁方式</label>
+                                            <div class="col-sm-4">
+                                                <!--<input type="text" name="lease_mode" class="form-control" placeholder="请输入租赁方式" value="{$demondInfo.lease_mode}" required />-->
+                                                <select name="lease_mode" class="form-control lease_mode">
+                                                    {volist name="leasing_mode" id="vo"}
+                                                    <option value="{$vo}" {if condition="$demondInfo.lease_mode eq $vo"}selected="selected" {/if}>{$vo}</option>
+                                                    {/volist}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">租赁位置</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="lease_position_now" class="form-control"
+                                                       placeholder="请输入租赁位置" value="{$demondInfo.lease_position_now}"/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">地上位置</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="up_position_now"
+                                                       class="form-control" placeholder="请输入地上位置"
+                                                       value="{$demondInfo.up_position_now}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">地下位置</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="down_position_now"
+                                                       class="form-control" placeholder="请输入地下位置"
+                                                       value="{$demondInfo.down_position_now}"/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">租赁面积</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="lease_area_now"
+                                                       class="form-control" placeholder="请输入租赁面积"
+                                                       value="{$demondInfo.lease_area_now}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">地上面积</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="lease_up_area_now"
+                                                       class="form-control" placeholder="请输入地上面积"
+                                                       value="{$demondInfo.lease_up_area_now}"/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">地下面积</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="lease_down_area_now"
+                                                       class="form-control" placeholder="请输入地下面积"
+                                                       value="{$demondInfo.lease_down_area_now}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">租赁年限/年</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="lease_year" class="form-control"
+                                                       placeholder="请输入租赁年限/年" value="{$demondInfo.lease_year}"/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">租赁开始时间</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="lease_start_now" name="lease_start_now"
+                                                       class="form-control datepicker lease_start_now"
+                                                       placeholder="请输入租赁开始时间" value="{$demondInfo.lease_start_now}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">租赁结束时间</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="lease_end_now" name="lease_end_now"
+                                                       class="form-control datepicker lease_end_now"
+                                                       placeholder="请输入租赁结束时间" value="{$demondInfo.lease_end_now}"/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">免租期/天</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="rent_free_period"
+                                                       class="form-control" placeholder="请输入免租期/天"
+                                                       value="{$demondInfo.rent_free_period}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row" style='display:flex;'>
+                                            <label class="col-sm-2 col-form-label">租金起算日</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="rent_start_day" name="rent_start_day"
+                                                       class="form-control datepicker rent_start_day"
+                                                       placeholder="请输入租金起算日" value="{$demondInfo.rent_start_day}"/>
+                                            </div><div style='align-self:center;'>元</div>
+                                            <!--                                            租赁单价有的是按每月/每套算的，按每平方米/每天算的  输入由用户自定义-->
+                                            <label class="col-sm-2 col-form-label">租赁单价</label>
+                                            <div class="col-sm-3">
+                                                <input type="number" step="0.01" name="lease_price_now"
+                                                       class="form-control" placeholder="请输入租赁单价/元"
+                                                       value="{$demondInfo.lease_price_now}"/>
+                                            </div><div style='align-self:center;'>元</div>
+                                        </div>
+                                        <div class="form-group row" style='display:flex;'>
+                                            <label class="col-sm-2 col-form-label">物业管理费</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="lease_manager_price_now"
+                                                       class="form-control" placeholder="请输入物业管理费/元"
+                                                       value="{$demondInfo.lease_manager_price_now}"/>
+                                            </div><div style='align-self:center;'>元</div>
+                                            <label class="col-sm-2 col-form-label">递增方式</label>
+                                            <div class="col-sm-3">
+                                                <input type="text" name="incremental_way_now" class="form-control"
+                                                       placeholder="请输入递增方式" value="{$demondInfo.incremental_way_now}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">退租违约金</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="falsify_now" class="form-control"
+                                                       placeholder="请输入退租违约金/元" value="{$demondInfo.falsify_now}"/>
+                                            </div><div style='align-self:center;'>元</div>
+                                            <label class="col-sm-2 col-form-label">房屋保证金</label>
+                                            <div class="col-sm-3">
+                                                <input type="number" step="0.01" name="house_deposit_now"
+                                                       class="form-control" placeholder="请输入房屋保证金/元"
+                                                       value="{$demondInfo.house_deposit_now}"/>
+                                            </div><div style='align-self:center;'>元</div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">风险保证金</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="risk_deposit_now"
+                                                       class="form-control" placeholder="请输入风险保证金/元"
+                                                       value="{$demondInfo.risk_deposit_now}"/>
+                                            </div><div style='align-self:center;'>元</div>
+                                            <label class="col-sm-2 col-form-label">意向承租企业名称</label>
+                                            <div class="col-sm-3">
+                                                <input type="text" name="lease_unit" class="form-control"
+                                                       placeholder="请输入意向承租企业名称" value="{$demondInfo.lease_unit}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">企业性质</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="lease_unit_nature" class="form-control"
+                                                       placeholder="请输入企业性质" value="{$demondInfo.lease_unit_nature}"/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">注册资金/万</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="register_capital"
+                                                       class="form-control" placeholder="请输入注册资金/万"
+                                                       value="{$demondInfo.register_capital}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">经营范围</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="business_scope" class="form-control"
+                                                       placeholder="请输入经营范围" value="{$demondInfo.business_scope}"/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">商务税务落地</label>
+                                            <div class="col-sm-4">
+                                                <!--<input type="text" name="tax_landing" class="form-control" placeholder="请输入商务税务落地" value="{$demondInfo.tax_landing}" required />-->
+                                                <select name="tax_landing" class="form-control tax_landing">
+                                                    {volist name="tax_landing" id="vo"}
+                                                    <option value="{$vo}" {if condition="$demondInfo.tax_landing eq $vo"
+                                                            }selected="selected" {
+                                                    /if}>{$vo}</option>
+                                                    {/volist}
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">承租后实际用途(多选鼠标按住ctrl键点击)</label>
+                                            <div class="col-sm-4">
+                                                <!--<input type="text" name="purpose" class="form-control" placeholder="请输入承租后实际用途" value="{$demondInfo.purpose}" required />-->
+                                                <select name="purpose[]"  multiple="" class="form-control purpose">
+                                                    {volist name="actual_use_after_lease" id="vo"}
+                                                    <option value="{$vo}" {if condition="$demondInfo.purpose eq $vo"
+                                                            }selected="selected" {
+                                                    /if}>{$vo}</option>
+                                                    {/volist}
+                                                </select>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">实际经营状态</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="management_state" class="form-control"
+                                                       placeholder="请输入实际经营状态" value="{$demondInfo.management_state}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">上年度税收</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="last_tax" class="form-control"
+                                                       placeholder="请输入上年度税收" value="{$demondInfo.last_tax}"/>
+                                            </div>
+                                            <label class="col-sm-2 col-form-label">承诺实际税收/万</label>
+                                            <div class="col-sm-4">
+                                                <input type="number" step="0.01" name="real_tax" class="form-control"
+                                                       placeholder="请输入承诺实际税收/万" value="{$demondInfo.real_tax}"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <textarea class="form-control col-sm-6" name="explain" id="explain"
+                                                      rows="5">{if condition="isset($demondInfo.explain) && $demondInfo.explain neq ''"}{$demondInfo.explain}{else /}特殊情况说明{/if}</textarea>
+                                            <input type="hidden" id="annex_address" name="annex_address"
+                                                   placeholder="请上传附件" value="{$demondInfo.annex_address}"/>
+                                            <label class="col-sm-2 col-form-label showNowAnnex">{if
+                                                condition="$demondInfo.annex_address eq ''"}上传附件{else /}<a
+                                                        class="nowAnnex" href="{$demondInfo.annex_address}"
+                                                        download="{$demondInfo.annex_address}">当前附件</a>{/if}</label>
+                                            <div class="col-sm-4">
+                                                <input type="file" id="annex_address_show" name="annex_address_show"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label"></label>
+                                    <div class="col-sm-2">
+                                        <input class="btn btn-primary btn-lg btn-block submit" type="submit" value="提交"
+                                               readonly/>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-5 col-form-label"></label>
+                                    <div class="col-sm-2">
+                                        <input class="btn btn-primary btn-lg btn-block submit saves" type="submit"
+                                               value="保存" readonly/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+{include file="public/bottom" /}
+<!--   Core JS Files   -->
+<script src="__WAP_PUBLIC__/js/2a559aaccaa34fb78270f9dc5f3dcac1.js"></script>
+<script src="__WAP_PUBLIC__/js/layer.js" type="text/javascript"></script>
+<script src="__WAP_PUBLIC__/js/common1.js" type="text/javascript"></script>
+<!--<script src="__WAP_PUBLIC__/js/bootstrap.min.14d449eb8876.js" type="text/javascript"></script>-->
+<script src="__WAP_PUBLIC__/js/template.eca497836b5a.js"></script>
+<script src="__WAP_PUBLIC__/js/jquery.form.js"></script>
+
+<script src="__WAP_PUBLIC__/layui/layui.js"></script>
+
+<script>
+
+    layui.use('laydate', function() {
+        var laydate = layui.laydate;
+        //年选择器
+        laydate.render({
+            elem: '#build_at'
+            , type: 'year'
+        });
+        //年选择器
+        laydate.render({
+            elem: '#finished_at'
+            , type: 'year'
+        });
+    })
+
+    $(function () {
+        $('.saves').click(function () {
+            $('#methods').val('save');
+        })
+        $('.getA').attr('href', $('.sendA').attr("href"));
+        $('.pageName').html($(".sendContent").html());
+
+        flatpickr(".datepicker", {
+            onReady: function (dateObj, dateStr, instance) {
+                var $cal = $(instance.calendarContainer);
+                if ($cal.find('.flatpickr-clear').length < 1) {
+                    $cal.append('<div class="flatpickr-clear">Clear</div>');
+                    $cal.find('.flatpickr-clear').on('click', function () {
+                        instance.clear();
+                        instance.close();
+                    });
+                }
+            }
+        });
+
+
+
+
+        $('.show-module').click(function () {
+            $(this).siblings().removeClass("show-module-sign");
+            $(this).addClass("show-module-sign");
+            var sinId = $(this).index();
+            $('.show-module-content').eq(sinId).css("display", "block");
+            $('.show-module-content').eq(sinId).siblings().css("display", "none");
+        });
+
+        //文件上传
+        $("#annex_address_show").change(function () {
+            var formdata = new FormData();
+            formdata.append("annex_address", $("#annex_address_show")[0].files[0]);
+            $.ajax({
+                url: "{:url('Examine/updateFile')}",
+                type: "post",
+                data: formdata,
+                processData: false,    // 不处理数据
+                contentType: false,    // 不设置内容类型
+                success: function (res) {
+                    var res = JSON.parse(res);
+                    layer.msg(res.info);
+                    if (res.code == 100) {
+                        $("#annex_address").val(res.data.address);
+                        $(".showNowAnnex").html("<a href='" + res.data.address + "' download='" + res.data.address + "'>当前附件</a>");
+                    }
+                }
+            })
+        });
+
+        //当表单提交时，调用所有的校验方法
+        $("#demandInfo").submit(function () {
+            var forthat = $(this);
+            //询问框
+            layer.open({
+                content: '确认提交吗？'
+                , btn: ['是', '否']
+                , skin: 'loginout'
+                , yes: function (index) {
+                    var status = 1;
+                    //验证
+                    // $('input').each(function () {
+                    //     var that = $(this);
+                    //     if ($(this).attr('name') != 'annex_address' && $(this).attr('name') != 'id' && $(this).attr('name') != 'apple_id' && $(this).attr('name') != undefined && $(this).attr('name') != '' && $(this).attr('name') != 'annex_address_show') {
+                    //         if ($(this).val() == '') {
+                    //             console.log(that.attr('placeholder'))
+                    //             layer.msg(that.attr('placeholder'), {time: 2000});
+                    //             status = 0;
+                    //             return false;
+                    //         }
+                    //     }
+                    // });
+
+                    if (status == 0) {
+                        return false;
+                    }
+                    layer.open({
+                        type: 3,
+                        skin: 'loading_style'
+                    });
+                    //1.发送数据到服务器
+                    $.post(
+                        "{:url('Examine/getreleaseDemand')}",
+                        forthat.serialize(),
+                        function (res) {
+                            var res = JSON.parse(res);
+                            layer.closeAll();
+                            layer.msg(res.info, {time: 2000}, function () {
+                                if (res.code == 100) {
+                                    return false;
+                                    setTimeout(function () {
+                                        window.history.go(-1);
+                                    }, 2000);
+                                }
+                            })
+                        });
+                    //2.不让页面跳转
+                    return false;
+                    //如果这个方法没有返回值，或者返回为true，则表单提交，如果返回为false，则表单不提交
+                }
+                , no: function (index) {
+                    return false;
+                }
+            });
+
+            return false;
+        });
+
+        $(".specSearch").click(function () {
+            var searchContent = $("input[name='house_name']").val();
+            if (searchContent == "") {
+                layer.msg("请填写搜索的内容!");
+                return false;
+            }
+            //1.发送数据到服务器
+            $.post("{:url('Examine/searchNeed')}", {"search_content": searchContent}, function (res) {
+                var res = JSON.parse(res);
+                layer.msg(res.info);
+                if (res.code == 100) {
+                    var nowContent = res.data;
+                    for (var p in nowContent) {
+                        if ($("." + p).length > 0) {
+                            $("input[name='" + p + "']").val(nowContent[p]);
+                            $("." + p + " option").each(function () {
+                                if ($(this).val() == nowContent[p]) {
+                                    $(this).attr("selected", true);
+                                }
+                            });
+                        } else {
+                            $("input[name='" + p + "']").val(nowContent[p]);
+                        }
+                    }
+                }
+            });
+
+        });
+
+        $('.logout').click(function () {
+            //询问框
+            layer.open({
+                content: '{:lang("logout_tip")}'
+                , skin: 'loginout'
+                , btn: ['{:lang("yes")}', '{:lang("no")}']
+                , yes: function (index) {
+                    window.location.href = "{:url('index/Login/logout')}";
+                }
+            });
+        });
+    });
+</script>
+</body>
+
+</html>
